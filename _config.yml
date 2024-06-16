@@ -7,7 +7,7 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
+locale                   : "India"
 title                    : "Ayush Shrivastava"
 title_separator          : "-"
 name                     : &name "Ayush Shrivastava"
@@ -21,7 +21,7 @@ repository               : ""
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile_photo.jpg"
+  avatar           : "/images/profile_photo.JPG"
   name             : "Ayush Shrivastava"
   pronouns         : # example: "she/her"  
   bio              : "MTech CSE Student at IIT Gandhinagar.\nIntrested in applied machine learning"
