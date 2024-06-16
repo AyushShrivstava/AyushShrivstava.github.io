@@ -7,8 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-
-Hello, I am a final year MTech in Computer Science from IIT Gandhinar. I am part of [Sustainability lab](https://sustainability-lab.github.io/) which is headed by my advisor [Prof Nipun Batra](https://nipunbatra.github.io/).  My interest lies in applying machine learning for buidling innovative solutions for sustainablity and health sensing.
+I am a final-year MTech student in Computer Science and Engineering at IIT Gandhinagar. I am also a member of [Sustainability lab](https://sustainability-lab.github.io/) which led by [Prof Nipun Batra](https://nipunbatra.github.io/). My research interests focus on applying machine learning to develop innovative solutions for sustainability and health sensing. I am looking for opportunities to work on challenging problems in the field of machine learning and artificial intelligence.
 
 -----
 
