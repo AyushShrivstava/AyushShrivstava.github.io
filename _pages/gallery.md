@@ -39,6 +39,12 @@ author_profile: false
 }
 </style>
 
+# Gallery 
+
+Welcome to my gallery! Here you'll find a collection of images from my life, including memorable moments and photos I've taken. I'll continue to add more images as I capture new experiences and milestones along my journey.
+
+## 2024
+
 <div class="gallery-container">
   <div class="gallery-item">
     <img src="../images/gallery/convocation2.jpg" alt="Awarded the MTech">
