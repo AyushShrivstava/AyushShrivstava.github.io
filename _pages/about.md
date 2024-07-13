@@ -80,24 +80,24 @@ Work experience
       <col span="1" style="width: 15%;">
   </colgroup>
   <tr>
-    <td>18 July 2024</td>
+    <td>18 Jul 2024</td>
     <td>Joining <a href="https://sustainability-lab.github.io/">Sustainability Lab</a> as PhD at IIT Gandhinagar</td>
   </tr>
   <tr>
-    <td>29 June 2024</td>
+    <td>8th-11th Jul 2024</td>
+    <td>Attended 7th ACM SIGCAS/SIGCHI Conference of Computing and Sustainable Societies <a href ="https://compass.acm.org/">ACM COMPASS 2024</a></td>
+  </tr>
+  <tr>
+    <td>29 Jun 2024</td>
     <td>Convocation! Getting Masters degree from IIT Gandhinagar</td>
   </tr>
   <tr>
-    <td>14 June 2024</td>
+    <td>14 Jun 2024</td>
     <td>Successfully Defended my Masters Thesis</td>
   </tr>
   <tr>
     <td>16 May 2024</td>
     <td>Visited the Sleep Clinic, Pulmonary Division at <a href="https://en.wikipedia.org/wiki/All_India_Institute_of_Medical_Sciences,_New_Delhi">All India Institute of Medical Sciences, Delhi</a> for a Project</td>
-  </tr>
-  <tr>
-    <td>1 May 2024</td>
-    <td>Submited the second draft of our work to IMWUT '24</td>
   </tr>
   <tr>
     <td>2 Feb 2024</td>

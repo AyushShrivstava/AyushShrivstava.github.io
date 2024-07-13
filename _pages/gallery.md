@@ -9,11 +9,11 @@ author_profile: false
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align items to the start (left) */
   gap: 20px;
 }
 .gallery-item {
-  width: calc(33.33% - 20px); /* Three items per row with gap */
+  width: calc(25% - 20px); /* Four items per row with gap */
   box-sizing: border-box;
   text-align: center;
 }
@@ -29,12 +29,17 @@ author_profile: false
 }
 @media (max-width: 992px) {
   .gallery-item {
-    width: calc(50% - 20px); /* Two items per row on medium screens */
+    width: calc(33.33% - 20px); /* Three items per row on medium screens */
   }
 }
 @media (max-width: 768px) {
   .gallery-item {
-    width: calc(100% - 20px); /* One item per row on smaller screens */
+    width: calc(50% - 20px); /* Two items per row on smaller screens */
+  }
+}
+@media (max-width: 576px) {
+  .gallery-item {
+    width: calc(100% - 20px); /* One item per row on extra small screens */
   }
 }
 </style>
@@ -43,8 +48,20 @@ author_profile: false
 
 Welcome to my gallery! Here you'll find a collection of images from my life, including memorable moments and photos I've taken. I'll continue to add more images as I capture new experiences and milestones along my journey.
 
-## 2024
+## ACM Compass 2024 @IIIT_Delhi
+<div class="gallery-container">
+  <div class="gallery-item">
+    <img src="../images/gallery/IIITD1.jpg" alt="Awarded the MTech">
+    <p>Inside IIIT Delhi Campus</p>
+  </div>  
+  <div class="gallery-item">
+    <img src="../images/gallery/ACM_Compass1.jpg" alt="Outside IITGN Convocation Hall 2024">
+    <p>Attending ACM Compass with the Lab</p>
+  </div>
+  <!-- Add more images here with descriptions -->
+</div>
 
+## Mtech Convocation 2024
 <div class="gallery-container">
   <div class="gallery-item">
     <img src="../images/gallery/convocation2.jpg" alt="Awarded the MTech">
@@ -54,13 +71,22 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
     <img src="../images/gallery/convocation.jpg" alt="Outside IITGN Convocation Hall 2024">
     <p>Outside IITGN Convocation Hall June 2024</p>
   </div>
-    <div class="gallery-item">
+  <div class="gallery-item">
     <img src="../images/gallery/convocation3.jpg" alt="Outside IITGN Convocation Hall 2024">
     <p>Outside IITGN Convocation Hall with my family</p>
   </div>
+  <!-- Add more images here with descriptions -->
+</div>
+
+## Mtech Thesis Defense 2024
+<div class="gallery-container">
   <div class="gallery-item">
     <img src="../images/gallery/MtechThesisDefense.jpg" alt="2024 June Mtech defense">
     <p>Suraj (left) and I are celebrating the successful defense of our MTech thesis</p>
+  </div>
+  <div class="gallery-item">
+    <img src="../images/gallery/MtechThesisDefense3.jpg" alt="2024 June Mtech defense">
+    <p>Celebrating the successful defense of our MTech thesis</p>
   </div>
   <!-- Add more images here with descriptions -->
 </div>
