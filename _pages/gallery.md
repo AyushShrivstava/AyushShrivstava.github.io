@@ -51,13 +51,17 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
 ## ACM Compass 2024 @IIIT_Delhi
 <div class="gallery-container">
   <div class="gallery-item">
-    <img src="../images/gallery/IIITD1.jpg" alt="Awarded the MTech">
-    <p>Inside IIIT Delhi Campus</p>
-  </div>  
-  <div class="gallery-item">
-    <img src="../images/gallery/ACM_Compass1.jpg" alt="Outside IITGN Convocation Hall 2024">
+    <img src="../images/gallery/compass24.jpg" alt="Outside IIIT Delhi main Academics Building">
     <p>Attending ACM Compass with the Lab</p>
+  </div> 
+  <div class="gallery-item">
+    <img src="../images/gallery/ACM_Compass1.jpg" alt="ACM Compass inside Conference Hall">
+    <p>ACM Compass - infront of conference hall</p>
   </div>
+  <div class="gallery-item">
+    <img src="../images/gallery/IIITD1.jpg" alt="Near IIITD gate">
+    <p>Inside IIIT Delhi Campus</p>
+  </div> 
   <!-- Add more images here with descriptions -->
 </div>
 
@@ -82,7 +86,7 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
 <div class="gallery-container">
   <div class="gallery-item">
     <img src="../images/gallery/MtechThesisDefense.jpg" alt="2024 June Mtech defense">
-    <p>Suraj (left) and I are celebrating the successful defense of our MTech thesis</p>
+    <p>Suraj and I celebrating the successful defense of our MTech thesis</p>
   </div>
   <div class="gallery-item">
     <img src="../images/gallery/MtechThesisDefense3.jpg" alt="2024 June Mtech defense">
