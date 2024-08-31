@@ -30,7 +30,7 @@ redirect_from:
 
 
 <p style="margin-right:-20%;">
-I am a final-year MTech student in Computer Science and Engineering at IIT Gandhinagar. I am also a member of <a href="https://sustainability-lab.github.io/">Sustainability Lab</a> which is led by <a href ="https://nipunbatra.github.io/">Prof. Nipun Batra</a>. My research interests focus on applying machine learning to develop innovative solutions for sustainability and health sensing. I am looking for opportunities to work on challenging problems in the field of machine learning and artificial intelligence.
+I am a First year PhD student in Computer Science and Engineering at IIT Gandhinagar. I am also a member of <a href="https://sustainability-lab.github.io/">Sustainability Lab</a> which is led by my advisor <a href ="https://nipunbatra.github.io/">Prof. Nipun Batra</a>. My research interests focus on applying machine learning to develop innovative solutions for sustainability and health sensing. I am looking for opportunities to work on challenging problems in the field of machine learning and artificial intelligence.
 </p>
 
 <!---
@@ -76,28 +76,28 @@ Work experience
 ## My Journey So Far
 
 <table>
-<!-- <thead>
-    <tr>
-        <th style="width: 20%;"></th>
-        <th style="width: 80%;"></th>
-    </tr>
-</thead> -->
-<tbody>
+  <colgroup>
+      <col span="1" style="width: 15%;">
+  </colgroup>
   <tr>
-    <td style="width: 15%;">29 June 2024</td>
-    <td style="width: 85%;">Convocation! Getting Masters degree from IIT Gandhinagar</td>
+    <td>18 Jul 2024</td>
+    <td>Joining <a href="https://sustainability-lab.github.io/">Sustainability Lab</a> as PhD at IIT Gandhinagar</td>
   </tr>
   <tr>
-    <td>14 June 2024</td>
+    <td>8th-11th Jul 2024</td>
+    <td>Attended 7th ACM SIGCAS/SIGCHI Conference of Computing and Sustainable Societies <a href ="https://compass.acm.org/">ACM COMPASS 2024</a></td>
+  </tr>
+  <tr>
+    <td>29 Jun 2024</td>
+    <td>Convocation! Getting Masters degree from IIT Gandhinagar</td>
+  </tr>
+  <tr>
+    <td>14 Jun 2024</td>
     <td>Successfully Defended my Masters Thesis</td>
   </tr>
   <tr>
     <td>16 May 2024</td>
     <td>Visited the Sleep Clinic, Pulmonary Division at <a href="https://en.wikipedia.org/wiki/All_India_Institute_of_Medical_Sciences,_New_Delhi">All India Institute of Medical Sciences, Delhi</a> for a Project</td>
-  </tr>
-  <tr>
-    <td>1 May 2024</td>
-    <td>Submited the second draft of our work to IMWUT '24</td>
   </tr>
   <tr>
     <td>2 Feb 2024</td>
@@ -143,6 +143,4 @@ Work experience
     <td>15 May 2019</td>
     <td>Completed B.E in Electronics and Telecommunication from <a href="https://en.wikipedia.org/wiki/Jabalpur_Engineering_College">Jabalpur Engineering College, Jabalpur</a></td>
   </tr>
-  
-</tbody>
 </table>
