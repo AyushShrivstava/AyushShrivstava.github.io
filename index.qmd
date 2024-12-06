@@ -1,0 +1,102 @@
+---
+title: Ayush Shrivastava
+# image: images/profile_photo2.JPG
+toc: False
+---
+
+
+
+<img src="images/profile_photo2.JPG" 
+     style="float: left; margin: 0 15px 0 0; width: 250px; height: 250px; border-radius: 15px;" 
+     alt="Ayush Shrivastava">
+
+
+<p style="margin-right:-20%;">
+I am a first-year PhD student in Computer Science and Engineering at IIT Gandhinagar, working at the intersection of machine learning, sustainability, and health sensing. I am an active member of the <a href="https://sustainability-lab.github.io/">Sustainability Lab</a>, led by <a href="https://nipunbatra.github.io/">Prof. Nipun Batra</a>, and the <a href="https://smashlab.io/">Smash Lab</a>, led by <a href="https://mynkgoel.github.io/">Prof. Mayank Goel</a>.  
+
+I hold a master's degree in Computer Science and Engineering from IIT Gandhinagar and a bachelor's degree in Electronics and Telecommunications from Jabalpur Engineering College. My research focuses on applying machine learning to develop innovative solutions in sustainability and health sensing. I am passionate about solving challenging problems using machine learning to create meaningful impact.
+
+</p>
+
+<br>
+
+<div style="margin-top: 20px;">
+  <a href="https://github.com/AyushShrivstava/" target="Github" style="margin-right: 15px; color: black; text-decoration: none;">
+    <img src="https://img.icons8.com/material-outlined/30/000000/github.png" alt="GitHub"> Github
+  </a>
+  <a href="https://www.linkedin.com/in/shrivastavaayush" target="Linkedin" style="margin-right: 15px; color: black; text-decoration: none;">
+    <img src="https://img.icons8.com/material-outlined/30/000000/linkedin.png" alt="LinkedIn"> Linkedin
+  </a>
+  <a href="https://x.com/Shriman_Ayush" target="X" style="margin-right: 15px; color: black; text-decoration: none;">
+    <img src="https://img.icons8.com/material-outlined/30/000000/twitter.png" alt="X"> X 
+  </a>
+  <a href="mailto:shrivastavaayush@iitgn.ac.in" target="Email" style="color: black; text-decoration: none;">
+    <img src="https://img.icons8.com/material-outlined/30/000000/email.png" alt="Email"> Email
+  </a>
+</div>
+
+<br>
+
+## My Journey So Far
+
+<table>
+  <colgroup>
+      <col span="1" style="width: 15%;">
+  </colgroup>
+  <tr>
+    <td>31 Aug 2024</td>
+    <td>Joined <a href="https://sustainability-lab.github.io/">Sustainability Lab</a> and <a href="https://smashlab.io/">Smash Lab</a> as a PhD student</td>
+  </tr>
+  <tr>
+    <td>15 Jul 2024</td>
+    <td>Joined IIT Gandhinagar as PhD student under the supervision of Prof Nipun Batra and Prof Mayank Goel</td>
+  </tr>
+  <tr>
+    <td>8-11 Jul 2024</td>
+    <td>Attended 7th ACM SIGCAS/SIGCHI Conference of Computing and Sustainable Societies <a href ="https://compass.acm.org/">ACM COMPASS 2024</a></td>
+  </tr>
+  <tr>
+    <td>29 Jun 2024</td>
+    <td>Convocation! Got Masters degree from IIT Gandhinagar</td>
+  </tr>
+  <tr>
+    <td>14 Jun 2024</td>
+    <td>Got brutally attacked but successfully defended my Masters Thesis</td>
+  </tr>
+  <!-- <tr>
+    <td>16 May 2024</td>
+    <td>Visited the Sleep Clinic, Pulmonary Division at <a href="https://en.wikipedia.org/wiki/All_India_Institute_of_Medical_Sciences,_New_Delhi">All India Institute of Medical Sciences, Delhi</a> for a Project</td>
+  </tr> -->
+  <tr>
+    <td>2 Feb 2024</td>
+    <td>Submitted the first draft of our work to IMWUT '24, marking my first research paper submission ever.</td>
+  </tr>
+  <tr>
+    <td>10 Oct 2023</td>
+    <td>Got Placed in <a href="https://www.atlascopco.com/en-in/about-atlas-copco">Atlas Copco</a> as Software Developer</td>
+  </tr>
+  <!-- <tr>
+    <td>17 May 2023</td>
+    <td>Joined <a href="https://aman1chaudhary.github.io/pdc-website/">Professional Developement Council (PDC)</a> as Council Member at IIT Gandhinagar</td>
+  </tr> -->
+  <tr>
+    <td>01 Jan 2023</td>
+    <td>Joined <a href="https://sustainability-lab.github.io/">Sustainability Lab</a> as a masters student at IIT Gandhinagar</td>
+  </tr>
+  <tr>
+    <td>18 jul 2022</td>
+    <td>Joined <a href="https://www.iitgn.ac.in/admissions/mtech">IIT Gandhinagar</a> for M.Tech in Computer Science and Engineering</td>
+  </tr>
+  <tr>
+    <td>15 Mar 2022</td>
+    <td>Attained 98.16 percentile in Graduate Aptitude Test in Engineering 2022 (GATE’22)</td>
+  </tr>
+  <tr>
+    <td>17 jun 2019</td>
+    <td>Joined <a href ="https://www.ibm.com/consulting">IBM India</a> as an Application Developer, Enterprise Resource Planning (ERP)</td>
+  </tr>
+  <tr>
+    <td>15 May 2019</td>
+    <td>Completed B.E in Electronics and Telecommunication from <a href="https://en.wikipedia.org/wiki/Jabalpur_Engineering_College">Jabalpur Engineering College, Jabalpur</a></td>
+  </tr>
+</table>

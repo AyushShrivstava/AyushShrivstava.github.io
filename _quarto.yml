@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "Homepage"
+  navbar:
+    search: true
+    left:
+      - href: publication.qmd
+        text: Publications
+      - href: posts.qmd
+        text: BlogPost
+      # - href: gallery.qmd
+      #   text: Gallery
+      # - href: teaching.qmd
+      #   text: Teaching
+
+
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: left
+    grid:
+      margin-width: 14%
+    theme: 
+    # css : styles.scss
+      light: [litera, styles.scss]
+      # dark: [darkly, styles-dark.scss]
+    # highlight-style: a11y-dark
+    mainfont: "Roboto"
+    code-copy: true
+    code-overflow: wrap
+
+execute:
+  freeze: auto
+
+

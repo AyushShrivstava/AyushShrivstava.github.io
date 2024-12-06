@@ -1,0 +1,55 @@
+---
+title: "Teaching"
+---
+
+
+<style>
+  .course-description {
+    margin-left: 30px; /* Indent to the right */
+    /* font-size: medium; */
+  }
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline; 
+  }
+</style>
+
+<h2>2024</h2>
+<h3>Spring and Fall : Machine Learning,</h3>
+<div class="course-description">
+  Professor Incharge: <a href="https://nipunbatra.github.io/">Nipun Batra</a> <br>
+  Organised and evaluated quizzes, assignments, took vivas for a classroom of 300 students, while also playing a pivotal role in supporting classroom logistics.
+</div>
+
+
+<h2>2023</h2>
+<h3>Fall : Computer Systems</h3>
+<div class="course-description">
+  Professor Incharge: <a href="https://abhishek.people.iitgn.ac.in/">Abhishek Bichhawat</a>, 
+  <a href="https://www.iitgn.ac.in/faculty/cse/sameer">Sameer G Kulkarni</a> <br>
+  Graded assignments and assisted the professor run a class of 40 students smoothly.
+</div>
+
+<h3>Summer : World of Engineering</h3>
+<div class="course-description">
+  Professor Incharge: <a href="https://www.iitgn.ac.in/faculty/civil/fac-udit">Udit Bhatia</a> <br>
+  Mentored a group of 30 students in the identification, conceptualization, and modeling of a prototype to address a real-world problem, fostering their problem-solving abilities and teamwork skills.
+</div>
+
+<h3>Spring : Probability, Statistics and Data Visualization</h3>
+<div class="course-description">
+  Professor Incharge: <a href="https://people.iitgn.ac.in/~shanmuga/">Shanmuganathan Raman</a> <br>
+  Successfully guided over 30 students in Python libraries, including Numpy, Pandas, Matplotlib, Scipy, and Scikit-learn, enhancing their data visualization skills.
+</div>
+
+
+<h2>2022</h2>
+<h3>Winter : Introduction to Computing</h3>
+<div class="course-description">
+  Professor Incharge: <a href="https://nipunbatra.github.io/">Nipun Batra</a>, 
+  <a href="https://bkomarath.rbgo.in/">Balagopal Komarath</a> <br>
+  Led a Python lab for 30 students, teaching them essential Python concepts, and helped manage logistics, invigilation, and quiz evaluation for a class of 300 students.
+</div>
