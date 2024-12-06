@@ -16,6 +16,10 @@ website:
       #   text: Gallery
       # - href: teaching.qmd
       #   text: Teaching
+    
+    right:
+      - href: /files/Ayush_Master_CV.pdf
+        text: Resume
 
 
 format:
