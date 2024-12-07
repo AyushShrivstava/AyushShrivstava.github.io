@@ -2,10 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.5.46">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ayush Shrivastava">
+<meta name="dcterms.date" content="2024-06-06">
 
 <title>Neural Processes – Homepage</title>
 <style>
@@ -69,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e063959c80f132e978b2eb62071ff951.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -179,10 +181,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#training-the-model" id="toc-training-the-model" class="nav-link active" data-scroll-target="#training-the-model">Training the model</a></li>
-  <li><a href="#generating-trainset-for-the-problem" id="toc-generating-trainset-for-the-problem" class="nav-link" data-scroll-target="#generating-trainset-for-the-problem">Generating Trainset for the Problem</a></li>
-  <li><a href="#generating-testset-for-the-problem" id="toc-generating-testset-for-the-problem" class="nav-link" data-scroll-target="#generating-testset-for-the-problem">Generating testset for the problem</a></li>
-  <li><a href="#training-the-model-1" id="toc-training-the-model-1" class="nav-link" data-scroll-target="#training-the-model-1">Training the model</a></li>
+  <li><a href="#neural-processes" id="toc-neural-processes" class="nav-link active" data-scroll-target="#neural-processes">Neural Processes</a></li>
+  <li><a href="#image-reconstruction-using-neural-processes" id="toc-image-reconstruction-using-neural-processes" class="nav-link" data-scroll-target="#image-reconstruction-using-neural-processes">Image Reconstruction using Neural Processes</a>
+  <ul class="collapse">
+  <li><a href="#generating-tasks-from-the-mnist-dataset" id="toc-generating-tasks-from-the-mnist-dataset" class="nav-link" data-scroll-target="#generating-tasks-from-the-mnist-dataset">Generating Tasks from the MNIST Dataset</a></li>
+  <li><a href="#intializing-the-model-class" id="toc-intializing-the-model-class" class="nav-link" data-scroll-target="#intializing-the-model-class">Intializing the Model Class</a></li>
+  <li><a href="#training-the-model" id="toc-training-the-model" class="nav-link" data-scroll-target="#training-the-model">Training the model</a></li>
+  <li><a href="#testing-the-model" id="toc-testing-the-model" class="nav-link" data-scroll-target="#testing-the-model">Testing the model</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -196,13 +202,28 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Neural Processes</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Deep Learning</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta column-page-right">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ayush Shrivastava </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 6, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -212,17 +233,34 @@ window.Quarto = {
 </header>
 
 
-<p>This notebook demonstrates the implementation of the Neural Processes. The model is trained to predict the distribution of the target function given a few examples of the function. In this notebook we will attempt to reconstruct an entire image given a few pixels of the image. we will be using the MNIST dataset for this task. The few pixels of the image are the context points and the entire image is the target function.</p>
+<section id="neural-processes" class="level2">
+<h2 class="anchored" data-anchor-id="neural-processes">Neural Processes</h2>
+<p>This notebook demonstrates the implementation of the Neural Processes. The model is trained to predict the distribution of the target function given a few examples of the function. In this notebook we will attempt to reconstruct an entire image given a few pixels of the image.</p>
 <p><span class="math display">\[Model(\{x_c, y_c\}_{c=1}^n, \{x_t\}_{t=1}^m) \rightarrow \{y_t\}_{t=1}^m\]</span></p>
 <p><span class="math inline">\(\{x_c, y_c\}_{c=1}^n\)</span> are the context points where <span class="math inline">\(x_i\)</span> are the pixel coordinates and <span class="math inline">\(y_i\)</span> are the pixel intensity values.</p>
 <p><span class="math inline">\(\{x_t\}_{t=1}^m\)</span> are the target pixel coordinates where we want to predict the pixel intensity values <span class="math inline">\(y_j\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/blogs/Neural_Process/NP_1.png" class="img-fluid figure-img"></p>
+<figcaption>Neural Processes Block Diagram</figcaption>
+</figure>
+</div>
+<!-- ![Neural Processes Diagram](../../images/blogs/Neural_Process/NP_2.png) -->
+<p>The model is composed of two neural networks: the encoder and the decoder. The encoder takes pixel coordinates and pixel intensitiy value of that coordinate as input and encodes them into a fixed-size representation. The decoder takes the representation and the pixel coordinates and predicts the pixel intensity value of the given coordinate.</p>
+</section>
+<section id="image-reconstruction-using-neural-processes" class="level2">
+<h2 class="anchored" data-anchor-id="image-reconstruction-using-neural-processes">Image Reconstruction using Neural Processes</h2>
+<p>We wish to reconstruct an entire image given a few pixels of the image. The few pixels of the image are the context points and the entire image is the target function.</p>
 <p>So for our case, the pixel locations <span class="math inline">\(x = (x^1, x^2)\)</span> and the pixel intensity values <span class="math inline">\(y = Img(x^1, x^2)\)</span> or just <span class="math inline">\(I\)</span> denoting intensity for simplicity.</p>
 <p><span class="math display">\[Model(\{(x^1_c, x^2_c, I_c)\}_{c=1}^n, \{(x^1_t, x^2_t)\}_{t=1}^m) \rightarrow \{I_t\}_{t=1}^m\]</span></p>
-<p>The model is composed of two neural networks: the encoder and the decoder. The encoder takes pixel coordinates and pixel intensitiy value of that coordinate as input and encodes them into a fixed-size representation. The decoder takes the representation and the pixel coordinates and predicts the pixel intensity value of the given coordinate.</p>
-<section id="training-the-model" class="level3">
-<h3 class="anchored" data-anchor-id="training-the-model">Training the model</h3>
-<p>During model training we will sample a random number of pixel locations from the image and use them as context points. The model is trained to predict the pixel intensity value of the sampled pixel locations. The model is trained using Mean Squared Error loss.</p>
-<div id="cell-2" class="cell" data-execution_count="354">
+<p>For model training we will randomly sample a fixed number of pixel locations from the image and use them as context points. The model is trained to predict the pixel intensity value at all the other pixel locations. At the time of prediction, We will provide few pixel locations and the model will predict the pixel intensity values for all the pixel locations in the image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/blogs/Neural_Process/NP_3.png" class="img-fluid figure-img"></p>
+<figcaption>Elaborate Neural Processes Block Diagram</figcaption>
+</figure>
+</div>
+<div id="cell-3" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -233,344 +271,405 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision.datasets <span class="im">import</span> MNIST</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision.transforms <span class="im">import</span> ToTensor</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchsummary <span class="im">import</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchsummary <span class="im">import</span> summary</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-3" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Neural_Procss_Model(nn.Module):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Neural Process Model has two parts: encoder and decoder</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Encoder takes in the context pairs (X1_c, X2_c, PixelIntensity) and encode them into a latent representation</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Decoder takes in the latent representation and the target pairs (X1_t, X2_t) and output the predicted target pairs</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(Neural_Procss_Model, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Encoder takes in the context pairs (X1c,X2c,PixelIntensity) and encode them into a latent representation</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.encoder <span class="op">=</span> nn.Sequential(</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">3</span>,<span class="dv">64</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">64</span>,<span class="dv">128</span>),</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">128</span>,<span class="dv">256</span>),</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Decoder takes in the latent representation and the target pairs and output the predicted target pairs</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.decoder <span class="op">=</span> nn.Sequential(</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">256</span><span class="op">+</span><span class="dv">2</span>,<span class="dv">128</span>),</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">128</span>,<span class="dv">64</span>),</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">64</span>,<span class="dv">32</span>),</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">32</span>,<span class="dv">1</span>)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, context_pairs, target_pairs):</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">        Forward pass of the Neural Process Model. </span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">        It takes in the context cordinate pairs (X1_c, X2_c, PixelIntensity) and target cordinate pairs (X1_t, X2_t, PixelIntensity) and output the predicted target pixel intensity for the target cordinate pairs</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">        Parameters:</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">        context_pairs: torch.Tensor of shape (batch_size, num_context_pairs, 3)</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">        target_pairs: torch.Tensor of shape (batch_size, num_target_pairs, 2)</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">        predicted_target_Pixel Intensity: torch.Tensor of shape (batch_size, num_target_pairs, 1)</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Encode the context pairs into a latent representation</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        latent_representation <span class="op">=</span> <span class="va">self</span>.encoder(context_pairs)</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Average the latent representation</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        latent_representation <span class="op">=</span> torch.mean(latent_representation,dim<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Repeat the latent representation for each target pair</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        latent_representation <span class="op">=</span> latent_representation.unsqueeze(<span class="dv">1</span>).repeat(<span class="dv">1</span>,target_pairs.size(<span class="dv">1</span>),<span class="dv">1</span>)</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Concatenate the latent representation with the target pixel locations</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        target_pixel_locations <span class="op">=</span> target_pairs[:,:,:<span class="dv">2</span>]</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        target <span class="op">=</span> torch.cat([latent_representation,target_pixel_locations],dim<span class="op">=-</span><span class="dv">1</span>)</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Decode the target pairs to obtain the predicted target pixel intensity</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        predicted_target_pixel_intensity <span class="op">=</span> <span class="va">self</span>.decoder(target)</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> predicted_target_pixel_intensity</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> train(<span class="va">self</span>, train_dataloader, num_epochs<span class="op">=</span><span class="dv">100</span>, optim <span class="op">=</span> torch.optim.Adam, lr<span class="op">=</span><span class="fl">3e-4</span>, criterion <span class="op">=</span> nn.MSELoss(),verbose<span class="op">=</span><span class="va">True</span>,device<span class="op">=</span><span class="st">'cuda'</span>):</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">        Train the Neural Process Model</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co">        Parameters:</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">        train_dataloader: DataLoader object for the training data</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">        num_epochs: int, number of epochs to train the model</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">        optimer: str, optimer to use for training the model</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">        lr: float, learning rate for the optimer</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">        criterion: loss function to use for training the model</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Move the model to the device</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.to(device)</span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Initialize the optimizer</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        optimizer <span class="op">=</span> optim(<span class="va">self</span>.parameters(), lr<span class="op">=</span>lr)</span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(num_epochs):</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i, (context_pairs, target_pairs) <span class="kw">in</span> <span class="bu">enumerate</span>(train_dataloader):</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>                context_pairs <span class="op">=</span> context_pairs.to(device)</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>                target_pairs <span class="op">=</span> target_pairs.to(device)</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>                <span class="co"># print(context_pairs.shape, target_pairs.shape)</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Zero the gradients</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>                optimizer.zero_grad()</span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Forward pass</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>                predicted_target_pixel_intensity <span class="op">=</span> <span class="va">self</span>(context_pairs, target_pairs)</span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Calculate the loss</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>                loss <span class="op">=</span> criterion(predicted_target_pixel_intensity.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>), target_pairs[:,:,<span class="dv">2</span>].reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Backward pass</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>                loss.backward()</span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Update the weights</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>                optimizer.step()</span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> verbose:</span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"Epoch: </span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st"> Loss: </span><span class="sc">{:.5f}</span><span class="st">"</span>.<span class="bu">format</span>(epoch<span class="op">+</span><span class="dv">1</span>,num_epochs,loss.item()))</span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test(<span class="va">self</span>, test_dataloader, criterion <span class="op">=</span> nn.MSELoss(),device<span class="op">=</span><span class="st">'cuda'</span>):</span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co">        Test the Neural Process Model</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co">        Parameters:</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="co">        test_dataloader: DataLoader object for the test data</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Move the model to the device</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.to(device)</span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Initialize the loss</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>        test_loss <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> torch.no_grad():</span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i, (context_pairs, target_pairs) <span class="kw">in</span> <span class="bu">enumerate</span>(test_dataloader):</span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>                context_pairs <span class="op">=</span> context_pairs.to(device)</span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>                target_pairs <span class="op">=</span> target_pairs.to(device)</span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Forward pass</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>                predicted_target_pixel_intensity <span class="op">=</span> <span class="va">self</span>(context_pairs, target_pairs)</span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Calculate the loss</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>                loss <span class="op">=</span> criterion(predicted_target_pixel_intensity.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>), target_pairs[:,:,<span class="dv">2</span>].reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>                test_loss <span class="op">+=</span> loss.item()</span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Test Loss: </span><span class="sc">{</span>test_loss<span class="op">/</span><span class="bu">len</span>(test_dataloader)<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="generating-tasks-from-the-mnist-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="generating-tasks-from-the-mnist-dataset">Generating Tasks from the MNIST Dataset</h3>
+<section id="downloading-the-mnist-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="downloading-the-mnist-dataset">Downloading the MNIST Dataset</h4>
+<p>We will be using the MNIST dataset for this task. The MNIST dataset consists of 28x28 grayscale images of handwritten digits (0-9). We will download the dataset using the <code>torchvision</code> library. We will convert the images to tensors and no further preprocessing is being performed on the images.</p>
+<div id="cell-6" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Downlaoding the MNIST dataset</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>train_data <span class="op">=</span> MNIST(root<span class="op">=</span><span class="st">'./data'</span>, train<span class="op">=</span><span class="va">True</span>, download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span>ToTensor())</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>test_data <span class="op">=</span> MNIST(root<span class="op">=</span><span class="st">'./data'</span>, train<span class="op">=</span><span class="va">False</span>, download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span> ToTensor())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="generating-trainset-for-the-problem" class="level3">
-<h3 class="anchored" data-anchor-id="generating-trainset-for-the-problem">Generating Trainset for the Problem</h3>
-<div id="cell-5" class="cell" data-execution_count="347">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>train_data <span class="op">=</span> MNIST(root<span class="op">=</span><span class="st">'./data'</span>, train<span class="op">=</span><span class="va">True</span>, download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span>ToTensor())</span>
+<section id="creating-context-and-target-sets" class="level4">
+<h4 class="anchored" data-anchor-id="creating-context-and-target-sets">Creating Context and Target sets</h4>
+<p>We will sample a random number of pixel coordinates <span class="math inline">\((x^1, x^2)\)</span> and the pixel intensity values <span class="math inline">\(I\)</span> for these coordinates. These coordinates and pixel intensity values will be used as context points. The Test set will contain all the pixel coordinates and Intensities of the image. The model will predict the pixel intensity values for all the pixel coordinates in the image.</p>
+<div id="cell-8" class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Context_Target_Sets(images_data, no_context_points,Image_shape):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>no_context_points <span class="op">=</span> <span class="dv">200</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>All_corrdinates <span class="op">=</span> np.array([(i,j) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">28</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">28</span>)])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>train_set <span class="op">=</span> []</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(train_data)):</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    image, _ <span class="op">=</span> train_data[i]</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    image <span class="op">=</span> image.squeeze().numpy()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    train_idx <span class="op">=</span> np.random.choice(<span class="bu">range</span>(<span class="bu">len</span>(All_corrdinates)), no_context_points, replace<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    context_points <span class="op">=</span> All_corrdinates[train_idx]</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    context_pixels <span class="op">=</span> image[context_points[:,<span class="dv">0</span>], context_points[:,<span class="dv">1</span>]]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    m,n <span class="op">=</span> Image_shape</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># All possible coordinates in the image. Size of MNIST image is 28x28</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    All_corrdinates <span class="op">=</span> np.array([(i,j) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over the dataset and create the context set and target set</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    task_set <span class="op">=</span> []</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> tqdm(<span class="bu">range</span>(<span class="bu">len</span>(images_data))):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Images in the dataset are of shape (1, 28, 28). We need to remove the channel dimension to get the shape (28, 28)</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        image, _ <span class="op">=</span> images_data[i]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        image <span class="op">=</span> image.squeeze().numpy()     <span class="co"># un-squeeze the image to remove the channel dimension</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    context_set <span class="op">=</span> np.concatenate([context_points, context_pixels.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)], axis<span class="op">=-</span><span class="dv">1</span>).astype(np.float32)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    target_set <span class="op">=</span> context_set.copy()</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    train_set.append((context_set, target_set))</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Sample random context points indices</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        context_idx <span class="op">=</span> np.random.choice(<span class="bu">range</span>(<span class="bu">len</span>(All_corrdinates)), no_context_points, replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get the context points and their corresponding pixel values from the generated context indices</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        context_points <span class="op">=</span> All_corrdinates[context_idx]</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        context_pixels <span class="op">=</span> image[context_points[:,<span class="dv">0</span>], context_points[:,<span class="dv">1</span>]]</span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(train_set, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> context_pairs, target_pairs <span class="kw">in</span> train_dataloader:</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(context_pairs.shape, target_pairs.shape)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Concatenate the context points and their corresponding pixel values</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        context_set <span class="op">=</span> np.concatenate([context_points, context_pixels.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)], axis<span class="op">=-</span><span class="dv">1</span>).astype(np.float32)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># For training the model, we need to predict the pixel values for all the pixels in the image</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        target_points <span class="op">=</span> All_corrdinates</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        target_pixels <span class="op">=</span> image[target_points[:,<span class="dv">0</span>], target_points[:,<span class="dv">1</span>]]</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Concatenate the target points and their corresponding pixel values</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        target_set <span class="op">=</span> np.concatenate([target_points, target_pixels.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)], axis<span class="op">=-</span><span class="dv">1</span>).astype(np.float32)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Append the context set and target set to the train_set</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        task_set.append((context_set, target_set))</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> task_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>train_set <span class="op">=</span> get_Context_Target_Sets(images_data<span class="op">=</span>train_data, no_context_points<span class="op">=</span><span class="dv">200</span>, Image_shape<span class="op">=</span>(<span class="dv">28</span>,<span class="dv">28</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(train_set, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> context_pairs, target_pairs <span class="kw">in</span> train_dataloader:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(context_pairs.shape, target_pairs.shape)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 60000/60000 [00:04&lt;00:00, 12578.65it/s]</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>torch.Size([32, 200, 3]) torch.Size([32, 200, 3])</code></pre>
+<pre><code>torch.Size([32, 200, 3]) torch.Size([32, 784, 3])</code></pre>
 </div>
 </div>
-</section>
-<section id="generating-testset-for-the-problem" class="level3">
-<h3 class="anchored" data-anchor-id="generating-testset-for-the-problem">Generating testset for the problem</h3>
-<div id="cell-7" class="cell" data-execution_count="348">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>test_data <span class="op">=</span> MNIST(root<span class="op">=</span><span class="st">'./data'</span>, train<span class="op">=</span><span class="va">False</span>, download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span> ToTensor())</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>no_context_points <span class="op">=</span> <span class="dv">200</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>test_set <span class="op">=</span> []</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(test_data)):</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    image, _ <span class="op">=</span> test_data[i]</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    image <span class="op">=</span> image.squeeze().numpy()</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    test_idx <span class="op">=</span> np.random.choice(<span class="bu">range</span>(<span class="bu">len</span>(All_corrdinates)), no_context_points, replace<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    context_points <span class="op">=</span> All_corrdinates[test_idx]</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    context_pixels <span class="op">=</span> image[context_points[:,<span class="dv">0</span>], context_points[:,<span class="dv">1</span>]]</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    context_set <span class="op">=</span> np.concatenate([context_points, context_pixels.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)], axis<span class="op">=-</span><span class="dv">1</span>).astype(np.float32)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    target_points <span class="op">=</span> np.array([(i,j) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">28</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">28</span>)])</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    target_pixels <span class="op">=</span> image[target_points[:,<span class="dv">0</span>], target_points[:,<span class="dv">1</span>]]</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    target_set <span class="op">=</span> np.concatenate([target_points, target_pixels.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)], axis<span class="op">=-</span><span class="dv">1</span>).astype(np.float32)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    test_set.append((context_set, target_set))</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>test_dataloader <span class="op">=</span> DataLoader(test_set, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> context_pairs, target_pairs <span class="kw">in</span> test_dataloader:</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(context_pairs.shape, target_pairs.shape)</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-10" class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>test_set <span class="op">=</span> get_Context_Target_Sets(images_data<span class="op">=</span>test_data, no_context_points<span class="op">=</span><span class="dv">200</span>, Image_shape<span class="op">=</span>(<span class="dv">28</span>,<span class="dv">28</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>test_dataloader <span class="op">=</span> DataLoader(test_set, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> context_pairs, target_pairs <span class="kw">in</span> test_dataloader:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(context_pairs.shape, target_pairs.shape)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 10000/10000 [00:00&lt;00:00, 12543.38it/s]</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>torch.Size([32, 200, 3]) torch.Size([32, 784, 3])</code></pre>
 </div>
 </div>
 </section>
-<section id="training-the-model-1" class="level3">
-<h3 class="anchored" data-anchor-id="training-the-model-1">Training the model</h3>
-<div id="cell-9" class="cell" data-execution_count="349">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Neural_Procss_Model()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>model.to(<span class="st">'cuda'</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>model.train(train_dataloader, num_epochs<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Epoch: 1/30 Loss: 0.06666
-Epoch: 2/30 Loss: 0.06497
-Epoch: 3/30 Loss: 0.06212
-Epoch: 4/30 Loss: 0.06163
-Epoch: 5/30 Loss: 0.05931
-Epoch: 6/30 Loss: 0.05229
-Epoch: 7/30 Loss: 0.04560
-Epoch: 8/30 Loss: 0.04370
-Epoch: 9/30 Loss: 0.04431
-Epoch: 10/30 Loss: 0.04166
-Epoch: 11/30 Loss: 0.04205
-Epoch: 12/30 Loss: 0.03904
-Epoch: 13/30 Loss: 0.03821
-Epoch: 14/30 Loss: 0.04091
-Epoch: 15/30 Loss: 0.03898
-Epoch: 16/30 Loss: 0.03534
-Epoch: 17/30 Loss: 0.04038
-Epoch: 18/30 Loss: 0.03608
-Epoch: 19/30 Loss: 0.03051
-Epoch: 20/30 Loss: 0.03762
-Epoch: 21/30 Loss: 0.03269
-Epoch: 22/30 Loss: 0.02833
-Epoch: 23/30 Loss: 0.02647
-Epoch: 24/30 Loss: 0.03339
-Epoch: 25/30 Loss: 0.02954
-Epoch: 26/30 Loss: 0.03007
-Epoch: 27/30 Loss: 0.02750
-Epoch: 28/30 Loss: 0.02566
-Epoch: 29/30 Loss: 0.02912
-Epoch: 30/30 Loss: 0.03134</code></pre>
+</section>
+<section id="intializing-the-model-class" class="level3">
+<h3 class="anchored" data-anchor-id="intializing-the-model-class">Intializing the Model Class</h3>
+<section id="encoder-and-decoder-networks" class="level4">
+<h4 class="anchored" data-anchor-id="encoder-and-decoder-networks">Encoder and Decoder Networks</h4>
+<p>Our Model class will contain the Encoder and Decoder networks. The Encoder network will take the context points and encode them into a fixed-size representation. The Decoder network will take the representation and the pixel coordinates and predict the pixel intensity value of the given coordinate.</p>
+</section>
+<section id="training-method" class="level4">
+<h4 class="anchored" data-anchor-id="training-method">Training Method</h4>
+<p>Method to train the model. The model is trained to predict the pixel intensity values of the target pixel coordinates given the context points. The loss function is the Mean Squared Error loss between the predicted pixel intensity values and the actual pixel intensity values.</p>
+</section>
+<section id="testing-method" class="level4">
+<h4 class="anchored" data-anchor-id="testing-method">Testing Method</h4>
+<p>Method to test the model. The model is tested on the test set. The model is provided with the context points and the model predicts the pixel intensity values of the target pixel coordinates. The Mean Squared Error loss is calculated between the predicted pixel intensity values and the actual pixel intensity values.</p>
+<div id="cell-12" class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Neural_Procss_Model(nn.Module):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Neural Process Model has two parts: encoder and decoder</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Encoder takes in the context pairs (X1_c, X2_c, PixelIntensity) and encode them into a latent representation</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Decoder takes in the latent representation and the target pairs (X1_t, X2_t) and output the predicted target pairs</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,device):</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(Neural_Procss_Model, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> device <span class="op">==</span> <span class="st">'cuda'</span>:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> torch.cuda.is_available():</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                device <span class="op">=</span> torch.device(<span class="st">'cuda'</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> device <span class="op">==</span> <span class="st">'mps'</span>:</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>            device <span class="op">=</span> torch.device(<span class="st">'mps'</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.device <span class="op">=</span> device</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Encoder takes in the context pairs (X1c,X2c,PixelIntensity) and encode them into a latent representation</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.encoder <span class="op">=</span> nn.Sequential(</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">3</span>,<span class="dv">64</span>),</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">64</span>,<span class="dv">128</span>),</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">128</span>,<span class="dv">256</span>),</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Decoder takes in the latent representation and the target pairs and output the predicted target pairs</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.decoder <span class="op">=</span> nn.Sequential(</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">256</span><span class="op">+</span><span class="dv">2</span>,<span class="dv">128</span>),</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">128</span>,<span class="dv">64</span>),</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">64</span>,<span class="dv">32</span>),</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">32</span>,<span class="dv">1</span>)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, context_pairs, target_pairs):</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co">        Forward pass of the Neural Process Model. </span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="co">        It takes in the context cordinate pairs (X1_c, X2_c, PixelIntensity) and target cordinate pairs (X1_t, X2_t, PixelIntensity) and output the predicted target pixel intensity for the target cordinate pairs</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="co">        Parameters:</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co">        context_pairs: torch.Tensor of shape (batch_size, num_context_pairs, 3)</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="co">        target_pairs: torch.Tensor of shape (batch_size, num_target_pairs, 2)</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co">        Returns:</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="co">        predicted_target_Pixel Intensity: torch.Tensor of shape (batch_size, num_target_pairs, 1)</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Encode the context pairs into a latent representation</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>        latent_representation <span class="op">=</span> <span class="va">self</span>.encoder(context_pairs)</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Average the latent representation</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>        latent_representation <span class="op">=</span> torch.mean(latent_representation,dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Repeat the latent representation for each target pair</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>        latent_representation <span class="op">=</span> latent_representation.unsqueeze(<span class="dv">1</span>).repeat(<span class="dv">1</span>,target_pairs.size(<span class="dv">1</span>),<span class="dv">1</span>)</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Concatenate the latent representation with the target pixel locations</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>        target_pixel_locations <span class="op">=</span> target_pairs[:,:,:<span class="dv">2</span>]</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>        target <span class="op">=</span> torch.cat([latent_representation,target_pixel_locations],dim<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Decode the target pairs to obtain the predicted target pixel intensity</span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>        predicted_target_pixel_intensity <span class="op">=</span> <span class="va">self</span>.decoder(target)</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> predicted_target_pixel_intensity</span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> train(<span class="va">self</span>, train_dataloader, num_epochs<span class="op">=</span><span class="dv">100</span>, optim <span class="op">=</span> torch.optim.Adam, lr<span class="op">=</span><span class="fl">3e-4</span>, criterion <span class="op">=</span> nn.MSELoss(),verbose<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="co">        Train the Neural Process Model</span></span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="co">        Parameters:</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="co">        train_dataloader: DataLoader object for the training data</span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="co">        num_epochs: int, number of epochs to train the model</span></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="co">        optimer: str, optimer to use for training the model</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="co">        lr: float, learning rate for the optimer</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a><span class="co">        criterion: loss function to use for training the model</span></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>        device <span class="op">=</span> <span class="va">self</span>.device</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Move the model to the device</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.to(device)</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Initialize the optimizer</span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>        optimizer <span class="op">=</span> optim(<span class="va">self</span>.parameters(), lr<span class="op">=</span>lr)</span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(num_epochs):</span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i, (context_pairs, target_pairs) <span class="kw">in</span> <span class="bu">enumerate</span>(train_dataloader):</span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>                context_pairs <span class="op">=</span> context_pairs.to(device)</span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>                target_pairs <span class="op">=</span> target_pairs.to(device)</span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Zero the gradients</span></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>                optimizer.zero_grad()</span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Forward pass</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>                predicted_target_pixel_intensity <span class="op">=</span> <span class="va">self</span>(context_pairs, target_pairs)</span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Calculate the loss</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>                loss <span class="op">=</span> criterion(predicted_target_pixel_intensity.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>), target_pairs[:,:,<span class="dv">2</span>].reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Backward pass</span></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a>                loss.backward()</span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Update the weights</span></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>                optimizer.step()</span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> verbose:</span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"Epoch: </span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st"> Loss: </span><span class="sc">{:.5f}</span><span class="st">"</span>.<span class="bu">format</span>(epoch<span class="op">+</span><span class="dv">1</span>,num_epochs,loss.item()))</span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test(<span class="va">self</span>, test_dataloader, criterion <span class="op">=</span> nn.MSELoss()):</span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a><span class="co">        Test the Neural Process Model</span></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a><span class="co">        Parameters:</span></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="co">        test_dataloader: DataLoader object for the test data</span></span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>        device <span class="op">=</span> <span class="va">self</span>.device</span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Move the model to the device</span></span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.to(device)</span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Initialize the loss</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>        test_loss <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i, (context_pairs, target_pairs) <span class="kw">in</span> <span class="bu">enumerate</span>(test_dataloader):</span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>                context_pairs <span class="op">=</span> context_pairs.to(device)</span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>                target_pairs <span class="op">=</span> target_pairs.to(device)</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Forward pass</span></span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>                predicted_target_pixel_intensity <span class="op">=</span> <span class="va">self</span>(context_pairs, target_pairs)</span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Calculate the loss</span></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a>                loss <span class="op">=</span> criterion(predicted_target_pixel_intensity.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>), target_pairs[:,:,<span class="dv">2</span>].reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a>                test_loss <span class="op">+=</span> loss.item()</span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Test Loss: </span><span class="sc">{</span>test_loss<span class="op">/</span><span class="bu">len</span>(test_dataloader)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="cell-10" class="cell" data-execution_count="352">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model.test(test_dataloader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Test Loss: 0.034481238389310366</code></pre>
-</div>
-</div>
-<div id="cell-11" class="cell" data-execution_count="353">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> context_pairs, target_pairs <span class="kw">in</span> test_dataloader:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    context_pairs <span class="op">=</span> context_pairs.to(<span class="st">'cuda'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    target_pairs <span class="op">=</span> target_pairs.to(<span class="st">'cuda'</span>)</span>
+</section>
+</section>
+<section id="training-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="training-the-model">Training the model</h3>
+<div id="cell-14" class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the device. If cuda is available, use cuda. </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> torch.cuda.is_available():</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    device <span class="op">=</span> torch.device(<span class="st">'cuda'</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    predicted_target_pixel_intensity <span class="op">=</span> model(context_pairs, target_pairs)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        predicted_pixel <span class="op">=</span> predicted_target_pixel_intensity[i].detach().cpu().numpy()</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        predicted_image <span class="op">=</span> predicted_pixel.reshape(<span class="dv">28</span>,<span class="dv">28</span>)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        actual_pixel <span class="op">=</span> target_pairs[i][:,<span class="dv">2</span>].detach().cpu().numpy()</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        actual_image <span class="op">=</span> actual_pixel.reshape(<span class="dv">28</span>,<span class="dv">28</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        context_image <span class="op">=</span> np.zeros((<span class="dv">28</span>,<span class="dv">28</span>))</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        context_pixel_locations <span class="op">=</span> context_pairs[i][:,:<span class="dv">2</span>].detach().cpu().numpy().astype(<span class="bu">int</span>) </span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        context_image[context_pixel_locations[:,<span class="dv">0</span>], context_pixel_locations[:,<span class="dv">1</span>]] <span class="op">=</span> context_pairs[i][:,<span class="dv">2</span>].detach().cpu().numpy()</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        plt.imshow(context_image, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">'Context Image'</span>)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>        plt.imshow(predicted_image, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">'Predicted Image'</span>)</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>)</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        plt.imshow(actual_image, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">'Actual Image'</span>)</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>        plt.tight_layout()</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># If mps is available, use mps. </span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> torch.mps.is_available():</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    device <span class="op">=</span> torch.device(<span class="st">'mps'</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Else use cpu</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    device <span class="op">=</span> torch.device(<span class="st">'cpu'</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Device in use: "</span>, device)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Device in use:  mps</code></pre>
+</div>
+</div>
+<div id="cell-15" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Neural_Procss_Model(device<span class="op">=</span>device)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># model.to('cuda')</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>model.train(train_dataloader, num_epochs<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch: 1/30 Loss: 0.06018
+Epoch: 2/30 Loss: 0.06170
+Epoch: 3/30 Loss: 0.05950
+Epoch: 4/30 Loss: 0.06060
+Epoch: 5/30 Loss: 0.05958
+Epoch: 6/30 Loss: 0.06148
+Epoch: 7/30 Loss: 0.05642
+Epoch: 8/30 Loss: 0.05425
+Epoch: 9/30 Loss: 0.05090
+Epoch: 10/30 Loss: 0.04823
+Epoch: 11/30 Loss: 0.04689
+Epoch: 12/30 Loss: 0.04165
+Epoch: 13/30 Loss: 0.04482
+Epoch: 14/30 Loss: 0.04253
+Epoch: 15/30 Loss: 0.03567
+Epoch: 16/30 Loss: 0.04409
+Epoch: 17/30 Loss: 0.03556
+Epoch: 18/30 Loss: 0.03798
+Epoch: 19/30 Loss: 0.03793
+Epoch: 20/30 Loss: 0.03933
+Epoch: 21/30 Loss: 0.03644
+Epoch: 22/30 Loss: 0.03336
+Epoch: 23/30 Loss: 0.03567
+Epoch: 24/30 Loss: 0.03594
+Epoch: 25/30 Loss: 0.03620
+Epoch: 26/30 Loss: 0.03798
+Epoch: 27/30 Loss: 0.03487
+Epoch: 28/30 Loss: 0.03350
+Epoch: 29/30 Loss: 0.03534
+Epoch: 30/30 Loss: 0.03392</code></pre>
+</div>
+</div>
+<div id="cell-16" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model.test(test_dataloader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test Loss: 0.03589645992762174</code></pre>
+</div>
+</div>
+</section>
+<section id="testing-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="testing-the-model">Testing the model</h3>
+<div id="cell-18" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> context_pairs, target_pairs <span class="kw">in</span> test_dataloader:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    context_pairs <span class="op">=</span> context_pairs.to(device)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    target_pairs <span class="op">=</span> target_pairs.to(device)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    predicted_target_pixel_intensity <span class="op">=</span> model(context_pairs, target_pairs)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        predicted_pixel <span class="op">=</span> predicted_target_pixel_intensity[i].detach().cpu().numpy()</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        predicted_image <span class="op">=</span> predicted_pixel.reshape(<span class="dv">28</span>,<span class="dv">28</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        actual_pixel <span class="op">=</span> target_pairs[i][:,<span class="dv">2</span>].detach().cpu().numpy()</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        actual_image <span class="op">=</span> actual_pixel.reshape(<span class="dv">28</span>,<span class="dv">28</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        context_image <span class="op">=</span> np.zeros((<span class="dv">28</span>,<span class="dv">28</span>))</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        context_pixel_locations <span class="op">=</span> context_pairs[i][:,:<span class="dv">2</span>].detach().cpu().numpy().astype(<span class="bu">int</span>) </span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        context_image[context_pixel_locations[:,<span class="dv">0</span>], context_pixel_locations[:,<span class="dv">1</span>]] <span class="op">=</span> context_pairs[i][:,<span class="dv">2</span>].detach().cpu().numpy()</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        plt.imshow(context_image, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">'Context Image'</span>)</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>        plt.imshow(predicted_image, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">'Predicted Image'</span>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>        plt.imshow(actual_image, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">'Actual Image'</span>)</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>        plt.tight_layout()</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Neural_Process_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Neural_Process_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Neural_Process_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="Neural_Process_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Neural_Process_files/figure-html/cell-8-output-3.png" class="img-fluid figure-img"></p>
+<p><img src="Neural_Process_files/figure-html/cell-11-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Neural_Process_files/figure-html/cell-8-output-4.png" class="img-fluid figure-img"></p>
+<p><img src="Neural_Process_files/figure-html/cell-11-output-4.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Neural_Process_files/figure-html/cell-8-output-5.png" class="img-fluid figure-img"></p>
+<p><img src="Neural_Process_files/figure-html/cell-11-output-5.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -656,6 +755,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -766,6 +867,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
