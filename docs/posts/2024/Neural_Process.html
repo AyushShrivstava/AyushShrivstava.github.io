@@ -213,11 +213,11 @@ window.Quarto = {
 
 
 <p>This notebook demonstrates the implementation of the Neural Processes. The model is trained to predict the distribution of the target function given a few examples of the function. In this notebook we will attempt to reconstruct an entire image given a few pixels of the image. we will be using the MNIST dataset for this task. The few pixels of the image are the context points and the entire image is the target function.</p>
-<p><span class="math display">\[Model(\{x_i, y_i\}_{c=1}^n, \{x_j\}_{t=1}^m) \rightarrow \{y_j\}_{j=1}^m\]</span></p>
-<p><span class="math inline">\(\{x_i, y_i\}_{c=1}^n\)</span> are the context points where <span class="math inline">\(x_i\)</span> are the pixel coordinates and <span class="math inline">\(y_i\)</span> are the pixel intensity values.</p>
-<p><span class="math inline">\(\{x_j\}_{t=1}^m\)</span> are the target pixel coordinates where we want to predict the pixel intensity values <span class="math inline">\(y_j\)</span>.</p>
-<p>So for our case, the pixel locations <span class="math inline">\(x = (x_1, x_2)\)</span> and the pixel intensity values <span class="math inline">\(y = Img(x1, x2)\)</span> or just <span class="math inline">\(I\)</span> denoting intensity for simplicity.</p>
-<p><span class="math display">\[Model(\{(x_1, x_2, I)\}_{c=1}^n, \{(x_1, x_2)\}_{t=1}^m) \rightarrow \{I\}_{j=1}^m\]</span></p>
+<p><span class="math display">\[Model(\{x_c, y_c\}_{c=1}^n, \{x_t\}_{t=1}^m) \rightarrow \{y_t\}_{t=1}^m\]</span></p>
+<p><span class="math inline">\(\{x_c, y_c\}_{c=1}^n\)</span> are the context points where <span class="math inline">\(x_i\)</span> are the pixel coordinates and <span class="math inline">\(y_i\)</span> are the pixel intensity values.</p>
+<p><span class="math inline">\(\{x_t\}_{t=1}^m\)</span> are the target pixel coordinates where we want to predict the pixel intensity values <span class="math inline">\(y_j\)</span>.</p>
+<p>So for our case, the pixel locations <span class="math inline">\(x = (x^1, x^2)\)</span> and the pixel intensity values <span class="math inline">\(y = Img(x^1, x^2)\)</span> or just <span class="math inline">\(I\)</span> denoting intensity for simplicity.</p>
+<p><span class="math display">\[Model(\{(x^1_c, x^2_c, I_c)\}_{c=1}^n, \{(x^1_t, x^2_t)\}_{t=1}^m) \rightarrow \{I_t\}_{t=1}^m\]</span></p>
 <p>The model is composed of two neural networks: the encoder and the decoder. The encoder takes pixel coordinates and pixel intensitiy value of that coordinate as input and encodes them into a fixed-size representation. The decoder takes the representation and the pixel coordinates and predicts the pixel intensity value of the given coordinate.</p>
 <section id="training-the-model" class="level3">
 <h3 class="anchored" data-anchor-id="training-the-model">Training the model</h3>
