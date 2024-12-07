@@ -183,10 +183,14 @@ window.Quarto = {
   <ul>
   <li><a href="#canny-edge-detector" id="toc-canny-edge-detector" class="nav-link active" data-scroll-target="#canny-edge-detector">Canny Edge Detector</a>
   <ul class="collapse">
+  <li><a href="#algorithm" id="toc-algorithm" class="nav-link" data-scroll-target="#algorithm">Algorithm</a>
+  <ul class="collapse">
   <li><a href="#smoothing-or-noise-reduction" id="toc-smoothing-or-noise-reduction" class="nav-link" data-scroll-target="#smoothing-or-noise-reduction">1. <strong>Smoothing or Noise Reduction</strong> :</a></li>
   <li><a href="#gradient-calculation" id="toc-gradient-calculation" class="nav-link" data-scroll-target="#gradient-calculation">2. <strong>Gradient Calculation</strong> :</a></li>
   <li><a href="#non-maximum-suppression" id="toc-non-maximum-suppression" class="nav-link" data-scroll-target="#non-maximum-suppression">3. <strong>Non Maximum Suppression</strong> :</a></li>
   <li><a href="#hysteresis-thresholding" id="toc-hysteresis-thresholding" class="nav-link" data-scroll-target="#hysteresis-thresholding">4. Hysteresis Thresholding:</a></li>
+  </ul></li>
+  <li><a href="#final-output" id="toc-final-output" class="nav-link" data-scroll-target="#final-output">Final Output:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -235,12 +239,14 @@ window.Quarto = {
 <section id="canny-edge-detector" class="level1">
 <h1>Canny Edge Detector</h1>
 <p>The Canny Edge detector is named after its inventor, John F. Canny. It is among the most popular edge detection algorithms due to its simplicity and effectiveness. The algorithm uses gradient information to detect edges. It follow the following steps:</p>
+<section id="algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="algorithm">Algorithm</h2>
 <section id="smoothing-or-noise-reduction" class="level3">
 <h3 class="anchored" data-anchor-id="smoothing-or-noise-reduction">1. <strong>Smoothing or Noise Reduction</strong> :</h3>
 <p>The algorithm uses a Gaussian filter to smooth the image and reduce noise. This is done to prevent the algorithm from detecting false edges due to noise. It also smoothens the image to reduce the abrupt changes in pixel values. These abrupt changes may end up being detected as edges.</p>
 <p><span class="math display">\[I'(x,y) = G(x,y) * I(x,y)\]</span></p>
 <p>where <span class="math inline">\(I(x,y)\)</span> is the input image, <span class="math inline">\(G(x,y)\)</span> is the Gaussian filter and <span class="math inline">\(I'(x,y)\)</span> is the smoothed image. ’*’ represents convolution operation between the image and the filter. Reading the image and convert it to grayscale. Image is converted to grayscale because the edge detection is done on the intensity values of the image. The color information is not required for edge detection.</p>
-<div id="cell-3" class="cell">
+<div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing libraries </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -295,7 +301,7 @@ window.Quarto = {
 <p><span class="math display">\[Magnitude =  \sqrt{I_x^2 + I_y^2}\]</span></p>
 <p><span class="math display">\[Direction = \arctan(\frac{I_y}{I_x})\]</span></p>
 <p>Magnitude signifies the strength of the edge. The direction is the angle of the edge. The direction is rounded to one of four angles representing vertical, horizontal and two diagonals. The angles are 0, 45, 90 and 135 degrees. We are assuming the edges are in one of these four directions.</p>
-<div id="cell-5" class="cell" data-execution_count="38">
+<div id="cell-6" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the gradients by applying Sobel operator</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>I_x <span class="op">=</span> cv.Sobel(blurred_image, cv.CV_64F, <span class="dv">1</span>, <span class="dv">0</span>, ksize<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>I_y <span class="op">=</span> cv.Sobel(blurred_image, cv.CV_64F, <span class="dv">0</span>, <span class="dv">1</span>, ksize<span class="op">=</span><span class="dv">3</span>)</span>
@@ -373,7 +379,7 @@ M(x, y), &amp; \text{otherwise.}
 </figure>
 </div>
 <p>The image on the left shows the gradient direction. The image on the right shows the process of non-maximum suppression. The point B (marked in Red) is the local maxima in the direction of the gradient while the points A and C (marked in black) are not. The points A and C are set to zero and the point B is kept. This operation will result in thinning of the edges.</p>
-<div id="cell-7" class="cell" data-execution_count="39">
+<div id="cell-8" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nms_image <span class="op">=</span> np.zeros_like(magnitude)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the window size</span></span>
@@ -431,17 +437,22 @@ M(x, y), &amp; \text{otherwise.}
 <section id="hysteresis-thresholding" class="level3">
 <h3 class="anchored" data-anchor-id="hysteresis-thresholding">4. Hysteresis Thresholding:</h3>
 <p>Next step is to apply hysteresis thresholding or also known as double thresholding. The algorithm uses two thresholds, a high threshold and a low threshold. All the points above the high threshold are considered to be strong edges and all the points below the low threshold are considered to be non-edges. The points between the two thresholds are considered to be weak edges. The algorithm then tracks the weak edges and checks if they are connected to strong edges. If they are connected to strong edges, they are considered to be edges. If they are not connected to strong edges, they are considered to be non-edges. This is done to remove the weak edges which are not connected to any of the strong edges.</p>
-<p>Let: - $ S $ denote the set of strong edges, - $ W $ denote the set of weak edges, - $ E(x, y) $ represent whether a pixel at ((x, y)) is classified as an edge ((1)) or not ((0)).</p>
+<p>Let:</p>
+<ul>
+<li><p><span class="math inline">\(S\)</span> denote the set of strong edges</p></li>
+<li><p><span class="math inline">\(W\)</span> denote the set of weak edge</p></li>
+<li><p><span class="math inline">\(E(x, y)\)</span> represent whether a pixel at <span class="math inline">\((x, y)\)</span> is classified as an edge <span class="math inline">\(1\)</span> or not <span class="math inline">\(0\)</span>.</p></li>
+</ul>
 <p>The classification can be expressed as:</p>
-<p>$$</p>
+<p><span class="math display">\[
 E(x, y) =
-<span class="math display">\[\begin{cases}
+\begin{cases}
 1, &amp; \text{if } (x, y) \in S, \text{ or } (x, y) \in W \text{ and connected to } S, \\
 0, &amp; \text{otherwise.}
-\end{cases}\]</span>
-<p>$$</p>
-<p>Connected to <span class="math inline">\(S\)</span> implies there exists a path from <span class="math inline">\((x, y)\)</span> in $ W $ to some <span class="math inline">\((x', y')\)</span> in <span class="math inline">\(S\)</span> that satisfies the connectivity criteria (e.g., adjacency).</p>
-<div id="cell-9" class="cell" data-execution_count="41">
+\end{cases}
+\]</span></p>
+<p>Connected to <span class="math inline">\(S\)</span> implies there exists a path from <span class="math inline">\((x, y)\)</span> in <span class="math inline">\(W\)</span> to some <span class="math inline">\((x', y')\)</span> in <span class="math inline">\(S\)</span> that satisfies the connectivity criteria (e.g., adjacency).</p>
+<div id="cell-10" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Edges <span class="op">=</span> np.zeros_like(nms_image)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>threshold_high <span class="op">=</span> <span class="dv">100</span></span>
@@ -490,6 +501,10 @@ E(x, y) =
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="final-output" class="level2">
+<h2 class="anchored" data-anchor-id="final-output">Final Output:</h2>
 <p>The Final output is the edge image where the edges are detected. The edges are detected using the gradient information. The algorithm is very effective in detecting edges and is widely used in computer vision applications.</p>
 
 
