@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ayushshrivstava.github.io/index.html</loc>
-    <lastmod>2024-12-07T05:42:34.329Z</lastmod>
+    <lastmod>2024-12-07T14:32:13.808Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2024/CondaPost.html</loc>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/gallery.html</loc>
-    <lastmod>2024-12-07T05:44:47.917Z</lastmod>
+    <lastmod>2024-12-07T06:02:27.969Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts.html</loc>
@@ -31,5 +31,9 @@
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2024/Canny_Edge.html</loc>
     <lastmod>2024-12-07T05:40:39.849Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ayushshrivstava.github.io/posts/2024/Neural_Process.html</loc>
+    <lastmod>2024-12-07T14:31:54.260Z</lastmod>
   </url>
 </urlset>

@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/2024/Neural_Process.html",
       "/posts/2024/Canny_Edge.html",
       "/posts/2024/CondaPost.html"
     ]

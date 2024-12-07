@@ -39,7 +39,7 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
 
 <div class="gallery-container">
   <div class="gallery-item">
-    <img src="images/gallery/compass24.jpg" alt="Outside IIIT Delhi main Academics Building">
+    ![compass24.jpg](./images/gallery/compass24.jpg)
     <p>Attending ACM Compass with the Lab</p>
   </div> 
   <div class="gallery-item">
@@ -50,7 +50,6 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
     <img src="images/gallery/IIITD1.jpg" alt="Near IIITD gate">
     <p>Inside IIIT Delhi Campus</p>
   </div> 
-  <!-- Add more images here with descriptions -->
 </div>
 
 ## Mtech Convocation 2024
