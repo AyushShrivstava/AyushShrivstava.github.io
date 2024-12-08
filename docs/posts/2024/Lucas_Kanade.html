@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ayush Shrivastava">
+<meta name="dcterms.date" content="2024-10-23">
 
-<title>My Blog – Homepage</title>
+<title>Lucas Kanade Optical Flow – Homepage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -137,7 +108,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Homepage</span>
     </a>
   </div>
@@ -148,17 +119,17 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./publication.html"> 
+    <a class="nav-link" href="../../publication.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">BlogPosts</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./files/Ayush_Master_CV.pdf"> 
+    <a class="nav-link" href="../../files/Ayush_Master_CV.pdf"> 
 <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
@@ -171,24 +142,49 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#optical-flow" id="toc-optical-flow" class="nav-link active" data-scroll-target="#optical-flow">Optical Flow</a></li>
+  <li><a href="#lucas-kanade-optical-flow" id="toc-lucas-kanade-optical-flow" class="nav-link" data-scroll-target="#lucas-kanade-optical-flow">Lucas Kanade Optical Flow</a></li>
+  <li><a href="#lucas-kanade-implementation" id="toc-lucas-kanade-implementation" class="nav-link" data-scroll-target="#lucas-kanade-implementation">Lucas Kanade Implementation</a></li>
+  </ul>
+</nav>
+</nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Computer Vision">Computer Vision <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Helpful Tips">Helpful Tips <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Blog</h1>
-</div>
+<h1 class="title">Lucas Kanade Optical Flow</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Computer Vision</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page-right">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ayush Shrivastava </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 23, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,135 +194,61 @@ window.Quarto = {
 </header>
 
 
+<section id="optical-flow" class="level1">
+<h1>Optical Flow</h1>
+<p>Optical flow is the pattern of apparent motion of image objects between two consecutive frames caused by the movement of object or camera. It is vector field where each vector denotes the movement of points from first frame to second. Generally, optical flow is used to track the motion of objects in a video. Lets assume you have captured two frames with a small time difference <span class="math inline">\(\Delta t\)</span>. You wish to track the motion of a pixel located at <span class="math inline">\((x, y)\)</span> in first frame. In the second frame, the pixel has moved to <span class="math inline">\((x + \Delta x, y + \Delta y)\)</span>. The vector <span class="math inline">\((\Delta x, \Delta y)\)</span> is the optical flow vector.</p>
+<!-- ![Optical Flow](../../images/blogs/Lucas-Kanade/BCC.png) -->
+<!-- <img src="/images/blogs/Lucas-Kanade/BCC.png"
+alt="Optical Flow" width="600"> -->
+<div class="quarto-figure quarto-figure-center" style="display: block; margin: auto; width: 600px;">
+<figure class="figure">
+<p><img src="../../images/blogs/Lucas-Kanade/BCC.png" class="img-fluid figure-img"></p>
+<figcaption>Optical Flow : Brightness Constancy Constraint</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[I(x, y, t) = I(x + \Delta x, y + \Delta y, t + \Delta t)\]</span></p>
+<p>The above equation is the basic assumption in optical flow. It assumes that intensity of an object does not change between two consecutive frames. This constraint is called <strong>brightness constancy constraint</strong>. This equation can be expanded using taylor series to get the optical flow equation.</p>
+<p><span class="math display">\[I(x + \Delta x, y + \Delta y, t + \Delta t) \approx I(x, y, t) + \frac{\partial I}{\partial x} \Delta x + \frac{\partial I}{\partial y} \Delta y + \frac{\partial I}{\partial t} \Delta t = I(x, y, t)\]</span></p>
+<p><span class="math display">\[\frac{\partial I}{\partial x} \Delta x + \frac{\partial I}{\partial y} \Delta y + \frac{\partial I}{\partial t} \Delta t = 0\]</span></p>
+<p><span class="math display">\[\frac{\partial I}{\partial x} u + \frac{\partial I}{\partial y} v + \frac{\partial I}{\partial t} = 0\]</span></p>
+<p>where <span class="math inline">\(u = \frac{\Delta x}{\Delta t}\)</span> and <span class="math inline">\(v = \frac{\Delta y}{\Delta t}\)</span> are the optical flow velocities in x and y directions respectively.</p>
+<p>The above equation is called optical flow equation. It is a single equation with two unknowns <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>. Hence, it is an ill-posed problem. To solve this problem, we need to make some more assumptions. One of the assumption to arrive here was brightness constancy assumption. It assumes that the intensity of an object does not change between two consecutive frames. The other assumption made was given by lucas and kanade. They assumed that the optical flow is same for all the pixels in a neighborhood. This assumption is called spatial coherence assumption.</p>
+</section>
+<section id="lucas-kanade-optical-flow" class="level1">
+<h1>Lucas Kanade Optical Flow</h1>
+<p>The Lucas-Kanade method is a widely used differential method for optical flow estimation developed by Bruce D. Lucas and Takeo Kanade. It assumes that the flow is essentially constant in a local neighbourhood of the pixel under consideration, and solves the basic optical flow equations for all the pixels in that neighbourhood by the least squares criterion.</p>
+<div class="quarto-figure quarto-figure-center" style="display: block; margin: auto; width: 400px;">
+<figure class="figure">
+<p><img src="../../images/blogs/Lucas-Kanade/LK-constraint.png" class="img-fluid figure-img"></p>
+<figcaption>Lucas Kanade : spatial coherence assumption</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[\frac{\partial I}{\partial x} u + \frac{\partial I}{\partial y} v + \frac{\partial I}{\partial t} = 0\]</span></p>
+<p><span class="math display">\[E_x = \frac{\partial I}{\partial x}, E_y = \frac{\partial I}{\partial y}, E_t = \frac{\partial I}{\partial t}\]</span></p>
+<p><span class="math display">\[E_x u + E_y v + E_t = 0\]</span></p>
+<p><span class="math display">\[\begin{bmatrix} E_x &amp; E_y \end{bmatrix} \begin{bmatrix} u \\ v \end{bmatrix} = -E_t\]</span></p>
+<p><span class="math display">\[ \begin{bmatrix} E_x(i-1,j-1) &amp; E_y(i-1,j-1) \\ E_x(i-1,j) &amp; E_y(i-1,j) \\ E_x(i-1,j+1) &amp; E_y(i-1,j+1) \\ E_x(i,j-1) &amp; E_y(i,j-1) \\ E_x(i,j) &amp; E_y(i,j) \\ E_x(i,j+1) &amp; E_y(i,j+1) \\ E_x(i+1,j-1) &amp; E_y(i+1,j-1) \\ E_x(i+1,j) &amp; E_y(i+1,j) \\ E_x(i+1,j+1) &amp; E_y(i+1,j+1) \end{bmatrix} \begin{bmatrix} u \\ v \end{bmatrix} = \begin{bmatrix} -E_t(i-1,j-1) \\ -E_t(i-1,j) \\ -E_t(i-1,j+1) \\ -E_t(i,j-1) \\ -E_t(i,j) \\ -E_t(i,j+1) \\ -E_t(i+1,j-1) \\ -E_t(i+1,j) \\ -E_t(i+1,j+1) \end{bmatrix}\]</span></p>
+<p><span class="math display">\[A_{(9,2)}  x_{(2,1)} = b_{(9,1)}\]</span></p>
+<p><span class="math display">\[A \overrightarrow{x} = \overrightarrow{b}\]</span></p>
+<p><span class="math display">\[x = (A^T A)^{-1} A^T b\]</span></p>
+<p>So for a chosen patch we can estimate the optical flow using above equation. This could also be written as</p>
+<p><span class="math display">\[\begin{bmatrix} u \\ v \end{bmatrix} = \begin{bmatrix} \sum E_x E_x &amp; \sum E_x E_y \\ \sum E_y E_x &amp; \sum E_y E_y \end{bmatrix}^{-1} \begin{bmatrix} -\sum E_x E_t \\ -\sum E_y E_t \end{bmatrix}\]</span></p>
+<p>This is the final equation used to estimate the optical flow using Lucas Kanade method. The above equation is solved for each patch in the image to get the optical flow vectors. Optical flow algorithm could be summarized as follows:</p>
+<ol type="1">
+<li>Compute image gradients <span class="math inline">\(E_x\)</span> and <span class="math inline">\(E_y\)</span>.</li>
+<li>Compute temporal gradient <span class="math inline">\(E_t\)</span>.</li>
+<li>Compute the matrix <span class="math inline">\(A\)</span> and vector <span class="math inline">\(b\)</span> for each patch.</li>
+<li>Solve the equation <span class="math inline">\(A \overrightarrow{x} = \overrightarrow{b}\)</span> to get the optical flow vectors.</li>
+</ol>
+</section>
+<section id="lucas-kanade-implementation" class="level1">
+<h1>Lucas Kanade Implementation</h1>
+<p>Coming soon…!</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Computer Vision" data-listing-date-sort="1733423400000" data-listing-file-modified-sort="1733545683022" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
-<a href="./posts/2024/Canny_Edge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/Canny_Edge/Canny_logo.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Canny Edge Detector
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Computer Vision'); return false;">
-Computer Vision
-</div>
-</div>
-<div class="card-text listing-description">
-The Canny Edge detector is named after its inventor, John F. Canny. It is among the most popular edge detection algorithms due to its simplicity and effectiveness. The…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Dec 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Computer Vision" data-listing-date-sort="1729621800000" data-listing-file-modified-sort="1733684898256" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="692">
-<a href="./posts/2024/Lucas_Kanade.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/blogs/Lucas-Kanade/BCC.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Lucas Kanade Optical Flow
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Computer Vision'); return false;">
-Computer Vision
-</div>
-</div>
-<div class="card-text listing-description">
-Optical flow is the pattern of apparent motion of image objects between two consecutive frames caused by the movement of object or camera. It is vector field where each…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Oct 23, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Helpful Tips" data-listing-date-sort="1718476200000" data-listing-file-modified-sort="1733508808752" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="202">
-<a href="./posts/2024/CondaPost.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/InstallingConda/conda_image.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Setting up Conda Environment for ML Projects
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Helpful Tips'); return false;">
-Helpful Tips
-</div>
-</div>
-<div class="card-text listing-description">
-This blogpost is written for myself as I keep forgetting the steps to set up a conda environment for my ML projects.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Jun 16, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Deep Learning" data-listing-date-sort="1717612200000" data-listing-file-modified-sort="1733599383633" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="560">
-<a href="./posts/2024/Neural_Process.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/Neural_Process/NP_1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Neural Processes
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-This notebook demonstrates the implementation of the Neural Processes. The model is trained to predict the distribution of the target function given a few examples of the…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Jun 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
