@@ -46,7 +46,7 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
 </div>
 <div class="gallery-item">
   <img src="images/gallery/I-Inventive25_2.jpeg" alt="ACM Compass inside Conference Hall">
-  <p>Posing with Rishiraj (left) infront of the Stall, IIT Madras</p>
+  <p>Posing with Dr. Rishiraj (left) infront of the Stall, IIT Madras</p>
 </div>
 <div class="gallery-item">
   <img src="images/gallery/I-Inventive25_4.JPG" alt="Near IIITD gate">
@@ -58,7 +58,7 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
 </div>
 :::
 
-## COMSNETS 2025,Bangalore
+## COMSNETS 2025, Bangalore
 
 :::{.gallery-container}
 <div class="gallery-item">
