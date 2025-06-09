@@ -7,21 +7,22 @@ toc: false
 ---
 
 <style>
+
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start;
   gap: 20px;
 }
 .gallery-item {
-  width: calc(25% - 20px); /* Four items per row with gap */
+  width: calc(25% - 20px); 
   box-sizing: border-box;
   text-align: center;
 }
 .gallery-item img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure images cover the space without distortion */
+  height: auto; 
+  object-fit: cover; 
   border-radius: 8px;
 }
 .gallery-item p {
@@ -30,55 +31,93 @@ toc: false
 }
 
 </style>
+  
 
 # Gallery 
 
 Welcome to my gallery! Here you'll find a collection of images from my life, including memorable moments and photos I've taken. I'll continue to add more images as I capture new experiences and milestones along my journey.
 
-## ACM Compass 2024 @IIIT_Delhi
+## I-Inventive 2025, IIT Madras
 
-<div class="gallery-container">
-  <div class="gallery-item">
-    ![compass24.jpg](./images/gallery/compass24.jpg)
-    <p>Attending ACM Compass with the Lab</p>
-  </div> 
-  <div class="gallery-item">
-    <img src="images/gallery/ACM_Compass1.jpg" alt="ACM Compass inside Conference Hall">
-    <p>ACM Compass - infront of conference hall</p>
-  </div>
-  <div class="gallery-item">
-    <img src="images/gallery/IIITD1.jpg" alt="Near IIITD gate">
-    <p>Inside IIIT Delhi Campus</p>
-  </div> 
+:::{.gallery-container}
+<div class="gallery-item">
+  <img src="images/gallery/I-Inventive25_1.jpeg" alt="Attending ACM Compass with the Lab">
+  <p>Explaining our project at the innovation expo I-Inventive</p>
 </div>
+<div class="gallery-item">
+  <img src="images/gallery/I-Inventive25_2.jpeg" alt="ACM Compass inside Conference Hall">
+  <p>Posing with Rishiraj (left) infront of the Stall, IIT Madras</p>
+</div>
+<div class="gallery-item">
+  <img src="images/gallery/I-Inventive25_4.jpg" alt="Near IIITD gate">
+  <p>Explaining Apnea project (Right)</p>
+</div>
+<div class="gallery-item">
+  <img src="images/gallery/I-Inventive25_3.jpeg" alt="Near IIITD gate">
+  <p>Deer from IIT Madras</p>
+</div>
+:::
+
+## COMSNETS 2025,Bangalore
+
+:::{.gallery-container}
+<div class="gallery-item">
+  <img src="images/gallery/COMSNETS3.jpeg" alt="Attending ACM Compass with the Lab">
+  <p>Attending COMSNETS 2025</p>
+</div>
+<div class="gallery-item">
+  <img src="images/gallery/COMSNETS2.jpg" alt="ACM Compass inside Conference Hall">
+  <p>Presenting "Towards Sleep Apnea Screening via Thermal Imagery"</p>
+</div>
+<div class="gallery-item">
+  <img src="images/gallery/COMSNETS1.jpg" alt="Near IIITD gate">
+  <p>Inside IIIT Delhi Campus</p>
+</div>
+:::
+
+## ACM Compass 2024, IIIT Delhi
+<!-- <div class="gallery-container"> -->
+:::{.gallery-container}
+<div class="gallery-item">
+  <img src="images/gallery/compass24.jpg" alt="Attending ACM Compass with the Lab">
+  <p>Attending ACM Compass with the Lab</p>
+</div>
+<div class="gallery-item">
+  <img src="images/gallery/ACM_Compass1.jpg" alt="ACM Compass inside Conference Hall">
+  <p>ACM Compass - infront of conference hall</p>
+</div>
+<div class="gallery-item">
+  <img src="images/gallery/IIITD1.jpg" alt="Near IIITD gate">
+  <p>Inside IIIT Delhi Campus</p>
+</div>
+:::
 
 ## Mtech Convocation 2024
 
-<div class="gallery-container">
-  <div class="gallery-item">
-    <img src="images/gallery/convocation2.jpg" alt="Awarded the MTech">
-    <p>Awarded the MTech in Computer Science and Engineering at IITGN convocation June 2024</p>
-  </div>
-  <div class="gallery-item">
-    <img src="images/gallery/convocation.jpg" alt="Outside IITGN Convocation Hall 2024">
-    <p>Outside IITGN Convocation Hall June 2024</p>
-  </div>
-  <div class="gallery-item">
-    <img src="images/gallery/convocation3.jpg" alt="Outside IITGN Convocation Hall 2024">
-    <p>Outside IITGN Convocation Hall with my family</p>
-  </div>
-  <!-- Add more images here with descriptions -->
+:::{.gallery-container}
+<div class="gallery-item">
+  <img src="images/gallery/convocation2.jpg" alt="Awarded the MTech">
+  <p>Awarded the MTech in Computer Science and Engineering at IITGN convocation June 2024</p>
 </div>
+<div class="gallery-item">
+  <img src="images/gallery/convocation.jpg" alt="Outside IITGN Convocation Hall 2024">
+  <p>Outside IITGN Convocation Hall June 2024</p>
+</div>
+<div class="gallery-item">
+  <img src="/images/gallery/convocation3.jpg" alt="Outside IITGN Convocation Hall 2024">
+  <p>Outside IITGN Convocation Hall with my family</p>
+</div>
+:::
 
 ## Mtech Thesis Defense 2024
-<div class="gallery-container">
-  <div class="gallery-item">
-    <img src="images/gallery/MtechThesisDefense.jpg" alt="2024 June Mtech defense">
-    <p>Suraj and I celebrating the successful defense of our MTech thesis</p>
-  </div>
-  <div class="gallery-item">
-    <img src="images/gallery/MtechThesisDefense3.jpg" alt="2024 June Mtech defense">
-    <p>Celebrating the successful defense of our MTech thesis</p>
-  </div>
-  <!-- Add more images here with descriptions -->
+
+:::{.gallery-container}
+<div class="gallery-item">
+  <img src="images/gallery/MtechThesisDefense.jpg" alt="2024 June Mtech defense">
+  <p>Suraj and I celebrating the successful defense of our MTech thesis</p>
 </div>
+<div class="gallery-item">
+  <img src="images/gallery/MtechThesisDefense3.jpg" alt="2024 June Mtech defense">
+  <p>Celebrating the successful defense of our MTech thesis</p>
+</div>
+:::

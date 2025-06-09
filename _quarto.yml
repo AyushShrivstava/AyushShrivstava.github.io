@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+resources:
+  - images/
+
 website:
   title: "Homepage"
   site-url: https://ayushshrivstava.github.io/
@@ -12,8 +15,8 @@ website:
         text: Publications
       - href: posts.qmd
         text: BlogPosts
-      # - href: gallery.qmd
-      #   text: Gallery
+      - href: gallery.qmd
+        text: Gallery
       # - href: teaching.qmd
       #   text: Teaching
     

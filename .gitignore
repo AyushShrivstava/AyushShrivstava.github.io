@@ -1,3 +1,4 @@
 /.quarto/
 /posts/2024/data/
 *.DS_Store
+docs/
