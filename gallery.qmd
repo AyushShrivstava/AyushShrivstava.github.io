@@ -45,8 +45,8 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
   <p>Taking a session Object Detection on Day-1 of Summer School.</p>
 </div>
 <div class="gallery-item">
-  <img src="images/gallery/SummerSchool25.jpeg" alt="Attending ACM Compass with the Lab">
-  <p>Taking a session on Day-4 on "Seeing Red". Estimating Heart rate from Smartphone Camera</p>
+  <img src="images/gallery/SummerSchool25_3.jpeg" alt="Attending ACM Compass with the Lab">
+  <p>Taking a session on Day-5 on "Seeing Red". Estimating Heart rate from Smartphone Camera</p>
 </div>
 
 :::
