@@ -116,6 +116,8 @@ I hold a master's degree in Computer Science and Engineering from IIT Gandhinaga
   </tr>
   <tr>
     <td>15 May 2019</td>
-    <td>Completed B.E in Electronics and Telecommunication from Jabalpur Engineering College, Jabalpur</td>
+    <td>
+     Completed B.E in Electronics and Telecommunication from Jabalpur Engineering College, Jabalpur
+     </td>
   </tr>
 </table>
