@@ -46,7 +46,7 @@
     "href": "posts.html",
     "title": "My Blog",
     "section": "",
-    "text": "Canny Edge Detector\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nDec 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPower of Sine Activation\n\n\n\nComputer Vision\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nNov 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLucas Kanade Optical Flow\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting up Conda Environment for ML Projects\n\n\n\nHelpful Tips\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeural Processes\n\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Setting Up Your Python Development Environment\n\n\n\n\n\n\nYour Name\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCanny Edge Detector\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nDec 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPower of Sine Activation\n\n\n\nComputer Vision\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nNov 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLucas Kanade Optical Flow\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting up Conda Environment for ML Projects\n\n\n\nHelpful Tips\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeural Processes\n\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publication.html",
@@ -200,7 +200,7 @@
     "href": "index.html#my-journey-so-far",
     "title": "Ayush Shrivastava",
     "section": "My Journey So Far",
-    "text": "My Journey So Far\n\n\n\n\n\n\n27-1 March 2025\n\n\nDelivered tutorials on “Object Detection” and “Heart Rate Prediction” at ACM Summer School on AI for Social Good\n\n\n\n\n27-1 March 2025\n\n\nShowcased our work in Global Tech Expo iInventive 2025, IIT Madras\n\n\n\n\n6-11 Jan 2025\n\n\nPresented my work Towards Sleep Apnea Screening via Thermal Imagery” in Graduate Forum, COMSNETS 2025\n\n\n\n\n31 Aug 2024\n\n\nJoined Sustainability Lab and Smash Lab as a PhD student\n\n\n\n\n\n8-11 Jul 2024\n\n\nAttended 7th ACM SIGCAS/SIGCHI Conference of Computing and Sustainable Societies ACM COMPASS 2024\n\n\n\n\n29 Jun 2024\n\n\nConvocation! Got Masters degree from IIT Gandhinagar\n\n\n\n\n\n\n\n\n\n\n18 July 2022\n\n\nJoined M.Tech in Computer Science at IIT Gandhinagar and became part of the Sustainability Lab.\n\n\n\n\n\n17 June 2019\n\n\nJoined IBM India as an Application Developer where I gained 2.5 years of corporate experience before moving on.\n\n\n\n\n15 May 2019\n\n\nCompleted B.E in Electronics and Telecommunication from Jabalpur Engineering College, Jabalpur&lt;"
+    "text": "My Journey So Far\n\n\n\n\n\n\n27-1 March 2025\n\n\nDelivered tutorials on “Object Detection” and “Heart Rate Prediction” at ACM Summer School on AI for Social Good\n\n\n\n\n27-1 March 2025\n\n\nShowcased our work in Global Tech Expo iInventive 2025, IIT Madras\n\n\n\n\n6-11 Jan 2025\n\n\nPresented my work Towards Sleep Apnea Screening via Thermal Imagery” in Graduate Forum, COMSNETS 2025\n\n\n\n\n31 Aug 2024\n\n\nJoined Sustainability Lab and Smash Lab as a PhD student\n\n\n\n\n\n8-11 Jul 2024\n\n\nAttended 7th ACM SIGCAS/SIGCHI Conference of Computing and Sustainable Societies ACM COMPASS 2024\n\n\n\n\n29 Jun 2024\n\n\nConvocation! Got Masters degree from IIT Gandhinagar\n\n\n\n\n\n\n\n\n\n\n18 July 2022\n\n\nJoined M.Tech in Computer Science at IIT Gandhinagar and became part of the Sustainability Lab.\n\n\n\n\n\n17 June 2019\n\n\nJoined IBM India as an Application Developer where I gained 2.5 years of corporate experience before moving on.\n\n\n\n\n15 May 2019\n\n\nCompleted B.E in Electronics and Telecommunication from Jabalpur Engineering College, Jabalpur"
   },
   {
     "objectID": "gallery.html#comsnets-2025-bangalore",
@@ -215,5 +215,117 @@
     "title": "Gallery",
     "section": "",
     "text": "Taking a session Object Detection on Day-1 of Summer School.\n\n\n\n\n\nTaking a session on Day-5 on “Seeing Red”. Estimating Heart rate from Smartphone Camera"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html",
+    "href": "posts/2026/initial_install.html",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "",
+    "text": "Before you begin, please read these important guidelines:\nGetting Help:\n\nIf you encounter any issues or have questions at any point during this lab, raise your hand and contact the nearest Teaching Assistant (TA) immediately.\nDo not spend more than 5 minutes stuck on a single step. Ask for help early rather than falling behind.\nTAs are here to assist you. No question is too small or too basic.\n\nWorking Through the Lab:\n\nFollow the instructions in order. Do not skip sections unless instructed by your TA.\nRead each step carefully before executing commands.\nPay attention to your operating system (Windows, macOS, or Linux) as instructions may differ.\nTest each step before moving to the next one to ensure everything is working correctly.\n\nImportant Notes:\n\nTake notes of any errors you encounter and the solutions that worked for you.\nKeep this document open for reference during future assignments.\nMake sure you complete the verification steps to confirm your installation is working.\nDo not leave the lab until you have a fully functional Python environment.\n\nLab Etiquette:\n\nBe patient during downloads and installations as they may take several minutes.\nHelp your neighbors if they are struggling and you have completed a section.\nKeep your workspace organized and save any important files you create.\nBefore leaving, ensure you can run Python code and that all required packages are installed."
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#general-instructions",
+    "href": "posts/2026/initial_install.html#general-instructions",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "",
+    "text": "Before you begin, please read these important guidelines:\nGetting Help:\n\nIf you encounter any issues or have questions at any point during this lab, raise your hand and contact the nearest Teaching Assistant (TA) immediately.\nDo not spend more than 5 minutes stuck on a single step. Ask for help early rather than falling behind.\nTAs are here to assist you. No question is too small or too basic.\n\nWorking Through the Lab:\n\nFollow the instructions in order. Do not skip sections unless instructed by your TA.\nRead each step carefully before executing commands.\nPay attention to your operating system (Windows, macOS, or Linux) as instructions may differ.\nTest each step before moving to the next one to ensure everything is working correctly.\n\nImportant Notes:\n\nTake notes of any errors you encounter and the solutions that worked for you.\nKeep this document open for reference during future assignments.\nMake sure you complete the verification steps to confirm your installation is working.\nDo not leave the lab until you have a fully functional Python environment.\n\nLab Etiquette:\n\nBe patient during downloads and installations as they may take several minutes.\nHelp your neighbors if they are struggling and you have completed a section.\nKeep your workspace organized and save any important files you create.\nBefore leaving, ensure you can run Python code and that all required packages are installed."
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#lab-overview",
+    "href": "posts/2026/initial_install.html#lab-overview",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Lab Overview",
+    "text": "Lab Overview\nDuration: 1.5 hours\nObjectives: By the end of this lab, you will be able to:\n\nInstall Anaconda on your computer\nUnderstand and configure environment variables\nCreate and manage Python virtual environments\nRun Python code and Jupyter notebooks\nComplete course assignments using your setup"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#part-1-installing-anaconda",
+    "href": "posts/2026/initial_install.html#part-1-installing-anaconda",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Part 1: Installing Anaconda",
+    "text": "Part 1: Installing Anaconda\n\nWhat is Anaconda?\nAnaconda is a distribution of Python that comes with many pre-installed packages for data science and scientific computing. It also includes conda, a package manager that makes it easy to install additional packages and manage different environments.\n\n\nStep 1: Download Anaconda\n\nGo to https://www.anaconda.com/download\nChoose the installer for your operating system (Windows, macOS, or Linux)\nDownload the latest Python 3.x version (not Python 2.x)\n\n\n\nStep 2: Install Anaconda\n\nWindows Installation\n\nRun the downloaded .exe file\nClick “Next” through the setup wizard\nImportant: On the “Advanced Installation Options” screen:\n\nCheck “Add Anaconda3 to my PATH environment variable” (even though it’s not recommended, it makes things easier for beginners)\nCheck “Register Anaconda3 as my default Python 3.x”\n\nClick “Install” and wait for the installation to complete (this may take 10-15 minutes)\nClick “Finish”\n\n\n\nmacOS Installation\n\nOpen the downloaded .pkg file\nFollow the installation prompts\nClick “Continue” and “Install”\nEnter your password when prompted\nClick “Close” when installation is complete\n\n\n\nLinux Installation\n\nOpen Terminal\nNavigate to the directory where you downloaded the file\nRun the following command (replace with your actual filename):\n\nbash Anaconda3-2024.xx-Linux-x86_64.sh\n\nPress Enter to read the license agreement, then type “yes” to accept\nPress Enter to confirm the installation location\nType “yes” when asked to initialize Anaconda\n\n\n\n\nStep 3: Verify Installation\nOpen a new terminal or command prompt and run:\nconda --version\nYou should see output like conda 24.x.x. If you get an error, proceed to the next section."
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#part-2-setting-up-environment-variables",
+    "href": "posts/2026/initial_install.html#part-2-setting-up-environment-variables",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Part 2: Setting Up Environment Variables",
+    "text": "Part 2: Setting Up Environment Variables\nIf the conda --version command didn’t work, you need to add Anaconda to your system’s PATH.\n\nWindows: Adding to PATH\n\nPress Win + X and select “System”\nClick “Advanced system settings” on the right\nClick “Environment Variables” button\nUnder “User variables”, find and select “Path”, then click “Edit”\nClick “New” and add these paths (adjust if you installed in a different location):\n\nC:\\Users\\YourUsername\\anaconda3\nC:\\Users\\YourUsername\\anaconda3\\Scripts\nC:\\Users\\YourUsername\\anaconda3\\Library\\bin\n\nClick “OK” on all windows\nClose and reopen your command prompt\nTest again with conda --version\n\n\n\nmacOS/Linux: Adding to PATH\n\nOpen Terminal\nCheck which shell you’re using:\n\necho $SHELL\n\nEdit your shell configuration file:\n\nIf using bash: nano ~/.bashrc\nIf using zsh: nano ~/.zshrc\n\nAdd this line at the end of the file:\n\nexport PATH=\"$HOME/anaconda3/bin:$PATH\"\n\nSave the file (Ctrl+O, Enter, then Ctrl+X in nano)\nReload the configuration:\n\nsource ~/.bashrc  # or source ~/.zshrc\n\nTest with conda --version"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#part-3-creating-your-first-environment",
+    "href": "posts/2026/initial_install.html#part-3-creating-your-first-environment",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Part 3: Creating Your First Environment",
+    "text": "Part 3: Creating Your First Environment\n\nWhy Use Environments?\nVirtual environments let you have different versions of Python and packages for different projects. This prevents conflicts and keeps your projects organized.\n\n\nCreate a Course Environment\nOpen your terminal/command prompt and run these commands:\n# Create a new environment named 'course_env' with Python 3.11\nconda create -n course_env python=3.11 -y\nThis will take a few minutes as it downloads and installs Python.\n\n\nActivate Your Environment\n# Windows\nconda activate course_env\n\n# macOS/Linux\nconda activate course_env\nYour prompt should now show (course_env) at the beginning, indicating the environment is active.\n\n\nInstall Essential Packages\nWith your environment activated, install the packages you’ll need:\n# Install data science packages\nconda install numpy pandas matplotlib jupyter -y\n\n# Install additional useful packages\nconda install scipy scikit-learn seaborn -y\n\n\nVerify Your Installation\nCheck that packages are installed:\n# Check Python version\npython --version\n\n# Check installed packages\nconda list"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#part-4-running-python",
+    "href": "posts/2026/initial_install.html#part-4-running-python",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Part 4: Running Python",
+    "text": "Part 4: Running Python\n\nMethod 1: Python Interactive Shell\nWith your environment activated, simply type:\npython\nYou’ll see the Python prompt &gt;&gt;&gt;. Try some commands:\nprint(\"Hello, Python!\")\nx = 5 + 3\nprint(x)\nexit()\n\n\nMethod 2: Running Python Scripts\n\nCreate a file called test.py with this content:\n\n# test.py\nprint(\"This is my first Python script!\")\n\n# Do some calculation\nnumbers = [1, 2, 3, 4, 5]\ntotal = sum(numbers)\nprint(f\"The sum is: {total}\")\n\nRun it from the terminal:\n\npython test.py\n\n\nMethod 3: Jupyter Notebook\nJupyter notebooks are interactive documents that mix code, text, and visualizations.\n\nStart Jupyter:\n\njupyter notebook\n\nYour browser will open automatically\nClick “New” → “Python 3” to create a new notebook\nTry this in a cell:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.title(\"My First Plot\")\nplt.show()\n\nPress Shift + Enter to run the cell"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#part-5-essential-commands-reference",
+    "href": "posts/2026/initial_install.html#part-5-essential-commands-reference",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Part 5: Essential Commands Reference",
+    "text": "Part 5: Essential Commands Reference\n\nConda Environment Commands\n# List all environments\nconda env list\n\n# Create new environment\nconda create -n myenv python=3.11\n\n# Activate environment\nconda activate myenv\n\n# Deactivate environment\nconda deactivate\n\n# Delete environment\nconda env remove -n myenv\n\n# Export environment (for sharing)\nconda env export &gt; environment.yml\n\n# Create environment from file\nconda env create -f environment.yml\n\n\nPackage Management Commands\n# Install a package\nconda install package_name\n\n# Install specific version\nconda install package_name=1.2.3\n\n# Update a package\nconda update package_name\n\n# Remove a package\nconda remove package_name\n\n# List installed packages\nconda list\n\n# Search for a package\nconda search package_name\n\n\nJupyter Commands\n# Start Jupyter Notebook\njupyter notebook\n\n# Start Jupyter Lab (more advanced interface)\njupyter lab\n\n# List running notebooks\njupyter notebook list\n\n# Stop all notebooks\njupyter notebook stop"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#part-6-practice-exercise",
+    "href": "posts/2026/initial_install.html#part-6-practice-exercise",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Part 6: Practice Exercise",
+    "text": "Part 6: Practice Exercise\nLet’s put everything together! Complete this exercise to confirm your setup is working.\n\nExercise: Create and Run Your First Python Script\n\nMake sure your course_env is activated\nCreate a new file called hello.py\nCopy this code into the file:\n\n# hello.py - My first Python script\n\n# Print a welcome message\nprint(\"Welcome to Python Programming!\")\nprint(\"=\" * 40)\n\n# Basic arithmetic\nprint(\"\\nLet's do some basic math:\")\na = 10\nb = 5\nprint(f\"{a} + {b} = {a + b}\")\nprint(f\"{a} - {b} = {a - b}\")\nprint(f\"{a} * {b} = {a * b}\")\nprint(f\"{a} / {b} = {a / b}\")\n\n# Working with lists\nprint(\"\\nWorking with a list of numbers:\")\nnumbers = [1, 2, 3, 4, 5]\nprint(f\"My numbers: {numbers}\")\nprint(f\"Sum of numbers: {sum(numbers)}\")\nprint(f\"Largest number: {max(numbers)}\")\n\n# Your turn - add your name\nyour_name = \"Your Name Here\"  # Change this to your actual name\nprint(f\"\\nThis script was created by: {your_name}\")\nprint(\"\\nCongratulations! Your Python environment is working correctly!\")\n\nBefore running, change “Your Name Here” to your actual name\nRun the script:\n\npython hello.py\n\nYou should see output showing the calculations and your name\n\nExpected Output:\nWelcome to Python Programming!\n========================================\n\nLet's do some basic math:\n10 + 5 = 15\n10 - 5 = 5\n10 * 5 = 50\n10 / 5 = 2.0\n\nWorking with a list of numbers:\nMy numbers: [1, 2, 3, 4, 5]\nSum of numbers: 15\nLargest number: 5\n\nThis script was created by: [Your Name]\n\nCongratulations! Your Python environment is working correctly!\nCongratulations! You’ve successfully set up your Python environment and run your first Python script."
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#troubleshooting-common-issues",
+    "href": "posts/2026/initial_install.html#troubleshooting-common-issues",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Troubleshooting Common Issues",
+    "text": "Troubleshooting Common Issues\n\nIssue: “conda: command not found”\nSolution: Anaconda is not in your PATH. Go back to Part 2 and set up environment variables.\n\n\nIssue: “Permission denied” errors on macOS/Linux\nSolution: Add sudo before the command, or check file permissions with chmod.\n\n\nIssue: Packages fail to install\nSolution: Try updating conda first:\nconda update conda\nconda update --all\n\n\nIssue: Jupyter won’t start\nSolution: Make sure jupyter is installed in your active environment:\nconda install jupyter -y\n\n\nIssue: Environment activation doesn’t work\nSolution: - Windows: Use Anaconda Prompt instead of regular Command Prompt - Mac/Linux: Make sure you’ve run conda init after installation"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#preparation-for-next-lab",
+    "href": "posts/2026/initial_install.html#preparation-for-next-lab",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Preparation for Next Lab",
+    "text": "Preparation for Next Lab\nBefore the next lab session:\n\nPractice creating a new environment called practice_env\nInstall numpy and matplotlib packages in it\nCreate a simple Python script that prints your name and the current date\nExplore the Jupyter notebook interface and try creating cells with markdown text"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#assignment-submission-setup",
+    "href": "posts/2026/initial_install.html#assignment-submission-setup",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Assignment Submission Setup",
+    "text": "Assignment Submission Setup\nFor course assignments:\n\nAlways activate course_env before starting work\nOrganize your work in folders by week/assignment\nUse Jupyter notebooks for assignments that require visualization\nUse .py scripts for pure code assignments\nInclude comments in your code explaining what each section does"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#quick-start-checklist",
+    "href": "posts/2026/initial_install.html#quick-start-checklist",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Quick Start Checklist",
+    "text": "Quick Start Checklist\nUse this checklist at the start of each assignment:\n\nOpen terminal/command prompt\nNavigate to your assignment folder: cd path/to/assignment\nActivate environment: conda activate course_env\nStart Jupyter (if needed): jupyter notebook\nBegin working on your assignment"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#additional-resources",
+    "href": "posts/2026/initial_install.html#additional-resources",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nAnaconda Documentation\nConda Cheat Sheet\nJupyter Notebook Documentation\nPython Official Tutorial"
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#questions",
+    "href": "posts/2026/initial_install.html#questions",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Questions?",
+    "text": "Questions?\nIf you encounter any issues during the lab, raise your hand and ask for help. Make sure you have a working setup before leaving today, as you’ll need it for all future assignments.\n\nLab Complete! You’re now ready to start programming in Python for this course."
+  },
+  {
+    "objectID": "posts/2026/initial_install.html#understanding-the-basics",
+    "href": "posts/2026/initial_install.html#understanding-the-basics",
+    "title": "Setting Up Your Python Development Environment",
+    "section": "Understanding the Basics",
+    "text": "Understanding the Basics\nBefore we start installing software, let’s understand some key concepts that will help you throughout this course.\n\nWhat are Virtual Environments?\nThink of a virtual environment as a separate workspace for each of your projects. Imagine you have two different projects:\n\nProject A needs Python 3.9 and version 1.0 of a package called “data-tools”\nProject B needs Python 3.11 and version 2.0 of the same “data-tools” package\n\nWithout virtual environments, you could only have one version installed at a time, and switching between projects would be a nightmare. Virtual environments solve this problem by creating isolated spaces where each project can have its own Python version and packages without interfering with each other.\nKey benefits of virtual environments:\n\nKeep different projects separate and organized\nAvoid conflicts between package versions\nMake it easy to share your project setup with others\nPrevent accidentally breaking one project while working on another\n\n\n\nPython Scripts vs Jupyter Notebooks\nPython code can be written and executed in different ways. The two most common formats you’ll use are:\nPython Scripts (.py files):\nPython scripts are plain text files containing Python code, saved with a .py extension. They are:\n\nSimple text files you can edit in any text editor\nRun from start to finish in one go\nGood for automation, data processing, and final production code\nExample: my_program.py\n\nWhen you run a script, Python executes all the code from top to bottom and then exits.\nJupyter Notebooks (.ipynb files):\nJupyter Notebooks are interactive documents that combine code, text, and visualizations. They are:\n\nDivided into “cells” that can be run independently\nInteractive - you can run code, see results immediately, and modify your approach\nGreat for data exploration, learning, and creating reports\nCan include formatted text, equations, images, and plots alongside your code\nExample: data_analysis.ipynb\n\nIn a notebook, you can run one cell at a time, experiment with different approaches, and see the results right away. This makes them perfect for learning and data analysis.\nWhen to use each:\n\nUse scripts for: homework assignments that just need final code, automated tasks, programs that run repeatedly\nUse notebooks for: exploring data, learning new concepts, creating reports with visualizations, step-by-step analysis\n\nIn this course, you may use both depending on the assignment requirements."
   }
 ]
