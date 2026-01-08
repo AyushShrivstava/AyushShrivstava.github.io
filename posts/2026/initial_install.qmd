@@ -1,8 +1,9 @@
 ---
 title: "Setting Up Your Python Development Environment"
 subtitle: "Installing Anaconda and Configuring Your First Environment"
-author: "Your Name"
-date: today
+author: Ayush Shrivastava
+date: 2026-01-15
+categories: [Python, Anaconda, Setup, Virtual Environments]
 format:
   html:
     toc: true
