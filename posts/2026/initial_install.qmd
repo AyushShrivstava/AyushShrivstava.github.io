@@ -2,6 +2,7 @@
 title: "Setting Up Your Python Development Environment"
 subtitle: "Installing Anaconda and Configuring Your First Environment"
 author: Ayush Shrivastava
+image: /images/blogs/initial_install/thumbnail.png
 date: 2026-01-08
 categories: [Python, Anaconda, Setup, Virtual Environments]
 format:
