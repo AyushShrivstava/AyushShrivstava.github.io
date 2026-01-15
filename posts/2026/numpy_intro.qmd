@@ -1514,7 +1514,7 @@ You have test scores of 50 students stored in an array. The scores are: Create a
 
 # Conclusion
 
-Congratulations! You now know:
+You now know:
 
 - What NumPy is and why it's useful
 - How to create and manipulate arrays
@@ -1523,8 +1523,5 @@ Congratulations! You now know:
 - Why NumPy is faster and uses less memory
 - How data is stored in memory
 
-Keep practicing and you'll become a NumPy expert in no time!
 
 ---
-
-**Remember:** NumPy is your friend for anything involving numbers!
