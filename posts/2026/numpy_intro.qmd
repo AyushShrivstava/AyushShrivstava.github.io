@@ -1,0 +1,1530 @@
+---
+title: "NumPy Tutorial 1"
+subtitle: "A comprehensive introduction to NumPy"
+author: "Ayush Shrivastava"
+date: 2026-01-15
+categories: [Python, NumPy, Data Science, Tutorial]
+format: 
+  html:
+    code-fold: false
+    toc: true
+---
+
+# Introduction to NumPy
+
+## What is NumPy?
+
+NumPy stands for **Numerical Python**. Think of it as a super-powered calculator for Python that can work with large amounts of numbers very quickly.
+
+**Why do we need NumPy?**
+
+- Python lists are slow when working with lots of numbers
+- NumPy is much faster (sometimes 100x faster!)
+- Makes mathematical operations easy
+- Used in Data Science, Machine Learning, and AI
+
+## Installing NumPy
+
+Open your terminal or command prompt and type:
+
+```bash
+pip install numpy
+```
+
+That's it! NumPy is now installed.
+
+# Creating NumPy Arrays
+
+## What is an Array?
+
+An array is like a list, but designed specifically for numbers. Let's see how to create them:
+
+```python
+# First, we need to import NumPy
+# 'np' is a short name we use instead of typing 'numpy' every time
+import numpy as np
+
+# Check if NumPy is installed correctly
+print("NumPy version:", np.__version__)
+```
+
+**Output:**
+```
+NumPy version: 1.24.3
+```
+
+## Creating Arrays from Lists
+
+```python
+# Creating a simple 1D array (like a row of numbers)
+my_list = [1, 2, 3, 4, 5]
+my_array = np.array(my_list)
+
+print("Original list:", my_list)
+print("NumPy array:", my_array)
+print("Type:", type(my_array))
+```
+
+**Output:**
+```
+Original list: [1, 2, 3, 4, 5]
+NumPy array: [1 2 3 4 5]
+Type: <class 'numpy.ndarray'>
+```
+
+```python
+# Creating a 2D array (like a table or matrix)
+# This is like having multiple rows
+my_2d_list = [[1, 2, 3], 
+              [4, 5, 6], 
+              [7, 8, 9]]
+
+my_2d_array = np.array(my_2d_list)
+
+print("2D Array:")
+print(my_2d_array)
+```
+
+**Output:**
+```
+2D Array:
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+```
+
+## Other Ways to Create Arrays
+
+### Creating Arrays of Zeros
+
+Useful when you need to initialize an array and fill values later.
+
+```python
+# Array of zeros
+zeros = np.zeros(5)
+print("Array of zeros:", zeros)
+
+# 2D array of zeros
+zeros_2d = np.zeros((3, 4))  # 3 rows, 4 columns
+print("2D array of zeros:")
+print(zeros_2d)
+```
+
+**Output:**
+```
+Array of zeros: [0. 0. 0. 0. 0.]
+2D array of zeros:
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+```
+
+### Creating Arrays of Ones
+
+Similar to zeros, but filled with ones.
+
+```python
+# Array of ones
+ones = np.ones(5)
+print("Array of ones:", ones)
+
+# 2D array of ones
+ones_2d = np.ones((2, 3))
+print("2D array of ones:")
+print(ones_2d)
+```
+
+**Output:**
+```
+Array of ones: [1. 1. 1. 1. 1.]
+2D array of ones:
+[[1. 1. 1.]
+ [1. 1. 1.]]
+```
+
+### Creating Arrays with Range
+
+Similar to Python's `range()` function, but creates a NumPy array.
+
+```python
+# Array of numbers in a range
+numbers = np.arange(0, 10, 2)  # Start at 0, end before 10, step by 2
+print("Numbers 0 to 10 (step 2):", numbers)
+
+# Another example
+numbers2 = np.arange(5, 15)  # Default step is 1
+print("Numbers 5 to 14:", numbers2)
+```
+
+**Output:**
+```
+Numbers 0 to 10 (step 2): [0 2 4 6 8]
+Numbers 5 to 14: [ 5  6  7  8  9 10 11 12 13 14]
+```
+
+### Creating Evenly Spaced Arrays
+
+Creates a specified number of evenly spaced values between a start and end point.
+
+```python
+# Array of 5 numbers between 0 and 1
+evenly_spaced = np.linspace(0, 1, 5)
+print("5 numbers from 0 to 1:", evenly_spaced)
+
+# Array of 7 numbers between 0 and 100
+evenly_spaced2 = np.linspace(0, 100, 7)
+print("7 numbers from 0 to 100:", evenly_spaced2)
+```
+
+**Output:**
+```
+5 numbers from 0 to 1: [0.   0.25 0.5  0.75 1.  ]
+7 numbers from 0 to 100: [  0.          16.66666667  33.33333333  50.          66.66666667
+  83.33333333 100.        ]
+```
+
+### Creating Random Arrays
+
+Generate arrays with random values from a uniform distribution between 0 and 1. Each value has an equal probability of being selected. Useful for testing and simulations.
+
+```python
+# Array of random numbers between 0 and 1
+random_array = np.random.rand(5)
+print("Random array (5 elements):", random_array)
+```
+
+**Output:**
+```
+Random array (5 elements): [0.5488135  0.71518937 0.60276338 0.54488318 0.4236548 ]
+```
+
+**Note:** Values are drawn from a uniform distribution where every number between 0 and 1 has equal probability.
+
+### Creating 2D Random Arrays
+
+Create multi-dimensional arrays with random values from a uniform distribution between 0 and 1.
+
+```python
+# 2D array of random numbers
+random_2d = np.random.rand(3, 3)
+print("Random 2D array (3x3):")
+print(random_2d)
+```
+
+**Output:**
+```
+Random 2D array (3x3):
+[[0.64589411 0.43758721 0.891773  ]
+ [0.96366276 0.38344152 0.79172504]
+ [0.52889492 0.56804456 0.92559664]]
+```
+
+### Creating Random Arrays from Normal Distribution
+
+Generate arrays with random values from a standard normal distribution (mean = 0, standard deviation = 1). This is useful for statistical simulations and machine learning.
+
+```python
+# Array from standard normal distribution
+normal_array = np.random.randn(5)
+print("Normal distribution array (5 elements):", normal_array)
+
+# 2D array from normal distribution
+normal_2d = np.random.randn(3, 3)
+print("Normal distribution 2D array (3x3):")
+print(normal_2d)
+```
+
+**Output:**
+```
+Normal distribution array (5 elements): [ 0.49671415 -0.1382643   0.64768854  1.52302986 -0.23415337]
+Normal distribution 2D array (3x3):
+[[-0.23413696  1.57921282  0.76743473]
+ [-0.46947439  0.54256004 -0.46341769]
+ [-0.46572975  0.24196227 -1.91328024]]
+```
+
+**Note:** Values are drawn from a normal (Gaussian) distribution. Most values cluster around 0, with approximately 68% of values between -1 and 1.
+
+### Creating Random Integer Arrays
+
+Generate random integers within a specified range using a discrete uniform distribution (each integer in the range has equal probability).
+
+```python
+# Random integers between a range
+random_ints = np.random.randint(1, 100, size=10)  # 10 random integers between 1 and 99
+print("Random integers (1-99):", random_ints)
+
+# Random integers in a 2D array
+random_ints_2d = np.random.randint(0, 10, size=(3, 4))  # 3x4 array with values 0-9
+print("Random 2D integers (0-9):")
+print(random_ints_2d)
+```
+
+**Output:**
+```
+Random integers (1-99): [44 47 64 67 84  9 83 21 36 87]
+Random 2D integers (0-9):
+[[5 0 3 3]
+ [7 9 3 5]
+ [2 4 7 6]]
+```
+
+**Note:** `randint(low, high)` generates integers from `low` (inclusive) to `high` (exclusive).
+
+# Basic NumPy Methods
+
+## Shape - Finding the Size of Your Array
+
+```python
+# Create a 2D array
+arr = np.array([[1, 2, 3, 4], 
+                [5, 6, 7, 8]])
+
+print("Array:")
+print(arr)
+print("\nShape (rows, columns):", arr.shape)
+print("Total number of elements:", arr.size)
+print("Number of dimensions:", arr.ndim)
+```
+
+**Output:**
+```
+Array:
+[[1 2 3 4]
+ [5 6 7 8]]
+
+Shape (rows, columns): (2, 4)
+Total number of elements: 8
+Number of dimensions: 2
+```
+
+**Understanding shape:** If shape is (2, 4), it means 2 rows and 4 columns.
+
+## Reshape - Changing the Shape
+
+```python
+# Start with a 1D array
+original = np.array([1, 2, 3, 4, 5, 6])
+print("Original array:", original)
+print("Original shape:", original.shape)
+
+# Reshape to 2 rows and 3 columns
+reshaped = original.reshape(2, 3)
+print("\nReshaped to 2x3:")
+print(reshaped)
+
+# Reshape to 3 rows and 2 columns
+reshaped2 = original.reshape(3, 2)
+print("\nReshaped to 3x2:")
+print(reshaped2)
+```
+
+**Output:**
+```
+Original array: [1 2 3 4 5 6]
+Original shape: (6,)
+
+Reshaped to 2x3:
+[[1 2 3]
+ [4 5 6]]
+
+Reshaped to 3x2:
+[[1 2]
+ [3 4]
+ [5 6]]
+```
+
+**Important:** Total elements must remain the same! You can't reshape 6 elements into a 2x4 array (that needs 8 elements).
+
+## Resize - Similar to Reshape
+
+```python
+# Resize changes the array itself
+arr = np.array([1, 2, 3, 4, 5, 6])
+print("Original:", arr)
+
+arr.resize(2, 3)  # This modifies the array directly
+print("After resize:")
+print(arr)
+```
+
+**Output:**
+```
+Original: [1 2 3 4 5 6]
+After resize:
+[[1 2 3]
+ [4 5 6]]
+```
+
+**Difference between reshape and resize:**
+
+- `reshape()` creates a new array with different shape
+- `resize()` modifies the original array
+
+## Statistical Methods - Math Made Easy!
+
+```python
+# Create an array of test scores
+scores = np.array([85, 90, 78, 92, 88, 95, 73, 89])
+
+print("Test Scores:", scores)
+print("\nMean (Average):", np.mean(scores))
+print("Standard Deviation:", np.std(scores))
+print("Minimum Score:", np.min(scores))
+print("Maximum Score:", np.max(scores))
+print("Sum of all scores:", np.sum(scores))
+```
+
+**Output:**
+```
+Test Scores: [85 90 78 92 88 95 73 89]
+
+Mean (Average): 86.25
+Standard Deviation: 6.89
+Minimum Score: 73
+Maximum Score: 95
+Sum of all scores: 690
+```
+
+**What is Standard Deviation?** It tells us how spread out the numbers are. 
+
+- Small standard deviation = numbers are close together
+- Large standard deviation = numbers are spread apart
+
+## Working with Unique Values
+
+```python
+# Create an array with duplicate values
+data = np.array([1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5])
+print("Original array:", data)
+
+# Get unique values
+unique_values = np.unique(data)
+print("Unique values:", unique_values)
+
+# Count occurrences of each unique value
+unique_vals, counts = np.unique(data, return_counts=True)
+print("\nValue counts:")
+for val, count in zip(unique_vals, counts):
+    print(f"  {val}: appears {count} times")
+```
+
+**Output:**
+```
+Original array: [1 2 2 3 3 3 4 4 4 4 5 5 5 5 5]
+Unique values: [1 2 3 4 5]
+
+Value counts:
+  1: appears 1 times
+  2: appears 2 times
+  3: appears 3 times
+  4: appears 4 times
+  5: appears 5 times
+```
+
+**Practical Example:**
+
+```python
+# Student IDs with duplicates (some students enrolled in multiple courses)
+student_ids = np.array([101, 102, 103, 101, 104, 102, 105, 103, 101])
+print("All enrollments:", student_ids)
+
+# Find unique students
+unique_students = np.unique(student_ids)
+print("Unique students:", unique_students)
+print("Total unique students:", len(unique_students))
+```
+
+**Output:**
+```
+All enrollments: [101 102 103 101 104 102 105 103 101]
+Unique students: [101 102 103 104 105]
+Total unique students: 5
+```
+
+## Data Types (dtype)
+
+```python
+# NumPy automatically detects the data type
+int_array = np.array([1, 2, 3])
+print("Integer array:", int_array)
+print("Data type:", int_array.dtype)
+
+float_array = np.array([1.5, 2.7, 3.9])
+print("\nFloat array:", float_array)
+print("Data type:", float_array.dtype)
+
+# You can force a specific type
+forced_float = np.array([1, 2, 3], dtype=np.float64)
+print("\nForced to float:", forced_float)
+print("Data type:", forced_float.dtype)
+```
+
+**Output:**
+```
+Integer array: [1 2 3]
+Data type: int64
+
+Float array: [1.5 2.7 3.9]
+Data type: float64
+
+Forced to float: [1. 2. 3.]
+Data type: float64
+```
+
+# Memory Storage: Row-Major vs Column-Major
+
+NumPy can store 2D arrays in two different ways in computer memory:
+
+**Row-Major (C-style):** Stores one row completely, then the next row (This is default in NumPy)
+
+**Column-Major (Fortran-style):** Stores one column completely, then the next column
+
+```python
+# Create a 2D array
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+
+print("Array:")
+print(arr)
+
+# Check storage order
+print("\nIs Row-Major (C-style)?", arr.flags['C_CONTIGUOUS'])
+print("Is Column-Major (F-style)?", arr.flags['F_CONTIGUOUS'])
+```
+
+**Output:**
+```
+Array:
+[[1 2 3]
+ [4 5 6]]
+
+Is Row-Major (C-style)? True
+Is Column-Major (F-style)? False
+```
+
+**Example:** For the array above:
+
+- **Row-Major storage:** [1, 2, 3, 4, 5, 6] (row by row)
+- **Column-Major storage:** [1, 4, 2, 5, 3, 6] (column by column)
+
+**Why does this matter?** The computer can read data faster when we access it in the order it's stored!
+
+# NumPy vs Lists: The Big Difference!
+
+## Difference 1: Adding Two Collections
+
+```python
+# Python Lists: + means CONCATENATE (join together)
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+result_list = list1 + list2
+print("List + List:", result_list)
+
+# NumPy Arrays: + means ADD element by element
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+result_array = arr1 + arr2
+print("Array + Array:", result_array)
+```
+
+**Output:**
+```
+List + List: [1, 2, 3, 4, 5, 6]
+Array + Array: [5 7 9]
+```
+
+**See the difference?**
+
+- Lists: [1,2,3] + [4,5,6] = [1,2,3,4,5,6] (joined together)
+- Arrays: [1,2,3] + [4,5,6] = [5,7,9] (added element-wise)
+
+## Difference 2: Multiplying by a Number
+
+```python
+# Python Lists: * means REPEAT
+my_list = [1, 2, 3]
+result_list = my_list * 3
+print("List * 3:", result_list)
+
+# NumPy Arrays: * means MULTIPLY each element
+my_array = np.array([1, 2, 3])
+result_array = my_array * 3
+print("Array * 3:", result_array)
+```
+
+**Output:**
+```
+List * 3: [1, 2, 3, 1, 2, 3, 1, 2, 3]
+Array * 3: [3 6 9]
+```
+
+**See the difference?**
+
+- Lists: [1,2,3] * 3 = [1,2,3,1,2,3,1,2,3] (repeated)
+- Arrays: [1,2,3] * 3 = [3,6,9] (each element multiplied)
+
+## Element-wise Multiplication vs Matrix Multiplication
+
+NumPy supports two types of multiplication:
+
+### Element-wise Multiplication (using *)
+
+```python
+# Element-wise multiplication
+arr1 = np.array([[1, 2], [3, 4]])
+arr2 = np.array([[5, 6], [7, 8]])
+
+result = arr1 * arr2
+print("Element-wise multiplication:")
+print(result)
+```
+
+**Output:**
+```
+Element-wise multiplication:
+[[ 5 12]
+ [21 32]]
+```
+
+**Explanation:** Each element is multiplied with the corresponding element in the same position.
+- 1 * 5 = 5
+- 2 * 6 = 12
+- 3 * 7 = 21
+- 4 * 8 = 32
+
+### Matrix Multiplication (using np.dot or @)
+
+```python
+# Matrix multiplication
+arr1 = np.array([[1, 2], [3, 4]])
+arr2 = np.array([[5, 6], [7, 8]])
+
+# Method 1: Using np.dot()
+result1 = np.dot(arr1, arr2)
+print("Matrix multiplication using np.dot():")
+print(result1)
+
+# Method 2: Using @ operator
+result2 = arr1 @ arr2
+print("\nMatrix multiplication using @ operator:")
+print(result2)
+```
+
+**Output:**
+```
+Matrix multiplication using np.dot():
+[[19 22]
+ [43 50]]
+
+Matrix multiplication using @ operator:
+[[19 22]
+ [43 50]]
+```
+
+**Explanation:** This is proper matrix multiplication from linear algebra.
+
+For the first element (row 1, col 1):
+- (1 * 5) + (2 * 7) = 5 + 14 = 19
+
+For the second element (row 1, col 2):
+- (1 * 6) + (2 * 8) = 6 + 16 = 22
+
+For the third element (row 2, col 1):
+- (3 * 5) + (4 * 7) = 15 + 28 = 43
+
+For the fourth element (row 2, col 2):
+- (3 * 6) + (4 * 8) = 18 + 32 = 50
+
+### Quick Comparison
+
+```python
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+print("Original matrices:")
+print("A =")
+print(A)
+print("\nB =")
+print(B)
+
+print("\n" + "="*50)
+print("Element-wise multiplication (A * B):")
+print(A * B)
+
+print("\n" + "="*50)
+print("Matrix multiplication (A @ B):")
+print(A @ B)
+```
+
+**Output:**
+```
+Original matrices:
+A =
+[[1 2]
+ [3 4]]
+
+B =
+[[5 6]
+ [7 8]]
+
+==================================================
+Element-wise multiplication (A * B):
+[[ 5 12]
+ [21 32]]
+
+==================================================
+Matrix multiplication (A @ B):
+[[19 22]
+ [43 50]]
+```
+
+**Key Differences:**
+
+| Operation | Symbol | What it does |
+|-----------|--------|-------------|
+| Element-wise | `*` | Multiplies corresponding elements |
+| Matrix multiplication | `@` or `np.dot()` | Proper linear algebra matrix multiplication |
+
+# How Data is Stored in Memory
+
+## Indexing and Slicing Arrays
+
+### Basic Indexing (1D Arrays)
+
+Accessing individual elements in a NumPy array works similarly to Python lists, using zero-based indexing.
+
+**Accessing the first element:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60])
+print("Array:", arr)
+print("First element:", arr[0])
+```
+
+**Output:**
+```
+Array: [10 20 30 40 50 60]
+First element: 10
+```
+
+**Accessing the third element:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60])
+print("Third element:", arr[2])
+```
+
+**Output:**
+```
+Third element: 30
+```
+
+**Accessing from the end (negative indexing):**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60])
+print("Last element:", arr[-1])
+print("Second to last:", arr[-2])
+```
+
+**Output:**
+```
+Last element: 60
+Second to last: 50
+```
+
+### Slicing (1D Arrays)
+
+Extract a portion of an array using the syntax `array[start:stop:step]`.
+
+**Basic slicing - extract elements from index 2 to 5:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60, 70, 80])
+print("Original array:", arr)
+print("Elements from index 2 to 5:", arr[2:6])  # 6 is exclusive
+```
+
+**Output:**
+```
+Original array: [10 20 30 40 50 60 70 80]
+Elements from index 2 to 5: [30 40 50 60]
+```
+
+**Slicing from the start:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60, 70, 80])
+print("First 4 elements:", arr[:4])
+```
+
+**Output:**
+```
+First 4 elements: [10 20 30 40]
+```
+
+**Slicing to the end:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60, 70, 80])
+print("Elements from index 3 to end:", arr[3:])
+```
+
+**Output:**
+```
+Elements from index 3 to end: [40 50 60 70 80]
+```
+
+**Using step to skip elements:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60, 70, 80])
+print("Every second element:", arr[::2])
+```
+
+**Output:**
+```
+Every second element: [10 30 50 70]
+```
+
+**Reversing an array:**
+
+```python
+arr = np.array([10, 20, 30, 40, 50, 60, 70, 80])
+print("Reverse the array:", arr[::-1])
+```
+
+**Output:**
+```
+Reverse the array: [80 70 60 50 40 30 20 10]
+```
+
+### Indexing in 2D Arrays
+
+For 2D arrays, use `array[row, column]` syntax.
+
+**Creating a 2D array:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12]])
+print("2D Array:")
+print(arr_2d)
+```
+
+**Output:**
+```
+2D Array:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+```
+
+**Accessing element at row 0, column 2:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12]])
+print("Element at row 0, column 2:", arr_2d[0, 2])
+```
+
+**Output:**
+```
+Element at row 0, column 2: 3
+```
+
+**Accessing element at row 2, column 3:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12]])
+print("Element at row 2, column 3:", arr_2d[2, 3])
+```
+
+**Output:**
+```
+Element at row 2, column 3: 12
+```
+
+**Using negative indexing (last row, last column):**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12]])
+print("Last row, last column:", arr_2d[-1, -1])
+```
+
+**Output:**
+```
+Last row, last column: 12
+```
+
+### Slicing in 2D Arrays
+
+Extract rows, columns, or sub-arrays from 2D arrays.
+
+**Creating a 2D array for slicing examples:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12],
+                   [13, 14, 15, 16]])
+print("Original 2D Array:")
+print(arr_2d)
+```
+
+**Output:**
+```
+Original 2D Array:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]]
+```
+
+**Extracting an entire row:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12],
+                   [13, 14, 15, 16]])
+print("First row:", arr_2d[0, :])
+print("Second row:", arr_2d[1, :])
+```
+
+**Output:**
+```
+First row: [1 2 3 4]
+Second row: [5 6 7 8]
+```
+
+**Extracting an entire column:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12],
+                   [13, 14, 15, 16]])
+print("First column:", arr_2d[:, 0])
+print("Third column:", arr_2d[:, 2])
+```
+
+**Output:**
+```
+First column: [ 1  5  9 13]
+Third column: [ 3  7 11 15]
+```
+
+**Extracting a sub-array (first 2 rows, first 3 columns):**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12],
+                   [13, 14, 15, 16]])
+print("First 2 rows, first 3 columns:")
+print(arr_2d[0:2, 0:3])
+```
+
+**Output:**
+```
+First 2 rows, first 3 columns:
+[[1 2 3]
+ [5 6 7]]
+```
+
+**Extracting specific rows and columns:**
+
+```python
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12],
+                   [13, 14, 15, 16]])
+print("Rows 1-2, Columns 2-3:")
+print(arr_2d[1:3, 2:4])
+```
+
+**Output:**
+```
+Rows 1-2, Columns 2-3:
+[[ 7  8]
+ [11 12]]
+```
+
+### Boolean Indexing (Conditional Selection)
+
+Select elements based on conditions.
+
+**Selecting elements greater than 40:**
+
+```python
+arr = np.array([10, 25, 30, 45, 50, 65, 70, 85])
+print("Original array:", arr)
+print("Elements > 40:", arr[arr > 40])
+```
+
+**Output:**
+```
+Original array: [10 25 30 45 50 65 70 85]
+Elements > 40: [45 50 65 70 85]
+```
+
+**Selecting elements within a range:**
+
+```python
+arr = np.array([10, 25, 30, 45, 50, 65, 70, 85])
+print("Original array:", arr)
+print("Elements between 20 and 60:", arr[(arr >= 20) & (arr <= 60)])
+```
+
+**Output:**
+```
+Original array: [10 25 30 45 50 65 70 85]
+Elements between 20 and 60: [25 30 45 50]
+```
+
+**Selecting even numbers:**
+
+```python
+arr = np.array([10, 25, 30, 45, 50, 65, 70, 85])
+print("Original array:", arr)
+print("Even numbers:", arr[arr % 2 == 0])
+```
+
+**Output:**
+```
+Original array: [10 25 30 45 50 65 70 85]
+Even numbers: [10 30 50 70]
+```
+
+### Modifying Array Elements
+
+You can modify array elements using indexing and slicing.
+
+**Modifying a single element:**
+
+```python
+arr = np.array([1, 2, 3, 4, 5])
+print("Original:", arr)
+arr[2] = 99
+print("After modifying index 2:", arr)
+```
+
+**Output:**
+```
+Original: [1 2 3 4 5]
+After modifying index 2: [ 1  2 99  4  5]
+```
+
+**Modifying multiple elements:**
+
+```python
+arr = np.array([1, 2, 3, 4, 5])
+print("Original:", arr)
+arr[0:3] = [10, 20, 30]
+print("After modifying first 3:", arr)
+```
+
+**Output:**
+```
+Original: [1 2 3 4 5]
+After modifying first 3: [10 20 30  4  5]
+```
+
+**Modifying using a condition:**
+
+```python
+arr = np.array([10, 20, 99, 4, 5])
+print("Original:", arr)
+arr[arr > 50] = 50  # Cap all values at 50
+print("After capping at 50:", arr)
+```
+
+**Output:**
+```
+Original: [10 20 99  4  5]
+After capping at 50: [10 20 50  4  5]
+```
+
+# How Data is Stored in Memory
+
+## Python Lists - Scattered Storage
+
+```python
+import sys
+
+# Create a list
+my_list = [10, 20, 30, 40, 50]
+
+# Size of the list structure
+list_size = sys.getsizeof(my_list)
+print(f"Size of list structure: {list_size} bytes")
+
+# Size of one integer object
+one_int_size = sys.getsizeof(my_list[0])
+print(f"Size of one integer: {one_int_size} bytes")
+
+# Total approximate size
+total_size = list_size + (one_int_size * len(my_list))
+print(f"Total approximate size: {total_size} bytes")
+```
+
+**Output:**
+```
+Size of list structure: 120 bytes
+Size of one integer: 28 bytes
+Total approximate size: 260 bytes
+```
+
+**How Lists Store Data:**
+```
+List: [pointer] -> [Integer Object 10]
+      [pointer] -> [Integer Object 20]
+      [pointer] -> [Integer Object 30]
+      ...
+```
+Each number is a separate object in memory!
+
+## NumPy Arrays - Compact Storage
+
+```python
+# Create equivalent NumPy array
+my_array = np.array([10, 20, 30, 40, 50])
+
+# Size in bytes
+array_size = my_array.nbytes
+print(f"Size of entire array: {array_size} bytes")
+print(f"Size per element: {my_array.itemsize} bytes")
+print(f"Total elements: {my_array.size}")
+```
+
+**Output:**
+```
+Size of entire array: 40 bytes
+Size per element: 8 bytes
+Total elements: 5
+```
+
+**How Arrays Store Data:**
+```
+Array: [10][20][30][40][50]  (one continuous block)
+```
+All numbers are stored together in one block!
+
+## Why NumPy Uses Less Memory
+
+```python
+# Compare for larger data
+size = 1000
+big_list = list(range(size))
+big_array = np.array(range(size))
+
+# List structure size
+list_structure_size = sys.getsizeof(big_list)
+
+# Size of integer objects (sample first 100 and estimate)
+sample_int_size = sum(sys.getsizeof(big_list[i]) for i in range(min(100, size)))
+avg_int_size = sample_int_size / min(100, size)
+total_int_size = avg_int_size * size
+
+# Total list size (structure + all integer objects)
+total_list_size = list_structure_size + total_int_size
+
+print(f"List structure size: {list_structure_size} bytes")
+print(f"Average integer object size: {avg_int_size:.0f} bytes")
+print(f"Total integer objects size: {total_int_size:.0f} bytes")
+print(f"Total list size (structure + objects): {total_list_size:.0f} bytes")
+print(f"\nNumPy array size: {big_array.nbytes} bytes")
+print(f"\nNumPy uses approximately {total_list_size / big_array.nbytes:.1f}x less memory!")
+```
+
+**Output:**
+```
+List structure size: 8056 bytes
+Average integer object size: 28 bytes
+Total integer objects size: 27960 bytes
+Total list size (structure + objects): 36016 bytes
+
+NumPy array size: 8000 bytes
+
+NumPy uses approximately 4.5x less memory!
+```
+
+# Speed Test: NumPy vs Lists
+
+Let's multiply two matrices (tables of numbers) and see which is faster!
+
+## Matrix Multiplication with Lists (Slow Way)
+
+```python
+def multiply_matrices_with_lists(A, B):
+    """Multiply two matrices using Python lists"""
+    rows_A = len(A)
+    cols_A = len(A[0])
+    cols_B = len(B[0])
+    
+    # Create result matrix filled with zeros
+    result = []
+    for i in range(rows_A):
+        row = []
+        for j in range(cols_B):
+            row.append(0)
+        result.append(row)
+    
+    # Perform multiplication
+    for i in range(rows_A):
+        for j in range(cols_B):
+            for k in range(cols_A):
+                result[i][j] += A[i][k] * B[k][j]
+    
+    return result
+
+# Test with small example
+A_list = [[1, 2], [3, 4]]
+B_list = [[5, 6], [7, 8]]
+
+result = multiply_matrices_with_lists(A_list, B_list)
+print("Result of matrix multiplication:")
+for row in result:
+    print(row)
+```
+
+**Output:**
+```
+Result of matrix multiplication:
+[19, 22]
+[43, 50]
+```
+
+## Matrix Multiplication with NumPy (Fast Way)
+
+```python
+# Same multiplication with NumPy
+A_array = np.array([[1, 2], [3, 4]])
+B_array = np.array([[5, 6], [7, 8]])
+
+result_np = np.dot(A_array, B_array)
+print("Result of matrix multiplication:")
+print(result_np)
+```
+
+**Output:**
+```
+Result of matrix multiplication:
+[[19 22]
+ [43 50]]
+```
+
+## Performance Comparison
+
+```python
+import time
+
+# Create larger matrices for timing
+size = 100
+
+# Create random matrices
+list_A = [[float(i+j) for j in range(size)] for i in range(size)]
+list_B = [[float(i-j) for j in range(size)] for i in range(size)]
+
+np_A = np.array(list_A)
+np_B = np.array(list_B)
+
+# Number of runs for averaging
+num_runs = 500
+
+# Time the list version (multiple runs)
+list_times = []
+for _ in range(num_runs):
+    start_time = time.time()
+    result_list = multiply_matrices_with_lists(list_A, list_B)
+    list_times.append(time.time() - start_time)
+
+avg_list_time = sum(list_times) / num_runs
+
+# Time the NumPy version (multiple runs)
+numpy_times = []
+for _ in range(num_runs):
+    start_time = time.time()
+    result_np = np.dot(np_A, np_B)
+    numpy_times.append(time.time() - start_time)
+
+avg_numpy_time = sum(numpy_times) / num_runs
+
+print(f"Matrix size: {size} x {size}")
+print(f"Number of runs: {num_runs}")
+print(f"\nPython Lists:")
+print(f"  Average time: {avg_list_time:.6f} seconds")
+print(f"  Min time: {min(list_times):.6f} seconds")
+print(f"  Max time: {max(list_times):.6f} seconds")
+
+print(f"\nNumPy:")
+print(f"  Average time: {avg_numpy_time:.6f} seconds")
+print(f"  Min time: {min(numpy_times):.6f} seconds")
+print(f"  Max time: {max(numpy_times):.6f} seconds")
+
+print(f"\nNumPy is {avg_list_time/avg_numpy_time:.1f}x FASTER!")
+```
+
+**Expected Output:**
+```
+Matrix size: 100 x 100
+Number of runs: 500
+
+Python Lists:
+  Average time: 2.345678 seconds
+  Min time: 2.320145 seconds
+  Max time: 2.378923 seconds
+
+NumPy:
+  Average time: 0.003401 seconds
+  Min time: 0.003201 seconds
+  Max time: 0.003789 seconds
+
+NumPy is 689.9x FASTER!
+```
+
+# Memory Usage Comparison
+
+```python
+import tracemalloc
+
+# Function to measure memory
+def measure_memory(func, *args):
+    tracemalloc.start()
+    result = func(*args)
+    current, peak = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    return peak / 1024 / 1024  # Convert to MB
+
+# Create test data
+size = 200
+list_A = [[float(i+j) for j in range(size)] for i in range(size)]
+list_B = [[float(i-j) for j in range(size)] for i in range(size)]
+
+np_A = np.array(list_A)
+np_B = np.array(list_B)
+
+# Measure memory for lists
+list_memory = measure_memory(multiply_matrices_with_lists, list_A, list_B)
+
+# Measure memory for NumPy
+numpy_memory = measure_memory(np.dot, np_A, np_B)
+
+print(f"Matrix size: {size} x {size}")
+print(f"\nPython Lists used: {list_memory:.2f} MB")
+print(f"NumPy used: {numpy_memory:.2f} MB")
+print(f"\nNumPy uses {list_memory/numpy_memory:.1f}x LESS memory!")
+```
+
+**Expected Output:**
+```
+Matrix size: 200 x 200
+
+Python Lists used: 2.45 MB
+NumPy used: 0.62 MB
+
+NumPy uses 4.0x LESS memory!
+```
+
+# Summary: NumPy vs Lists
+
+| Feature | Python Lists | NumPy Arrays |
+|---------|-------------|--------------|
+| **Speed** | Slow | Very Fast |
+| **Memory** | Uses more | Uses less |
+| **Addition (+)** | Concatenates | Element-wise add |
+| **Multiplication (*)** | Repeats | Element-wise multiply |
+| **Data Type** | Mixed types OK | Same type only |
+| **Storage** | Scattered | Contiguous block |
+| **Math Operations** | Need loops | Built-in |
+
+# When to Use What?
+
+## Use NumPy Arrays when:
+- Working with numbers and math
+- Need speed and efficiency
+- Doing calculations on large data
+- Working with matrices
+- Doing scientific computing
+
+## Use Python Lists when:
+- Need different types of data together
+- Small amount of data
+- Need to frequently add/remove items
+- Don't need mathematical operations
+
+# Practice Exercise
+
+Try this yourself:
+
+1. Create a NumPy array of numbers from 1 to 100
+2. Calculate the mean and standard deviation
+3. Reshape it into a 10x10 matrix
+4. Multiply it by 2
+
+```python
+# Solution
+# Step 1
+numbers = np.arange(1, 101)
+print("Array:", numbers)
+
+# Step 2
+print(f"\nMean: {np.mean(numbers)}")
+print(f"Standard Deviation: {np.std(numbers)}")
+
+# Step 3
+matrix = numbers.reshape(10, 10)
+print("\n10x10 Matrix:")
+print(matrix)
+
+# Step 4
+doubled = matrix * 2
+print("\nDoubled Matrix:")
+print(doubled)
+```
+
+**Expected Output:**
+```
+Array: [  1   2   3 ...  98  99 100]
+
+Mean: 50.5
+Standard Deviation: 28.86607004772212
+
+10x10 Matrix:
+[[  1   2   3   4   5   6   7   8   9  10]
+ [ 11  12  13  14  15  16  17  18  19  20]
+ ...
+ [ 91  92  93  94  95  96  97  98  99 100]]
+
+Doubled Matrix:
+[[  2   4   6   8  10  12  14  16  18  20]
+ [ 22  24  26  28  30  32  34  36  38  40]
+ ...
+ [182 184 186 188 190 192 194 196 198 200]]
+```
+
+# Practice Questions
+
+Test your understanding with these exercises. Solve them in your notebook!
+
+## Question 1: Array Creation
+Create a 1D NumPy array containing the first 20 even numbers (2, 4, 6, ..., 40).
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 2: 2D Array and Shape
+Create a 2D array of shape (4, 5) filled with random integers between 10 and 50. Print the shape, size, and number of dimensions.
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 3: Statistical Analysis
+Create an array of 100 random numbers from a normal distribution. Calculate and print:
+- Mean
+- Standard deviation
+- Minimum value
+- Maximum value
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 4: Array Reshaping
+Create a 1D array with numbers from 1 to 24. Reshape it into:
+- A 2D array of shape (4, 6)
+- A 2D array of shape (6, 4)
+- A 3D array of shape (2, 3, 4)
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 5: Element-wise Operations
+Create two arrays: one with [1, 2, 3, 4, 5] and another with [10, 20, 30, 40, 50]. Perform:
+- Element-wise addition
+- Element-wise subtraction
+- Element-wise multiplication
+- Element-wise division
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 6: Finding Unique Values
+Create an array with the following values: [5, 2, 8, 2, 9, 5, 3, 8, 5, 1]. Find:
+- All unique values
+- How many times each unique value appears
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 7: Array Slicing
+Create a 5x5 array with random integers between 1 and 100. Extract:
+- The first row
+- The last column
+- A 2x2 sub-array from the center
+- All elements greater than 50
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 8: Matrix Multiplication
+Create two 3x3 matrices with random integers between 1 and 10. Perform:
+- Element-wise multiplication
+- Matrix multiplication (using both np.dot() and @ operator)
+- Compare the results
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 9: Array Comparison
+Create two arrays of shape (3, 4) with random integers between 1 and 20. Compare them to find:
+- Elements where array1 is greater than array2
+- Elements where both arrays have the same value
+- The total count of elements where array1 > array2
+
+```python
+# Write your code here in your notebook
+```
+
+## Question 10: Real-world Application
+You have test scores of 50 students stored in an array. The scores are: Create an array with random integers between 40 and 100 (representing scores). Calculate:
+- Class average
+- How many students scored above 75
+- How many students failed (score < 50)
+- The percentage of students who passed
+
+```python
+# Write your code here in your notebook
+```
+
+# Conclusion
+
+Congratulations! You now know:
+
+- What NumPy is and why it's useful
+- How to create and manipulate arrays
+- Basic NumPy methods (shape, mean, std, etc.)
+- Difference between NumPy and Lists
+- Why NumPy is faster and uses less memory
+- How data is stored in memory
+
+Keep practicing and you'll become a NumPy expert in no time!
+
+---
+
+**Remember:** NumPy is your friend for anything involving numbers!

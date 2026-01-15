@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.46">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ayush Shrivastava">
+<meta name="dcterms.date" content="2026-01-15">
+
+<title>NumPy Tutorial 1 – Homepage</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Homepage</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../publication.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">BlogPosts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../gallery.html"> 
+<span class="menu-text">Gallery</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../files/Ayush_Master_CV.pdf"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-numpy" id="toc-introduction-to-numpy" class="nav-link active" data-scroll-target="#introduction-to-numpy">Introduction to NumPy</a>
+  <ul class="collapse">
+  <li><a href="#what-is-numpy" id="toc-what-is-numpy" class="nav-link" data-scroll-target="#what-is-numpy">What is NumPy?</a></li>
+  <li><a href="#installing-numpy" id="toc-installing-numpy" class="nav-link" data-scroll-target="#installing-numpy">Installing NumPy</a></li>
+  </ul></li>
+  <li><a href="#creating-numpy-arrays" id="toc-creating-numpy-arrays" class="nav-link" data-scroll-target="#creating-numpy-arrays">Creating NumPy Arrays</a>
+  <ul class="collapse">
+  <li><a href="#what-is-an-array" id="toc-what-is-an-array" class="nav-link" data-scroll-target="#what-is-an-array">What is an Array?</a></li>
+  <li><a href="#creating-arrays-from-lists" id="toc-creating-arrays-from-lists" class="nav-link" data-scroll-target="#creating-arrays-from-lists">Creating Arrays from Lists</a></li>
+  <li><a href="#other-ways-to-create-arrays" id="toc-other-ways-to-create-arrays" class="nav-link" data-scroll-target="#other-ways-to-create-arrays">Other Ways to Create Arrays</a>
+  <ul class="collapse">
+  <li><a href="#creating-arrays-of-zeros" id="toc-creating-arrays-of-zeros" class="nav-link" data-scroll-target="#creating-arrays-of-zeros">Creating Arrays of Zeros</a></li>
+  <li><a href="#creating-arrays-of-ones" id="toc-creating-arrays-of-ones" class="nav-link" data-scroll-target="#creating-arrays-of-ones">Creating Arrays of Ones</a></li>
+  <li><a href="#creating-arrays-with-range" id="toc-creating-arrays-with-range" class="nav-link" data-scroll-target="#creating-arrays-with-range">Creating Arrays with Range</a></li>
+  <li><a href="#creating-evenly-spaced-arrays" id="toc-creating-evenly-spaced-arrays" class="nav-link" data-scroll-target="#creating-evenly-spaced-arrays">Creating Evenly Spaced Arrays</a></li>
+  <li><a href="#creating-random-arrays" id="toc-creating-random-arrays" class="nav-link" data-scroll-target="#creating-random-arrays">Creating Random Arrays</a></li>
+  <li><a href="#creating-2d-random-arrays" id="toc-creating-2d-random-arrays" class="nav-link" data-scroll-target="#creating-2d-random-arrays">Creating 2D Random Arrays</a></li>
+  <li><a href="#creating-random-arrays-from-normal-distribution" id="toc-creating-random-arrays-from-normal-distribution" class="nav-link" data-scroll-target="#creating-random-arrays-from-normal-distribution">Creating Random Arrays from Normal Distribution</a></li>
+  <li><a href="#creating-random-integer-arrays" id="toc-creating-random-integer-arrays" class="nav-link" data-scroll-target="#creating-random-integer-arrays">Creating Random Integer Arrays</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#basic-numpy-methods" id="toc-basic-numpy-methods" class="nav-link" data-scroll-target="#basic-numpy-methods">Basic NumPy Methods</a>
+  <ul class="collapse">
+  <li><a href="#shape---finding-the-size-of-your-array" id="toc-shape---finding-the-size-of-your-array" class="nav-link" data-scroll-target="#shape---finding-the-size-of-your-array">Shape - Finding the Size of Your Array</a></li>
+  <li><a href="#reshape---changing-the-shape" id="toc-reshape---changing-the-shape" class="nav-link" data-scroll-target="#reshape---changing-the-shape">Reshape - Changing the Shape</a></li>
+  <li><a href="#resize---similar-to-reshape" id="toc-resize---similar-to-reshape" class="nav-link" data-scroll-target="#resize---similar-to-reshape">Resize - Similar to Reshape</a></li>
+  <li><a href="#statistical-methods---math-made-easy" id="toc-statistical-methods---math-made-easy" class="nav-link" data-scroll-target="#statistical-methods---math-made-easy">Statistical Methods - Math Made Easy!</a></li>
+  <li><a href="#working-with-unique-values" id="toc-working-with-unique-values" class="nav-link" data-scroll-target="#working-with-unique-values">Working with Unique Values</a></li>
+  <li><a href="#data-types-dtype" id="toc-data-types-dtype" class="nav-link" data-scroll-target="#data-types-dtype">Data Types (dtype)</a></li>
+  </ul></li>
+  <li><a href="#memory-storage-row-major-vs-column-major" id="toc-memory-storage-row-major-vs-column-major" class="nav-link" data-scroll-target="#memory-storage-row-major-vs-column-major">Memory Storage: Row-Major vs Column-Major</a></li>
+  <li><a href="#numpy-vs-lists-the-big-difference" id="toc-numpy-vs-lists-the-big-difference" class="nav-link" data-scroll-target="#numpy-vs-lists-the-big-difference">NumPy vs Lists: The Big Difference!</a>
+  <ul class="collapse">
+  <li><a href="#difference-1-adding-two-collections" id="toc-difference-1-adding-two-collections" class="nav-link" data-scroll-target="#difference-1-adding-two-collections">Difference 1: Adding Two Collections</a></li>
+  <li><a href="#difference-2-multiplying-by-a-number" id="toc-difference-2-multiplying-by-a-number" class="nav-link" data-scroll-target="#difference-2-multiplying-by-a-number">Difference 2: Multiplying by a Number</a></li>
+  <li><a href="#element-wise-multiplication-vs-matrix-multiplication" id="toc-element-wise-multiplication-vs-matrix-multiplication" class="nav-link" data-scroll-target="#element-wise-multiplication-vs-matrix-multiplication">Element-wise Multiplication vs Matrix Multiplication</a>
+  <ul class="collapse">
+  <li><a href="#element-wise-multiplication-using" id="toc-element-wise-multiplication-using" class="nav-link" data-scroll-target="#element-wise-multiplication-using">Element-wise Multiplication (using *)</a></li>
+  <li><a href="#matrix-multiplication-using-np.dot-or" id="toc-matrix-multiplication-using-np.dot-or" class="nav-link" data-scroll-target="#matrix-multiplication-using-np.dot-or">Matrix Multiplication (using np.dot or @)</a></li>
+  <li><a href="#quick-comparison" id="toc-quick-comparison" class="nav-link" data-scroll-target="#quick-comparison">Quick Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#how-data-is-stored-in-memory" id="toc-how-data-is-stored-in-memory" class="nav-link" data-scroll-target="#how-data-is-stored-in-memory">How Data is Stored in Memory</a>
+  <ul class="collapse">
+  <li><a href="#indexing-and-slicing-arrays" id="toc-indexing-and-slicing-arrays" class="nav-link" data-scroll-target="#indexing-and-slicing-arrays">Indexing and Slicing Arrays</a>
+  <ul class="collapse">
+  <li><a href="#basic-indexing-1d-arrays" id="toc-basic-indexing-1d-arrays" class="nav-link" data-scroll-target="#basic-indexing-1d-arrays">Basic Indexing (1D Arrays)</a></li>
+  <li><a href="#slicing-1d-arrays" id="toc-slicing-1d-arrays" class="nav-link" data-scroll-target="#slicing-1d-arrays">Slicing (1D Arrays)</a></li>
+  <li><a href="#indexing-in-2d-arrays" id="toc-indexing-in-2d-arrays" class="nav-link" data-scroll-target="#indexing-in-2d-arrays">Indexing in 2D Arrays</a></li>
+  <li><a href="#slicing-in-2d-arrays" id="toc-slicing-in-2d-arrays" class="nav-link" data-scroll-target="#slicing-in-2d-arrays">Slicing in 2D Arrays</a></li>
+  <li><a href="#boolean-indexing-conditional-selection" id="toc-boolean-indexing-conditional-selection" class="nav-link" data-scroll-target="#boolean-indexing-conditional-selection">Boolean Indexing (Conditional Selection)</a></li>
+  <li><a href="#modifying-array-elements" id="toc-modifying-array-elements" class="nav-link" data-scroll-target="#modifying-array-elements">Modifying Array Elements</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#how-data-is-stored-in-memory-1" id="toc-how-data-is-stored-in-memory-1" class="nav-link" data-scroll-target="#how-data-is-stored-in-memory-1">How Data is Stored in Memory</a>
+  <ul class="collapse">
+  <li><a href="#python-lists---scattered-storage" id="toc-python-lists---scattered-storage" class="nav-link" data-scroll-target="#python-lists---scattered-storage">Python Lists - Scattered Storage</a></li>
+  <li><a href="#numpy-arrays---compact-storage" id="toc-numpy-arrays---compact-storage" class="nav-link" data-scroll-target="#numpy-arrays---compact-storage">NumPy Arrays - Compact Storage</a></li>
+  <li><a href="#why-numpy-uses-less-memory" id="toc-why-numpy-uses-less-memory" class="nav-link" data-scroll-target="#why-numpy-uses-less-memory">Why NumPy Uses Less Memory</a></li>
+  </ul></li>
+  <li><a href="#speed-test-numpy-vs-lists" id="toc-speed-test-numpy-vs-lists" class="nav-link" data-scroll-target="#speed-test-numpy-vs-lists">Speed Test: NumPy vs Lists</a>
+  <ul class="collapse">
+  <li><a href="#matrix-multiplication-with-lists-slow-way" id="toc-matrix-multiplication-with-lists-slow-way" class="nav-link" data-scroll-target="#matrix-multiplication-with-lists-slow-way">Matrix Multiplication with Lists (Slow Way)</a></li>
+  <li><a href="#matrix-multiplication-with-numpy-fast-way" id="toc-matrix-multiplication-with-numpy-fast-way" class="nav-link" data-scroll-target="#matrix-multiplication-with-numpy-fast-way">Matrix Multiplication with NumPy (Fast Way)</a></li>
+  <li><a href="#performance-comparison" id="toc-performance-comparison" class="nav-link" data-scroll-target="#performance-comparison">Performance Comparison</a></li>
+  </ul></li>
+  <li><a href="#memory-usage-comparison" id="toc-memory-usage-comparison" class="nav-link" data-scroll-target="#memory-usage-comparison">Memory Usage Comparison</a></li>
+  <li><a href="#summary-numpy-vs-lists" id="toc-summary-numpy-vs-lists" class="nav-link" data-scroll-target="#summary-numpy-vs-lists">Summary: NumPy vs Lists</a></li>
+  <li><a href="#when-to-use-what" id="toc-when-to-use-what" class="nav-link" data-scroll-target="#when-to-use-what">When to Use What?</a>
+  <ul class="collapse">
+  <li><a href="#use-numpy-arrays-when" id="toc-use-numpy-arrays-when" class="nav-link" data-scroll-target="#use-numpy-arrays-when">Use NumPy Arrays when:</a></li>
+  <li><a href="#use-python-lists-when" id="toc-use-python-lists-when" class="nav-link" data-scroll-target="#use-python-lists-when">Use Python Lists when:</a></li>
+  </ul></li>
+  <li><a href="#practice-exercise" id="toc-practice-exercise" class="nav-link" data-scroll-target="#practice-exercise">Practice Exercise</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice Questions</a>
+  <ul class="collapse">
+  <li><a href="#question-1-array-creation" id="toc-question-1-array-creation" class="nav-link" data-scroll-target="#question-1-array-creation">Question 1: Array Creation</a></li>
+  <li><a href="#question-2-2d-array-and-shape" id="toc-question-2-2d-array-and-shape" class="nav-link" data-scroll-target="#question-2-2d-array-and-shape">Question 2: 2D Array and Shape</a></li>
+  <li><a href="#question-3-statistical-analysis" id="toc-question-3-statistical-analysis" class="nav-link" data-scroll-target="#question-3-statistical-analysis">Question 3: Statistical Analysis</a></li>
+  <li><a href="#question-4-array-reshaping" id="toc-question-4-array-reshaping" class="nav-link" data-scroll-target="#question-4-array-reshaping">Question 4: Array Reshaping</a></li>
+  <li><a href="#question-5-element-wise-operations" id="toc-question-5-element-wise-operations" class="nav-link" data-scroll-target="#question-5-element-wise-operations">Question 5: Element-wise Operations</a></li>
+  <li><a href="#question-6-finding-unique-values" id="toc-question-6-finding-unique-values" class="nav-link" data-scroll-target="#question-6-finding-unique-values">Question 6: Finding Unique Values</a></li>
+  <li><a href="#question-7-array-slicing" id="toc-question-7-array-slicing" class="nav-link" data-scroll-target="#question-7-array-slicing">Question 7: Array Slicing</a></li>
+  <li><a href="#question-8-matrix-multiplication" id="toc-question-8-matrix-multiplication" class="nav-link" data-scroll-target="#question-8-matrix-multiplication">Question 8: Matrix Multiplication</a></li>
+  <li><a href="#question-9-array-comparison" id="toc-question-9-array-comparison" class="nav-link" data-scroll-target="#question-9-array-comparison">Question 9: Array Comparison</a></li>
+  <li><a href="#question-10-real-world-application" id="toc-question-10-real-world-application" class="nav-link" data-scroll-target="#question-10-real-world-application">Question 10: Real-world Application</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">NumPy Tutorial 1</h1>
+<p class="subtitle lead">A comprehensive introduction to NumPy</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">NumPy</div>
+    <div class="quarto-category">Data Science</div>
+    <div class="quarto-category">Tutorial</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ayush Shrivastava </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 15, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-to-numpy" class="level1">
+<h1>Introduction to NumPy</h1>
+<section id="what-is-numpy" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-numpy">What is NumPy?</h2>
+<p>NumPy stands for <strong>Numerical Python</strong>. Think of it as a super-powered calculator for Python that can work with large amounts of numbers very quickly.</p>
+<p><strong>Why do we need NumPy?</strong></p>
+<ul>
+<li>Python lists are slow when working with lots of numbers</li>
+<li>NumPy is much faster (sometimes 100x faster!)</li>
+<li>Makes mathematical operations easy</li>
+<li>Used in Data Science, Machine Learning, and AI</li>
+</ul>
+</section>
+<section id="installing-numpy" class="level2">
+<h2 class="anchored" data-anchor-id="installing-numpy">Installing NumPy</h2>
+<p>Open your terminal or command prompt and type:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That’s it! NumPy is now installed.</p>
+</section>
+</section>
+<section id="creating-numpy-arrays" class="level1">
+<h1>Creating NumPy Arrays</h1>
+<section id="what-is-an-array" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-array">What is an Array?</h2>
+<p>An array is like a list, but designed specifically for numbers. Let’s see how to create them:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, we need to import NumPy</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 'np' is a short name we use instead of typing 'numpy' every time</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if NumPy is installed correctly</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy version:"</span>, np.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>NumPy version: 1.24.3</code></pre>
+</section>
+<section id="creating-arrays-from-lists" class="level2">
+<h2 class="anchored" data-anchor-id="creating-arrays-from-lists">Creating Arrays from Lists</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a simple 1D array (like a row of numbers)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> np.array(my_list)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original list:"</span>, my_list)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy array:"</span>, my_array)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Type:"</span>, <span class="bu">type</span>(my_array))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original list: [1, 2, 3, 4, 5]
+NumPy array: [1 2 3 4 5]
+Type: &lt;class 'numpy.ndarray'&gt;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 2D array (like a table or matrix)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is like having multiple rows</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>my_2d_list <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>my_2d_array <span class="op">=</span> np.array(my_2d_list)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2D Array:"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_2d_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>2D Array:
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]</code></pre>
+</section>
+<section id="other-ways-to-create-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="other-ways-to-create-arrays">Other Ways to Create Arrays</h2>
+<section id="creating-arrays-of-zeros" class="level3">
+<h3 class="anchored" data-anchor-id="creating-arrays-of-zeros">Creating Arrays of Zeros</h3>
+<p>Useful when you need to initialize an array and fill values later.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of zeros</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros(<span class="dv">5</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array of zeros:"</span>, zeros)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D array of zeros</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>zeros_2d <span class="op">=</span> np.zeros((<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># 3 rows, 4 columns</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2D array of zeros:"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Array of zeros: [0. 0. 0. 0. 0.]
+2D array of zeros:
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]</code></pre>
+</section>
+<section id="creating-arrays-of-ones" class="level3">
+<h3 class="anchored" data-anchor-id="creating-arrays-of-ones">Creating Arrays of Ones</h3>
+<p>Similar to zeros, but filled with ones.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of ones</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones(<span class="dv">5</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array of ones:"</span>, ones)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D array of ones</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ones_2d <span class="op">=</span> np.ones((<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2D array of ones:"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ones_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Array of ones: [1. 1. 1. 1. 1.]
+2D array of ones:
+[[1. 1. 1.]
+ [1. 1. 1.]]</code></pre>
+</section>
+<section id="creating-arrays-with-range" class="level3">
+<h3 class="anchored" data-anchor-id="creating-arrays-with-range">Creating Arrays with Range</h3>
+<p>Similar to Python’s <code>range()</code> function, but creates a NumPy array.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of numbers in a range</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)  <span class="co"># Start at 0, end before 10, step by 2</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Numbers 0 to 10 (step 2):"</span>, numbers)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Another example</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>numbers2 <span class="op">=</span> np.arange(<span class="dv">5</span>, <span class="dv">15</span>)  <span class="co"># Default step is 1</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Numbers 5 to 14:"</span>, numbers2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Numbers 0 to 10 (step 2): [0 2 4 6 8]
+Numbers 5 to 14: [ 5  6  7  8  9 10 11 12 13 14]</code></pre>
+</section>
+<section id="creating-evenly-spaced-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="creating-evenly-spaced-arrays">Creating Evenly Spaced Arrays</h3>
+<p>Creates a specified number of evenly spaced values between a start and end point.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of 5 numbers between 0 and 1</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>evenly_spaced <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"5 numbers from 0 to 1:"</span>, evenly_spaced)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of 7 numbers between 0 and 100</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>evenly_spaced2 <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">7</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"7 numbers from 0 to 100:"</span>, evenly_spaced2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>5 numbers from 0 to 1: [0.   0.25 0.5  0.75 1.  ]
+7 numbers from 0 to 100: [  0.          16.66666667  33.33333333  50.          66.66666667
+  83.33333333 100.        ]</code></pre>
+</section>
+<section id="creating-random-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="creating-random-arrays">Creating Random Arrays</h3>
+<p>Generate arrays with random values from a uniform distribution between 0 and 1. Each value has an equal probability of being selected. Useful for testing and simulations.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of random numbers between 0 and 1</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>random_array <span class="op">=</span> np.random.rand(<span class="dv">5</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Random array (5 elements):"</span>, random_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Random array (5 elements): [0.5488135  0.71518937 0.60276338 0.54488318 0.4236548 ]</code></pre>
+<p><strong>Note:</strong> Values are drawn from a uniform distribution where every number between 0 and 1 has equal probability.</p>
+</section>
+<section id="creating-2d-random-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="creating-2d-random-arrays">Creating 2D Random Arrays</h3>
+<p>Create multi-dimensional arrays with random values from a uniform distribution between 0 and 1.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D array of random numbers</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>random_2d <span class="op">=</span> np.random.rand(<span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Random 2D array (3x3):"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Random 2D array (3x3):
+[[0.64589411 0.43758721 0.891773  ]
+ [0.96366276 0.38344152 0.79172504]
+ [0.52889492 0.56804456 0.92559664]]</code></pre>
+</section>
+<section id="creating-random-arrays-from-normal-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="creating-random-arrays-from-normal-distribution">Creating Random Arrays from Normal Distribution</h3>
+<p>Generate arrays with random values from a standard normal distribution (mean = 0, standard deviation = 1). This is useful for statistical simulations and machine learning.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array from standard normal distribution</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>normal_array <span class="op">=</span> np.random.randn(<span class="dv">5</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Normal distribution array (5 elements):"</span>, normal_array)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D array from normal distribution</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>normal_2d <span class="op">=</span> np.random.randn(<span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Normal distribution 2D array (3x3):"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(normal_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Normal distribution array (5 elements): [ 0.49671415 -0.1382643   0.64768854  1.52302986 -0.23415337]
+Normal distribution 2D array (3x3):
+[[-0.23413696  1.57921282  0.76743473]
+ [-0.46947439  0.54256004 -0.46341769]
+ [-0.46572975  0.24196227 -1.91328024]]</code></pre>
+<p><strong>Note:</strong> Values are drawn from a normal (Gaussian) distribution. Most values cluster around 0, with approximately 68% of values between -1 and 1.</p>
+</section>
+<section id="creating-random-integer-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="creating-random-integer-arrays">Creating Random Integer Arrays</h3>
+<p>Generate random integers within a specified range using a discrete uniform distribution (each integer in the range has equal probability).</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Random integers between a range</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>random_ints <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">100</span>, size<span class="op">=</span><span class="dv">10</span>)  <span class="co"># 10 random integers between 1 and 99</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Random integers (1-99):"</span>, random_ints)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Random integers in a 2D array</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>random_ints_2d <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># 3x4 array with values 0-9</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Random 2D integers (0-9):"</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random_ints_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Random integers (1-99): [44 47 64 67 84  9 83 21 36 87]
+Random 2D integers (0-9):
+[[5 0 3 3]
+ [7 9 3 5]
+ [2 4 7 6]]</code></pre>
+<p><strong>Note:</strong> <code>randint(low, high)</code> generates integers from <code>low</code> (inclusive) to <code>high</code> (exclusive).</p>
+</section>
+</section>
+</section>
+<section id="basic-numpy-methods" class="level1">
+<h1>Basic NumPy Methods</h1>
+<section id="shape---finding-the-size-of-your-array" class="level2">
+<h2 class="anchored" data-anchor-id="shape---finding-the-size-of-your-array">Shape - Finding the Size of Your Array</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2D array</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]])</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Shape (rows, columns):"</span>, arr.shape)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Total number of elements:"</span>, arr.size)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of dimensions:"</span>, arr.ndim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Array:
+[[1 2 3 4]
+ [5 6 7 8]]
+
+Shape (rows, columns): (2, 4)
+Total number of elements: 8
+Number of dimensions: 2</code></pre>
+<p><strong>Understanding shape:</strong> If shape is (2, 4), it means 2 rows and 4 columns.</p>
+</section>
+<section id="reshape---changing-the-shape" class="level2">
+<h2 class="anchored" data-anchor-id="reshape---changing-the-shape">Reshape - Changing the Shape</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start with a 1D array</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original shape:"</span>, original.shape)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape to 2 rows and 3 columns</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>reshaped <span class="op">=</span> original.reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Reshaped to 2x3:"</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reshaped)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape to 3 rows and 2 columns</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>reshaped2 <span class="op">=</span> original.reshape(<span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Reshaped to 3x2:"</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reshaped2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original array: [1 2 3 4 5 6]
+Original shape: (6,)
+
+Reshaped to 2x3:
+[[1 2 3]
+ [4 5 6]]
+
+Reshaped to 3x2:
+[[1 2]
+ [3 4]
+ [5 6]]</code></pre>
+<p><strong>Important:</strong> Total elements must remain the same! You can’t reshape 6 elements into a 2x4 array (that needs 8 elements).</p>
+</section>
+<section id="resize---similar-to-reshape" class="level2">
+<h2 class="anchored" data-anchor-id="resize---similar-to-reshape">Resize - Similar to Reshape</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resize changes the array itself</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original:"</span>, arr)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>arr.resize(<span class="dv">2</span>, <span class="dv">3</span>)  <span class="co"># This modifies the array directly</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After resize:"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original: [1 2 3 4 5 6]
+After resize:
+[[1 2 3]
+ [4 5 6]]</code></pre>
+<p><strong>Difference between reshape and resize:</strong></p>
+<ul>
+<li><code>reshape()</code> creates a new array with different shape</li>
+<li><code>resize()</code> modifies the original array</li>
+</ul>
+</section>
+<section id="statistical-methods---math-made-easy" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-methods---math-made-easy">Statistical Methods - Math Made Easy!</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an array of test scores</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> np.array([<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">95</span>, <span class="dv">73</span>, <span class="dv">89</span>])</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test Scores:"</span>, scores)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Mean (Average):"</span>, np.mean(scores))</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standard Deviation:"</span>, np.std(scores))</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Minimum Score:"</span>, np.<span class="bu">min</span>(scores))</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Maximum Score:"</span>, np.<span class="bu">max</span>(scores))</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum of all scores:"</span>, np.<span class="bu">sum</span>(scores))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Test Scores: [85 90 78 92 88 95 73 89]
+
+Mean (Average): 86.25
+Standard Deviation: 6.89
+Minimum Score: 73
+Maximum Score: 95
+Sum of all scores: 690</code></pre>
+<p><strong>What is Standard Deviation?</strong> It tells us how spread out the numbers are.</p>
+<ul>
+<li>Small standard deviation = numbers are close together</li>
+<li>Large standard deviation = numbers are spread apart</li>
+</ul>
+</section>
+<section id="working-with-unique-values" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-unique-values">Working with Unique Values</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an array with duplicate values</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>])</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, data)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get unique values</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>unique_values <span class="op">=</span> np.unique(data)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Unique values:"</span>, unique_values)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Count occurrences of each unique value</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>unique_vals, counts <span class="op">=</span> np.unique(data, return_counts<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Value counts:"</span>)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> val, count <span class="kw">in</span> <span class="bu">zip</span>(unique_vals, counts):</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>val<span class="sc">}</span><span class="ss">: appears </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss"> times"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original array: [1 2 2 3 3 3 4 4 4 4 5 5 5 5 5]
+Unique values: [1 2 3 4 5]
+
+Value counts:
+  1: appears 1 times
+  2: appears 2 times
+  3: appears 3 times
+  4: appears 4 times
+  5: appears 5 times</code></pre>
+<p><strong>Practical Example:</strong></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Student IDs with duplicates (some students enrolled in multiple courses)</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>student_ids <span class="op">=</span> np.array([<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">101</span>, <span class="dv">104</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">103</span>, <span class="dv">101</span>])</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All enrollments:"</span>, student_ids)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Find unique students</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>unique_students <span class="op">=</span> np.unique(student_ids)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Unique students:"</span>, unique_students)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Total unique students:"</span>, <span class="bu">len</span>(unique_students))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>All enrollments: [101 102 103 101 104 102 105 103 101]
+Unique students: [101 102 103 104 105]
+Total unique students: 5</code></pre>
+</section>
+<section id="data-types-dtype" class="level2">
+<h2 class="anchored" data-anchor-id="data-types-dtype">Data Types (dtype)</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy automatically detects the data type</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>int_array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Integer array:"</span>, int_array)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type:"</span>, int_array.dtype)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>float_array <span class="op">=</span> np.array([<span class="fl">1.5</span>, <span class="fl">2.7</span>, <span class="fl">3.9</span>])</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Float array:"</span>, float_array)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type:"</span>, float_array.dtype)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co"># You can force a specific type</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>forced_float <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.float64)</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Forced to float:"</span>, forced_float)</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type:"</span>, forced_float.dtype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Integer array: [1 2 3]
+Data type: int64
+
+Float array: [1.5 2.7 3.9]
+Data type: float64
+
+Forced to float: [1. 2. 3.]
+Data type: float64</code></pre>
+</section>
+</section>
+<section id="memory-storage-row-major-vs-column-major" class="level1">
+<h1>Memory Storage: Row-Major vs Column-Major</h1>
+<p>NumPy can store 2D arrays in two different ways in computer memory:</p>
+<p><strong>Row-Major (C-style):</strong> Stores one row completely, then the next row (This is default in NumPy)</p>
+<p><strong>Column-Major (Fortran-style):</strong> Stores one column completely, then the next column</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2D array</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Check storage order</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Is Row-Major (C-style)?"</span>, arr.flags[<span class="st">'C_CONTIGUOUS'</span>])</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is Column-Major (F-style)?"</span>, arr.flags[<span class="st">'F_CONTIGUOUS'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Array:
+[[1 2 3]
+ [4 5 6]]
+
+Is Row-Major (C-style)? True
+Is Column-Major (F-style)? False</code></pre>
+<p><strong>Example:</strong> For the array above:</p>
+<ul>
+<li><strong>Row-Major storage:</strong> [1, 2, 3, 4, 5, 6] (row by row)</li>
+<li><strong>Column-Major storage:</strong> [1, 4, 2, 5, 3, 6] (column by column)</li>
+</ul>
+<p><strong>Why does this matter?</strong> The computer can read data faster when we access it in the order it’s stored!</p>
+</section>
+<section id="numpy-vs-lists-the-big-difference" class="level1">
+<h1>NumPy vs Lists: The Big Difference!</h1>
+<section id="difference-1-adding-two-collections" class="level2">
+<h2 class="anchored" data-anchor-id="difference-1-adding-two-collections">Difference 1: Adding Two Collections</h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python Lists: + means CONCATENATE (join together)</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>result_list <span class="op">=</span> list1 <span class="op">+</span> list2</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List + List:"</span>, result_list)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy Arrays: + means ADD element by element</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>result_array <span class="op">=</span> arr1 <span class="op">+</span> arr2</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array + Array:"</span>, result_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>List + List: [1, 2, 3, 4, 5, 6]
+Array + Array: [5 7 9]</code></pre>
+<p><strong>See the difference?</strong></p>
+<ul>
+<li>Lists: [1,2,3] + [4,5,6] = [1,2,3,4,5,6] (joined together)</li>
+<li>Arrays: [1,2,3] + [4,5,6] = [5,7,9] (added element-wise)</li>
+</ul>
+</section>
+<section id="difference-2-multiplying-by-a-number" class="level2">
+<h2 class="anchored" data-anchor-id="difference-2-multiplying-by-a-number">Difference 2: Multiplying by a Number</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python Lists: * means REPEAT</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>result_list <span class="op">=</span> my_list <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List * 3:"</span>, result_list)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy Arrays: * means MULTIPLY each element</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>result_array <span class="op">=</span> my_array <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array * 3:"</span>, result_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>List * 3: [1, 2, 3, 1, 2, 3, 1, 2, 3]
+Array * 3: [3 6 9]</code></pre>
+<p><strong>See the difference?</strong></p>
+<ul>
+<li>Lists: [1,2,3] * 3 = [1,2,3,1,2,3,1,2,3] (repeated)</li>
+<li>Arrays: [1,2,3] * 3 = [3,6,9] (each element multiplied)</li>
+</ul>
+</section>
+<section id="element-wise-multiplication-vs-matrix-multiplication" class="level2">
+<h2 class="anchored" data-anchor-id="element-wise-multiplication-vs-matrix-multiplication">Element-wise Multiplication vs Matrix Multiplication</h2>
+<p>NumPy supports two types of multiplication:</p>
+<section id="element-wise-multiplication-using" class="level3">
+<h3 class="anchored" data-anchor-id="element-wise-multiplication-using">Element-wise Multiplication (using *)</h3>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Element-wise multiplication</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> arr1 <span class="op">*</span> arr2</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Element-wise multiplication:"</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Element-wise multiplication:
+[[ 5 12]
+ [21 32]]</code></pre>
+<p><strong>Explanation:</strong> Each element is multiplied with the corresponding element in the same position. - 1 * 5 = 5 - 2 * 6 = 12 - 3 * 7 = 21 - 4 * 8 = 32</p>
+</section>
+<section id="matrix-multiplication-using-np.dot-or" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-multiplication-using-np.dot-or">Matrix Multiplication (using np.dot or @)</h3>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix multiplication</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Using np.dot()</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>result1 <span class="op">=</span> np.dot(arr1, arr2)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matrix multiplication using np.dot():"</span>)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result1)</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Using @ operator</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>result2 <span class="op">=</span> arr1 <span class="op">@</span> arr2</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matrix multiplication using @ operator:"</span>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Matrix multiplication using np.dot():
+[[19 22]
+ [43 50]]
+
+Matrix multiplication using @ operator:
+[[19 22]
+ [43 50]]</code></pre>
+<p><strong>Explanation:</strong> This is proper matrix multiplication from linear algebra.</p>
+<p>For the first element (row 1, col 1): - (1 * 5) + (2 * 7) = 5 + 14 = 19</p>
+<p>For the second element (row 1, col 2): - (1 * 6) + (2 * 8) = 6 + 16 = 22</p>
+<p>For the third element (row 2, col 1): - (3 * 5) + (4 * 7) = 15 + 28 = 43</p>
+<p>For the fourth element (row 2, col 2): - (3 * 6) + (4 * 8) = 18 + 32 = 50</p>
+</section>
+<section id="quick-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="quick-comparison">Quick Comparison</h3>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original matrices:"</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A ="</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">B ="</span>)</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Element-wise multiplication (A * B):"</span>)</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">*</span> B)</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matrix multiplication (A @ B):"</span>)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original matrices:
+A =
+[[1 2]
+ [3 4]]
+
+B =
+[[5 6]
+ [7 8]]
+
+==================================================
+Element-wise multiplication (A * B):
+[[ 5 12]
+ [21 32]]
+
+==================================================
+Matrix multiplication (A @ B):
+[[19 22]
+ [43 50]]</code></pre>
+<p><strong>Key Differences:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 25%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Symbol</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Element-wise</td>
+<td><code>*</code></td>
+<td>Multiplies corresponding elements</td>
+</tr>
+<tr class="even">
+<td>Matrix multiplication</td>
+<td><code>@</code> or <code>np.dot()</code></td>
+<td>Proper linear algebra matrix multiplication</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="how-data-is-stored-in-memory" class="level1">
+<h1>How Data is Stored in Memory</h1>
+<section id="indexing-and-slicing-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="indexing-and-slicing-arrays">Indexing and Slicing Arrays</h2>
+<section id="basic-indexing-1d-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="basic-indexing-1d-arrays">Basic Indexing (1D Arrays)</h3>
+<p>Accessing individual elements in a NumPy array works similarly to Python lists, using zero-based indexing.</p>
+<p><strong>Accessing the first element:</strong></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>])</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>, arr)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element:"</span>, arr[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Array: [10 20 30 40 50 60]
+First element: 10</code></pre>
+<p><strong>Accessing the third element:</strong></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>])</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Third element:"</span>, arr[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Third element: 30</code></pre>
+<p><strong>Accessing from the end (negative indexing):</strong></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>])</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element:"</span>, arr[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Second to last:"</span>, arr[<span class="op">-</span><span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Last element: 60
+Second to last: 50</code></pre>
+</section>
+<section id="slicing-1d-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="slicing-1d-arrays">Slicing (1D Arrays)</h3>
+<p>Extract a portion of an array using the syntax <code>array[start:stop:step]</code>.</p>
+<p><strong>Basic slicing - extract elements from index 2 to 5:</strong></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>])</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, arr)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elements from index 2 to 5:"</span>, arr[<span class="dv">2</span>:<span class="dv">6</span>])  <span class="co"># 6 is exclusive</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original array: [10 20 30 40 50 60 70 80]
+Elements from index 2 to 5: [30 40 50 60]</code></pre>
+<p><strong>Slicing from the start:</strong></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>])</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First 4 elements:"</span>, arr[:<span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>First 4 elements: [10 20 30 40]</code></pre>
+<p><strong>Slicing to the end:</strong></p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>])</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elements from index 3 to end:"</span>, arr[<span class="dv">3</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Elements from index 3 to end: [40 50 60 70 80]</code></pre>
+<p><strong>Using step to skip elements:</strong></p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>])</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Every second element:"</span>, arr[::<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Every second element: [10 30 50 70]</code></pre>
+<p><strong>Reversing an array:</strong></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>])</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Reverse the array:"</span>, arr[::<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Reverse the array: [80 70 60 50 40 30 20 10]</code></pre>
+</section>
+<section id="indexing-in-2d-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="indexing-in-2d-arrays">Indexing in 2D Arrays</h3>
+<p>For 2D arrays, use <code>array[row, column]</code> syntax.</p>
+<p><strong>Creating a 2D array:</strong></p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]])</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2D Array:"</span>)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>2D Array:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]</code></pre>
+<p><strong>Accessing element at row 0, column 2:</strong></p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]])</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Element at row 0, column 2:"</span>, arr_2d[<span class="dv">0</span>, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Element at row 0, column 2: 3</code></pre>
+<p><strong>Accessing element at row 2, column 3:</strong></p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]])</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Element at row 2, column 3:"</span>, arr_2d[<span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Element at row 2, column 3: 12</code></pre>
+<p><strong>Using negative indexing (last row, last column):</strong></p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]])</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last row, last column:"</span>, arr_2d[<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Last row, last column: 12</code></pre>
+</section>
+<section id="slicing-in-2d-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="slicing-in-2d-arrays">Slicing in 2D Arrays</h3>
+<p>Extract rows, columns, or sub-arrays from 2D arrays.</p>
+<p><strong>Creating a 2D array for slicing examples:</strong></p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>],</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]])</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original 2D Array:"</span>)</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original 2D Array:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]]</code></pre>
+<p><strong>Extracting an entire row:</strong></p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>],</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]])</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First row:"</span>, arr_2d[<span class="dv">0</span>, :])</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Second row:"</span>, arr_2d[<span class="dv">1</span>, :])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>First row: [1 2 3 4]
+Second row: [5 6 7 8]</code></pre>
+<p><strong>Extracting an entire column:</strong></p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>],</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]])</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First column:"</span>, arr_2d[:, <span class="dv">0</span>])</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Third column:"</span>, arr_2d[:, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>First column: [ 1  5  9 13]
+Third column: [ 3  7 11 15]</code></pre>
+<p><strong>Extracting a sub-array (first 2 rows, first 3 columns):</strong></p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>],</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]])</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First 2 rows, first 3 columns:"</span>)</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr_2d[<span class="dv">0</span>:<span class="dv">2</span>, <span class="dv">0</span>:<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>First 2 rows, first 3 columns:
+[[1 2 3]
+ [5 6 7]]</code></pre>
+<p><strong>Extracting specific rows and columns:</strong></p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>],</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>                   [<span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]])</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Rows 1-2, Columns 2-3:"</span>)</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr_2d[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">2</span>:<span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Rows 1-2, Columns 2-3:
+[[ 7  8]
+ [11 12]]</code></pre>
+</section>
+<section id="boolean-indexing-conditional-selection" class="level3">
+<h3 class="anchored" data-anchor-id="boolean-indexing-conditional-selection">Boolean Indexing (Conditional Selection)</h3>
+<p>Select elements based on conditions.</p>
+<p><strong>Selecting elements greater than 40:</strong></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">85</span>])</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, arr)</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elements &gt; 40:"</span>, arr[arr <span class="op">&gt;</span> <span class="dv">40</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original array: [10 25 30 45 50 65 70 85]
+Elements &gt; 40: [45 50 65 70 85]</code></pre>
+<p><strong>Selecting elements within a range:</strong></p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">85</span>])</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, arr)</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elements between 20 and 60:"</span>, arr[(arr <span class="op">&gt;=</span> <span class="dv">20</span>) <span class="op">&amp;</span> (arr <span class="op">&lt;=</span> <span class="dv">60</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original array: [10 25 30 45 50 65 70 85]
+Elements between 20 and 60: [25 30 45 50]</code></pre>
+<p><strong>Selecting even numbers:</strong></p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">85</span>])</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, arr)</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Even numbers:"</span>, arr[arr <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original array: [10 25 30 45 50 65 70 85]
+Even numbers: [10 30 50 70]</code></pre>
+</section>
+<section id="modifying-array-elements" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-array-elements">Modifying Array Elements</h3>
+<p>You can modify array elements using indexing and slicing.</p>
+<p><strong>Modifying a single element:</strong></p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original:"</span>, arr)</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>arr[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After modifying index 2:"</span>, arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original: [1 2 3 4 5]
+After modifying index 2: [ 1  2 99  4  5]</code></pre>
+<p><strong>Modifying multiple elements:</strong></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original:"</span>, arr)</span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>arr[<span class="dv">0</span>:<span class="dv">3</span>] <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After modifying first 3:"</span>, arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original: [1 2 3 4 5]
+After modifying first 3: [10 20 30  4  5]</code></pre>
+<p><strong>Modifying using a condition:</strong></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">99</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original:"</span>, arr)</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>arr[arr <span class="op">&gt;</span> <span class="dv">50</span>] <span class="op">=</span> <span class="dv">50</span>  <span class="co"># Cap all values at 50</span></span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After capping at 50:"</span>, arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Original: [10 20 99  4  5]
+After capping at 50: [10 20 50  4  5]</code></pre>
+</section>
+</section>
+</section>
+<section id="how-data-is-stored-in-memory-1" class="level1">
+<h1>How Data is Stored in Memory</h1>
+<section id="python-lists---scattered-storage" class="level2">
+<h2 class="anchored" data-anchor-id="python-lists---scattered-storage">Python Lists - Scattered Storage</h2>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list</span></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of the list structure</span></span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a>list_size <span class="op">=</span> sys.getsizeof(my_list)</span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of list structure: </span><span class="sc">{</span>list_size<span class="sc">}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of one integer object</span></span>
+<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a>one_int_size <span class="op">=</span> sys.getsizeof(my_list[<span class="dv">0</span>])</span>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of one integer: </span><span class="sc">{</span>one_int_size<span class="sc">}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Total approximate size</span></span>
+<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a>total_size <span class="op">=</span> list_size <span class="op">+</span> (one_int_size <span class="op">*</span> <span class="bu">len</span>(my_list))</span>
+<span id="cb96-16"><a href="#cb96-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total approximate size: </span><span class="sc">{</span>total_size<span class="sc">}</span><span class="ss"> bytes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Size of list structure: 120 bytes
+Size of one integer: 28 bytes
+Total approximate size: 260 bytes</code></pre>
+<p><strong>How Lists Store Data:</strong></p>
+<pre><code>List: [pointer] -&gt; [Integer Object 10]
+      [pointer] -&gt; [Integer Object 20]
+      [pointer] -&gt; [Integer Object 30]
+      ...</code></pre>
+<p>Each number is a separate object in memory!</p>
+</section>
+<section id="numpy-arrays---compact-storage" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-arrays---compact-storage">NumPy Arrays - Compact Storage</h2>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create equivalent NumPy array</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes</span></span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>array_size <span class="op">=</span> my_array.nbytes</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of entire array: </span><span class="sc">{</span>array_size<span class="sc">}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size per element: </span><span class="sc">{</span>my_array<span class="sc">.</span>itemsize<span class="sc">}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total elements: </span><span class="sc">{</span>my_array<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Size of entire array: 40 bytes
+Size per element: 8 bytes
+Total elements: 5</code></pre>
+<p><strong>How Arrays Store Data:</strong></p>
+<pre><code>Array: [10][20][30][40][50]  (one continuous block)</code></pre>
+<p>All numbers are stored together in one block!</p>
+</section>
+<section id="why-numpy-uses-less-memory" class="level2">
+<h2 class="anchored" data-anchor-id="why-numpy-uses-less-memory">Why NumPy Uses Less Memory</h2>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare for larger data</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>big_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(size))</span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>big_array <span class="op">=</span> np.array(<span class="bu">range</span>(size))</span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a><span class="co"># List structure size</span></span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a>list_structure_size <span class="op">=</span> sys.getsizeof(big_list)</span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of integer objects (sample first 100 and estimate)</span></span>
+<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>sample_int_size <span class="op">=</span> <span class="bu">sum</span>(sys.getsizeof(big_list[i]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">min</span>(<span class="dv">100</span>, size)))</span>
+<span id="cb102-11"><a href="#cb102-11" aria-hidden="true" tabindex="-1"></a>avg_int_size <span class="op">=</span> sample_int_size <span class="op">/</span> <span class="bu">min</span>(<span class="dv">100</span>, size)</span>
+<span id="cb102-12"><a href="#cb102-12" aria-hidden="true" tabindex="-1"></a>total_int_size <span class="op">=</span> avg_int_size <span class="op">*</span> size</span>
+<span id="cb102-13"><a href="#cb102-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-14"><a href="#cb102-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Total list size (structure + all integer objects)</span></span>
+<span id="cb102-15"><a href="#cb102-15" aria-hidden="true" tabindex="-1"></a>total_list_size <span class="op">=</span> list_structure_size <span class="op">+</span> total_int_size</span>
+<span id="cb102-16"><a href="#cb102-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-17"><a href="#cb102-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"List structure size: </span><span class="sc">{</span>list_structure_size<span class="sc">}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb102-18"><a href="#cb102-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average integer object size: </span><span class="sc">{</span>avg_int_size<span class="sc">:.0f}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb102-19"><a href="#cb102-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total integer objects size: </span><span class="sc">{</span>total_int_size<span class="sc">:.0f}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb102-20"><a href="#cb102-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total list size (structure + objects): </span><span class="sc">{</span>total_list_size<span class="sc">:.0f}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb102-21"><a href="#cb102-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">NumPy array size: </span><span class="sc">{</span>big_array<span class="sc">.</span>nbytes<span class="sc">}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb102-22"><a href="#cb102-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">NumPy uses approximately </span><span class="sc">{</span>total_list_size <span class="op">/</span> big_array<span class="sc">.</span>nbytes<span class="sc">:.1f}</span><span class="ss">x less memory!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>List structure size: 8056 bytes
+Average integer object size: 28 bytes
+Total integer objects size: 27960 bytes
+Total list size (structure + objects): 36016 bytes
+
+NumPy array size: 8000 bytes
+
+NumPy uses approximately 4.5x less memory!</code></pre>
+</section>
+</section>
+<section id="speed-test-numpy-vs-lists" class="level1">
+<h1>Speed Test: NumPy vs Lists</h1>
+<p>Let’s multiply two matrices (tables of numbers) and see which is faster!</p>
+<section id="matrix-multiplication-with-lists-slow-way" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-multiplication-with-lists-slow-way">Matrix Multiplication with Lists (Slow Way)</h2>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiply_matrices_with_lists(A, B):</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Multiply two matrices using Python lists"""</span></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>    rows_A <span class="op">=</span> <span class="bu">len</span>(A)</span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>    cols_A <span class="op">=</span> <span class="bu">len</span>(A[<span class="dv">0</span>])</span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>    cols_B <span class="op">=</span> <span class="bu">len</span>(B[<span class="dv">0</span>])</span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create result matrix filled with zeros</span></span>
+<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> []</span>
+<span id="cb104-9"><a href="#cb104-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rows_A):</span>
+<span id="cb104-10"><a href="#cb104-10" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> []</span>
+<span id="cb104-11"><a href="#cb104-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(cols_B):</span>
+<span id="cb104-12"><a href="#cb104-12" aria-hidden="true" tabindex="-1"></a>            row.append(<span class="dv">0</span>)</span>
+<span id="cb104-13"><a href="#cb104-13" aria-hidden="true" tabindex="-1"></a>        result.append(row)</span>
+<span id="cb104-14"><a href="#cb104-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb104-15"><a href="#cb104-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Perform multiplication</span></span>
+<span id="cb104-16"><a href="#cb104-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rows_A):</span>
+<span id="cb104-17"><a href="#cb104-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(cols_B):</span>
+<span id="cb104-18"><a href="#cb104-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(cols_A):</span>
+<span id="cb104-19"><a href="#cb104-19" aria-hidden="true" tabindex="-1"></a>                result[i][j] <span class="op">+=</span> A[i][k] <span class="op">*</span> B[k][j]</span>
+<span id="cb104-20"><a href="#cb104-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb104-21"><a href="#cb104-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
+<span id="cb104-22"><a href="#cb104-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-23"><a href="#cb104-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Test with small example</span></span>
+<span id="cb104-24"><a href="#cb104-24" aria-hidden="true" tabindex="-1"></a>A_list <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb104-25"><a href="#cb104-25" aria-hidden="true" tabindex="-1"></a>B_list <span class="op">=</span> [[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]]</span>
+<span id="cb104-26"><a href="#cb104-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-27"><a href="#cb104-27" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> multiply_matrices_with_lists(A_list, B_list)</span>
+<span id="cb104-28"><a href="#cb104-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result of matrix multiplication:"</span>)</span>
+<span id="cb104-29"><a href="#cb104-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> result:</span>
+<span id="cb104-30"><a href="#cb104-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Result of matrix multiplication:
+[19, 22]
+[43, 50]</code></pre>
+</section>
+<section id="matrix-multiplication-with-numpy-fast-way" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-multiplication-with-numpy-fast-way">Matrix Multiplication with NumPy (Fast Way)</h2>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Same multiplication with NumPy</span></span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>A_array <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>B_array <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a>result_np <span class="op">=</span> np.dot(A_array, B_array)</span>
+<span id="cb106-6"><a href="#cb106-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result of matrix multiplication:"</span>)</span>
+<span id="cb106-7"><a href="#cb106-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_np)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Output:</strong></p>
+<pre><code>Result of matrix multiplication:
+[[19 22]
+ [43 50]]</code></pre>
+</section>
+<section id="performance-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="performance-comparison">Performance Comparison</h2>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create larger matrices for timing</span></span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create random matrices</span></span>
+<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a>list_A <span class="op">=</span> [[<span class="bu">float</span>(i<span class="op">+</span>j) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(size)] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size)]</span>
+<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a>list_B <span class="op">=</span> [[<span class="bu">float</span>(i<span class="op">-</span>j) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(size)] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size)]</span>
+<span id="cb108-9"><a href="#cb108-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-10"><a href="#cb108-10" aria-hidden="true" tabindex="-1"></a>np_A <span class="op">=</span> np.array(list_A)</span>
+<span id="cb108-11"><a href="#cb108-11" aria-hidden="true" tabindex="-1"></a>np_B <span class="op">=</span> np.array(list_B)</span>
+<span id="cb108-12"><a href="#cb108-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-13"><a href="#cb108-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of runs for averaging</span></span>
+<span id="cb108-14"><a href="#cb108-14" aria-hidden="true" tabindex="-1"></a>num_runs <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb108-15"><a href="#cb108-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-16"><a href="#cb108-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Time the list version (multiple runs)</span></span>
+<span id="cb108-17"><a href="#cb108-17" aria-hidden="true" tabindex="-1"></a>list_times <span class="op">=</span> []</span>
+<span id="cb108-18"><a href="#cb108-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_runs):</span>
+<span id="cb108-19"><a href="#cb108-19" aria-hidden="true" tabindex="-1"></a>    start_time <span class="op">=</span> time.time()</span>
+<span id="cb108-20"><a href="#cb108-20" aria-hidden="true" tabindex="-1"></a>    result_list <span class="op">=</span> multiply_matrices_with_lists(list_A, list_B)</span>
+<span id="cb108-21"><a href="#cb108-21" aria-hidden="true" tabindex="-1"></a>    list_times.append(time.time() <span class="op">-</span> start_time)</span>
+<span id="cb108-22"><a href="#cb108-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-23"><a href="#cb108-23" aria-hidden="true" tabindex="-1"></a>avg_list_time <span class="op">=</span> <span class="bu">sum</span>(list_times) <span class="op">/</span> num_runs</span>
+<span id="cb108-24"><a href="#cb108-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-25"><a href="#cb108-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Time the NumPy version (multiple runs)</span></span>
+<span id="cb108-26"><a href="#cb108-26" aria-hidden="true" tabindex="-1"></a>numpy_times <span class="op">=</span> []</span>
+<span id="cb108-27"><a href="#cb108-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_runs):</span>
+<span id="cb108-28"><a href="#cb108-28" aria-hidden="true" tabindex="-1"></a>    start_time <span class="op">=</span> time.time()</span>
+<span id="cb108-29"><a href="#cb108-29" aria-hidden="true" tabindex="-1"></a>    result_np <span class="op">=</span> np.dot(np_A, np_B)</span>
+<span id="cb108-30"><a href="#cb108-30" aria-hidden="true" tabindex="-1"></a>    numpy_times.append(time.time() <span class="op">-</span> start_time)</span>
+<span id="cb108-31"><a href="#cb108-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-32"><a href="#cb108-32" aria-hidden="true" tabindex="-1"></a>avg_numpy_time <span class="op">=</span> <span class="bu">sum</span>(numpy_times) <span class="op">/</span> num_runs</span>
+<span id="cb108-33"><a href="#cb108-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-34"><a href="#cb108-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Matrix size: </span><span class="sc">{</span>size<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>size<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb108-35"><a href="#cb108-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of runs: </span><span class="sc">{</span>num_runs<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb108-36"><a href="#cb108-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Python Lists:"</span>)</span>
+<span id="cb108-37"><a href="#cb108-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Average time: </span><span class="sc">{</span>avg_list_time<span class="sc">:.6f}</span><span class="ss"> seconds"</span>)</span>
+<span id="cb108-38"><a href="#cb108-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Min time: </span><span class="sc">{</span><span class="bu">min</span>(list_times)<span class="sc">:.6f}</span><span class="ss"> seconds"</span>)</span>
+<span id="cb108-39"><a href="#cb108-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Max time: </span><span class="sc">{</span><span class="bu">max</span>(list_times)<span class="sc">:.6f}</span><span class="ss"> seconds"</span>)</span>
+<span id="cb108-40"><a href="#cb108-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-41"><a href="#cb108-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">NumPy:"</span>)</span>
+<span id="cb108-42"><a href="#cb108-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Average time: </span><span class="sc">{</span>avg_numpy_time<span class="sc">:.6f}</span><span class="ss"> seconds"</span>)</span>
+<span id="cb108-43"><a href="#cb108-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Min time: </span><span class="sc">{</span><span class="bu">min</span>(numpy_times)<span class="sc">:.6f}</span><span class="ss"> seconds"</span>)</span>
+<span id="cb108-44"><a href="#cb108-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Max time: </span><span class="sc">{</span><span class="bu">max</span>(numpy_times)<span class="sc">:.6f}</span><span class="ss"> seconds"</span>)</span>
+<span id="cb108-45"><a href="#cb108-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-46"><a href="#cb108-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">NumPy is </span><span class="sc">{</span>avg_list_time<span class="op">/</span>avg_numpy_time<span class="sc">:.1f}</span><span class="ss">x FASTER!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected Output:</strong></p>
+<pre><code>Matrix size: 100 x 100
+Number of runs: 500
+
+Python Lists:
+  Average time: 2.345678 seconds
+  Min time: 2.320145 seconds
+  Max time: 2.378923 seconds
+
+NumPy:
+  Average time: 0.003401 seconds
+  Min time: 0.003201 seconds
+  Max time: 0.003789 seconds
+
+NumPy is 689.9x FASTER!</code></pre>
+</section>
+</section>
+<section id="memory-usage-comparison" class="level1">
+<h1>Memory Usage Comparison</h1>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tracemalloc</span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to measure memory</span></span>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> measure_memory(func, <span class="op">*</span>args):</span>
+<span id="cb110-5"><a href="#cb110-5" aria-hidden="true" tabindex="-1"></a>    tracemalloc.start()</span>
+<span id="cb110-6"><a href="#cb110-6" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> func(<span class="op">*</span>args)</span>
+<span id="cb110-7"><a href="#cb110-7" aria-hidden="true" tabindex="-1"></a>    current, peak <span class="op">=</span> tracemalloc.get_traced_memory()</span>
+<span id="cb110-8"><a href="#cb110-8" aria-hidden="true" tabindex="-1"></a>    tracemalloc.stop()</span>
+<span id="cb110-9"><a href="#cb110-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> peak <span class="op">/</span> <span class="dv">1024</span> <span class="op">/</span> <span class="dv">1024</span>  <span class="co"># Convert to MB</span></span>
+<span id="cb110-10"><a href="#cb110-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-11"><a href="#cb110-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create test data</span></span>
+<span id="cb110-12"><a href="#cb110-12" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb110-13"><a href="#cb110-13" aria-hidden="true" tabindex="-1"></a>list_A <span class="op">=</span> [[<span class="bu">float</span>(i<span class="op">+</span>j) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(size)] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size)]</span>
+<span id="cb110-14"><a href="#cb110-14" aria-hidden="true" tabindex="-1"></a>list_B <span class="op">=</span> [[<span class="bu">float</span>(i<span class="op">-</span>j) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(size)] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size)]</span>
+<span id="cb110-15"><a href="#cb110-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-16"><a href="#cb110-16" aria-hidden="true" tabindex="-1"></a>np_A <span class="op">=</span> np.array(list_A)</span>
+<span id="cb110-17"><a href="#cb110-17" aria-hidden="true" tabindex="-1"></a>np_B <span class="op">=</span> np.array(list_B)</span>
+<span id="cb110-18"><a href="#cb110-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-19"><a href="#cb110-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Measure memory for lists</span></span>
+<span id="cb110-20"><a href="#cb110-20" aria-hidden="true" tabindex="-1"></a>list_memory <span class="op">=</span> measure_memory(multiply_matrices_with_lists, list_A, list_B)</span>
+<span id="cb110-21"><a href="#cb110-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-22"><a href="#cb110-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Measure memory for NumPy</span></span>
+<span id="cb110-23"><a href="#cb110-23" aria-hidden="true" tabindex="-1"></a>numpy_memory <span class="op">=</span> measure_memory(np.dot, np_A, np_B)</span>
+<span id="cb110-24"><a href="#cb110-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-25"><a href="#cb110-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Matrix size: </span><span class="sc">{</span>size<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>size<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb110-26"><a href="#cb110-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Python Lists used: </span><span class="sc">{</span>list_memory<span class="sc">:.2f}</span><span class="ss"> MB"</span>)</span>
+<span id="cb110-27"><a href="#cb110-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"NumPy used: </span><span class="sc">{</span>numpy_memory<span class="sc">:.2f}</span><span class="ss"> MB"</span>)</span>
+<span id="cb110-28"><a href="#cb110-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">NumPy uses </span><span class="sc">{</span>list_memory<span class="op">/</span>numpy_memory<span class="sc">:.1f}</span><span class="ss">x LESS memory!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected Output:</strong></p>
+<pre><code>Matrix size: 200 x 200
+
+Python Lists used: 2.45 MB
+NumPy used: 0.62 MB
+
+NumPy uses 4.0x LESS memory!</code></pre>
+</section>
+<section id="summary-numpy-vs-lists" class="level1">
+<h1>Summary: NumPy vs Lists</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Python Lists</th>
+<th>NumPy Arrays</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Speed</strong></td>
+<td>Slow</td>
+<td>Very Fast</td>
+</tr>
+<tr class="even">
+<td><strong>Memory</strong></td>
+<td>Uses more</td>
+<td>Uses less</td>
+</tr>
+<tr class="odd">
+<td><strong>Addition (+)</strong></td>
+<td>Concatenates</td>
+<td>Element-wise add</td>
+</tr>
+<tr class="even">
+<td>**Multiplication (*)**</td>
+<td>Repeats</td>
+<td>Element-wise multiply</td>
+</tr>
+<tr class="odd">
+<td><strong>Data Type</strong></td>
+<td>Mixed types OK</td>
+<td>Same type only</td>
+</tr>
+<tr class="even">
+<td><strong>Storage</strong></td>
+<td>Scattered</td>
+<td>Contiguous block</td>
+</tr>
+<tr class="odd">
+<td><strong>Math Operations</strong></td>
+<td>Need loops</td>
+<td>Built-in</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="when-to-use-what" class="level1">
+<h1>When to Use What?</h1>
+<section id="use-numpy-arrays-when" class="level2">
+<h2 class="anchored" data-anchor-id="use-numpy-arrays-when">Use NumPy Arrays when:</h2>
+<ul>
+<li>Working with numbers and math</li>
+<li>Need speed and efficiency</li>
+<li>Doing calculations on large data</li>
+<li>Working with matrices</li>
+<li>Doing scientific computing</li>
+</ul>
+</section>
+<section id="use-python-lists-when" class="level2">
+<h2 class="anchored" data-anchor-id="use-python-lists-when">Use Python Lists when:</h2>
+<ul>
+<li>Need different types of data together</li>
+<li>Small amount of data</li>
+<li>Need to frequently add/remove items</li>
+<li>Don’t need mathematical operations</li>
+</ul>
+</section>
+</section>
+<section id="practice-exercise" class="level1">
+<h1>Practice Exercise</h1>
+<p>Try this yourself:</p>
+<ol type="1">
+<li>Create a NumPy array of numbers from 1 to 100</li>
+<li>Calculate the mean and standard deviation</li>
+<li>Reshape it into a 10x10 matrix</li>
+<li>Multiply it by 2</li>
+</ol>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1</span></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">101</span>)</span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>, numbers)</span>
+<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2</span></span>
+<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(numbers)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb112-8"><a href="#cb112-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Standard Deviation: </span><span class="sc">{</span>np<span class="sc">.</span>std(numbers)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb112-9"><a href="#cb112-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-10"><a href="#cb112-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3</span></span>
+<span id="cb112-11"><a href="#cb112-11" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> numbers.reshape(<span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb112-12"><a href="#cb112-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">10x10 Matrix:"</span>)</span>
+<span id="cb112-13"><a href="#cb112-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)</span>
+<span id="cb112-14"><a href="#cb112-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-15"><a href="#cb112-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4</span></span>
+<span id="cb112-16"><a href="#cb112-16" aria-hidden="true" tabindex="-1"></a>doubled <span class="op">=</span> matrix <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb112-17"><a href="#cb112-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Doubled Matrix:"</span>)</span>
+<span id="cb112-18"><a href="#cb112-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doubled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected Output:</strong></p>
+<pre><code>Array: [  1   2   3 ...  98  99 100]
+
+Mean: 50.5
+Standard Deviation: 28.86607004772212
+
+10x10 Matrix:
+[[  1   2   3   4   5   6   7   8   9  10]
+ [ 11  12  13  14  15  16  17  18  19  20]
+ ...
+ [ 91  92  93  94  95  96  97  98  99 100]]
+
+Doubled Matrix:
+[[  2   4   6   8  10  12  14  16  18  20]
+ [ 22  24  26  28  30  32  34  36  38  40]
+ ...
+ [182 184 186 188 190 192 194 196 198 200]]</code></pre>
+</section>
+<section id="practice-questions" class="level1">
+<h1>Practice Questions</h1>
+<p>Test your understanding with these exercises. Solve them in your notebook!</p>
+<section id="question-1-array-creation" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-array-creation">Question 1: Array Creation</h2>
+<p>Create a 1D NumPy array containing the first 20 even numbers (2, 4, 6, …, 40).</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-2-2d-array-and-shape" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-2d-array-and-shape">Question 2: 2D Array and Shape</h2>
+<p>Create a 2D array of shape (4, 5) filled with random integers between 10 and 50. Print the shape, size, and number of dimensions.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-3-statistical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-statistical-analysis">Question 3: Statistical Analysis</h2>
+<p>Create an array of 100 random numbers from a normal distribution. Calculate and print: - Mean - Standard deviation - Minimum value - Maximum value</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-4-array-reshaping" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-array-reshaping">Question 4: Array Reshaping</h2>
+<p>Create a 1D array with numbers from 1 to 24. Reshape it into: - A 2D array of shape (4, 6) - A 2D array of shape (6, 4) - A 3D array of shape (2, 3, 4)</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-5-element-wise-operations" class="level2">
+<h2 class="anchored" data-anchor-id="question-5-element-wise-operations">Question 5: Element-wise Operations</h2>
+<p>Create two arrays: one with [1, 2, 3, 4, 5] and another with [10, 20, 30, 40, 50]. Perform: - Element-wise addition - Element-wise subtraction - Element-wise multiplication - Element-wise division</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-6-finding-unique-values" class="level2">
+<h2 class="anchored" data-anchor-id="question-6-finding-unique-values">Question 6: Finding Unique Values</h2>
+<p>Create an array with the following values: [5, 2, 8, 2, 9, 5, 3, 8, 5, 1]. Find: - All unique values - How many times each unique value appears</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-7-array-slicing" class="level2">
+<h2 class="anchored" data-anchor-id="question-7-array-slicing">Question 7: Array Slicing</h2>
+<p>Create a 5x5 array with random integers between 1 and 100. Extract: - The first row - The last column - A 2x2 sub-array from the center - All elements greater than 50</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-8-matrix-multiplication" class="level2">
+<h2 class="anchored" data-anchor-id="question-8-matrix-multiplication">Question 8: Matrix Multiplication</h2>
+<p>Create two 3x3 matrices with random integers between 1 and 10. Perform: - Element-wise multiplication - Matrix multiplication (using both np.dot() and @ operator) - Compare the results</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-9-array-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="question-9-array-comparison">Question 9: Array Comparison</h2>
+<p>Create two arrays of shape (3, 4) with random integers between 1 and 20. Compare them to find: - Elements where array1 is greater than array2 - Elements where both arrays have the same value - The total count of elements where array1 &gt; array2</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="question-10-real-world-application" class="level2">
+<h2 class="anchored" data-anchor-id="question-10-real-world-application">Question 10: Real-world Application</h2>
+<p>You have test scores of 50 students stored in an array. The scores are: Create an array with random integers between 40 and 100 (representing scores). Calculate: - Class average - How many students scored above 75 - How many students failed (score &lt; 50) - The percentage of students who passed</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here in your notebook</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Congratulations! You now know:</p>
+<ul>
+<li>What NumPy is and why it’s useful</li>
+<li>How to create and manipulate arrays</li>
+<li>Basic NumPy methods (shape, mean, std, etc.)</li>
+<li>Difference between NumPy and Lists</li>
+<li>Why NumPy is faster and uses less memory</li>
+<li>How data is stored in memory</li>
+</ul>
+<p>Keep practicing and you’ll become a NumPy expert in no time!</p>
+<hr>
+<p><strong>Remember:</strong> NumPy is your friend for anything involving numbers!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ayushshrivstava\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
