@@ -111,7 +111,7 @@ Welcome to my gallery! Here you'll find a collection of images from my life, inc
 
 :::{.gallery-container}
 <div class="gallery-item">
-  <img src="images/gallery/convocation2.jpg" alt="Awarded the MTech">
+  <img src="images/gallery/convocation4.JPG" alt="Awarded the MTech">
   <p>Awarded the MTech in Computer Science and Engineering at IITGN convocation June 2024</p>
 </div>
 <div class="gallery-item">

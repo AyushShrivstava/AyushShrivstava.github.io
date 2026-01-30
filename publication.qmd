@@ -2,5 +2,5 @@
 title: "Publication"
 ---
 
-1. Under review in IMWUT, Feb 2025. Will be added soon.
-2. Under review in Neurips, May 2025. Will be added soon.
+1. Under review in Nature BioSensing. Will be added soon.
+2. Under review in KDD, 2026. Will be added soon.
