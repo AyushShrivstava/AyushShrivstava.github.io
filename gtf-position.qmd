@@ -1,0 +1,92 @@
+---
+title: "Graduate Teaching Fellow (GTF)"
+subtitle: "IIT Gandhinagar"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+---
+
+## Overview
+
+The Graduate Teaching Fellow (GTF) position is an institutional program at IIT Gandhinagar designed to provide PhD students with opportunities to develop teaching and leadership skills. The program is part of the Institute's doctoral curriculum, which emphasizes holistic development alongside thesis research work.
+
+## Position Description
+
+A Graduate Teaching Fellow is a PhD student who assumes the responsibility of teaching a course independently as an instructor or tutor. The Fellow performs duties comparable to those of faculty members teaching similar courses, including course delivery, content preparation, and student evaluation.
+
+The position carries a tenure of six months at a time.
+
+## Eligibility and Selection
+
+### Eligibility Requirements
+
+- Completion of at least one year in the PhD program
+- Consent from the doctoral supervisor
+- Recommendation through appropriate academic channels
+
+### Selection Process
+
+The Dean of Academic Affairs establishes a mechanism for candidate selection. Positions are approved by the Director based on recommendations from the Dean. The number of positions available is determined by institutional needs and proposals from various disciplines.
+
+## Responsibilities
+
+Graduate Teaching Fellows undertake the following responsibilities:
+
+- Independent instruction of assigned courses
+- Preparation and delivery of lectures
+- Course material development
+- Student assessment and evaluation
+- Course coordination and administration
+
+Each Fellow works under the mentorship of a faculty member who provides training and guidance for efficient performance of assigned duties.
+
+## Compensation and Recognition
+
+### Financial Compensation
+
+Upon satisfactory completion of a course, Fellows receive a one-time honorarium at the rate of Rs. 5,000 per credit. The amount is pro-rated in cases where course responsibility is shared.
+
+### Outstanding Graduate Teaching Fellow Award
+
+The Institute recognizes exceptional performance through the Outstanding Graduate Teaching Fellow Award. Typically, one award is given each semester.
+
+**Award Benefits:**
+
+- Grant of up to Rs. 20,000 for travel and professional activities
+- Funding from the Excellence Fund in the Endowment Account
+
+**Nomination Requirements:**
+
+1. Nomination letter (maximum one page) commenting on the Fellow's teaching efforts, preparation, clarity of presentation, and student engagement
+2. Teaching statement from the Fellow (maximum one page) outlining teaching philosophy, goal achievement, and learning outcomes
+3. Student feedback statements from at least two students
+4. Course reaction survey summary provided by the Academic Office
+
+**Selection Process:**
+
+A committee comprising the Dean (Academics), Associate Dean (PG), and at least two faculty members reviews nominations. The committee may conduct interviews with nominees as needed and recommends one Fellow to the Director for approval.
+
+## Professional Development Outcomes
+
+The GTF program is structured to provide PhD students with experience in several areas relevant to academic careers:
+
+**Teaching Experience**: Independent course instruction differs substantially from teaching assistant or grading duties. Fellows gain experience in all aspects of course management and delivery.
+
+**Mentorship**: Faculty mentors provide guidance on pedagogical methods, course planning, and professional standards in academic instruction.
+
+**Skill Development**: The position offers opportunities to develop communication abilities, time management, and coordination skills through direct responsibility for course outcomes.
+
+**Documentation**: Fellows receive an experience certificate from the Dean of Academic Affairs upon completion of their tenure.
+
+## Program Rationale
+
+The doctoral program at IIT Gandhinagar places emphasis on comprehensive student development beyond research specialization. The curriculum includes expectations for students to attend seminars, organize conferences, write research proposals, and participate in institutional activities.
+
+The GTF program aligns with this broader educational philosophy by providing structured opportunities for students to engage in teaching activities under mentorship. The experience is designed to prepare students for future academic positions at research and teaching institutions.
+
+
+---
+
+*Information based on Academic Affairs Advisory 41 (Version 1.1, March 2019), as approved and amended by the Senate of IIT Gandhinagar.*

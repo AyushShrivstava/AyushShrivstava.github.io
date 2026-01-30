@@ -22,7 +22,8 @@ title: "Teaching"
 <div class="course-description">
   Professor Incharge: <a href="https://mayank4490.github.io">Mayank Singh</a> <br>
   Course Website: <a href="https://sites.google.com/iitgn.ac.in/es114-2026/home">ES-114: Probability, Statistics and Data Visualization</a> <br>
-  Position : Graduate Teaching Fellow (GTF) <br>
+  <!-- Position : Graduate Teaching Fellow (GTF) <br> -->
+  Position : Graduate Teaching Fellow [(GTF)](gtf-position.qmd) <br>
   Taught concepts of probability, statistics, and data visualization using Python to a classroom of 360 students. Conducted weekly lab sessions, assisted in grading assignments, and provided support during exams.
 </div>
 
