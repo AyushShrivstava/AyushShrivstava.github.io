@@ -1,8 +1,9 @@
 ---
-title: "NumPy Tutorial 1"
+title: "NumPy Tutorial"
 subtitle: "A comprehensive introduction to NumPy"
 author: "Ayush Shrivastava"
 date: 2026-01-15
+image: /images/blogs/numpy/Numpy_thumbnail.png
 categories: [Python, NumPy, Data Science, Tutorial]
 format: 
   html:

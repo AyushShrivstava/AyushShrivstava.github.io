@@ -17,8 +17,8 @@ website:
         text: BlogPosts
       - href: gallery.qmd
         text: Gallery
-      # - href: teaching.qmd
-      #   text: Teaching
+      - href: teaching.qmd
+        text: Teaching
     
     right:
       - href: /files/Ayush_Master_CV.pdf

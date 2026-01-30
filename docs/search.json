@@ -46,7 +46,7 @@
     "href": "posts.html",
     "title": "My Blog",
     "section": "",
-    "text": "NumPy Tutorial 1\n\n\n\nPython\n\n\nNumPy\n\n\nData Science\n\n\nTutorial\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting Up Your Python Development Environment\n\n\n\nPython\n\n\nAnaconda\n\n\nSetup\n\n\nVirtual Environments\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCanny Edge Detector\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nDec 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPower of Sine Activation\n\n\n\nComputer Vision\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nNov 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLucas Kanade Optical Flow\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting up Conda Environment for ML Projects\n\n\n\nHelpful Tips\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeural Processes\n\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "NumPy Tutorial\n\n\n\nPython\n\n\nNumPy\n\n\nData Science\n\n\nTutorial\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting Up Your Environment\n\n\n\nPython\n\n\nAnaconda\n\n\nSetup\n\n\nVirtual Environments\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCanny Edge Detector\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nDec 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPower of Sine Activation\n\n\n\nComputer Vision\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nNov 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLucas Kanade Optical Flow\n\n\n\nComputer Vision\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting up Conda Environment for ML Projects\n\n\n\nHelpful Tips\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeural Processes\n\n\n\nDeep Learning\n\n\n\n\n\n\n\nAyush Shrivastava\n\n\nJun 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publication.html",
@@ -123,7 +123,7 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "2024\n\n\nSpring and Fall : Machine Learning,\n\n\nProfessor Incharge: Nipun Batra  Organised and evaluated quizzes, assignments, took vivas for a classroom of 300 students, while also playing a pivotal role in supporting classroom logistics.\n\n\n2023\n\n\nFall : Computer Systems\n\n\nProfessor Incharge: Abhishek Bichhawat, Sameer G Kulkarni  Graded assignments and assisted the professor run a class of 40 students smoothly.\n\n\nSummer : World of Engineering\n\n\nProfessor Incharge: Udit Bhatia  Mentored a group of 30 students in the identification, conceptualization, and modeling of a prototype to address a real-world problem, fostering their problem-solving abilities and teamwork skills.\n\n\nSpring : Probability, Statistics and Data Visualization\n\n\nProfessor Incharge: Shanmuganathan Raman  Successfully guided over 30 students in Python libraries, including Numpy, Pandas, Matplotlib, Scipy, and Scikit-learn, enhancing their data visualization skills.\n\n\n2022\n\n\nWinter : Introduction to Computing\n\n\nProfessor Incharge: Nipun Batra, Balagopal Komarath  Led a Python lab for 30 students, teaching them essential Python concepts, and helped manage logistics, invigilation, and quiz evaluation for a class of 300 students."
+    "text": "2026\n\n\nSpring : Probability, Statistics and Data Visualization\n\n\nProfessor Incharge: Mayank Singh  Course Website: ES-114: Probability, Statistics and Data Visualization  Position : Graduate Teaching Fellow (GTF)  Taught concepts of probability, statistics, and data visualization using Python to a classroom of 360 students. Conducted weekly lab sessions, assisted in grading assignments, and provided support during exams.\n\n\n2025\n\n\nFall : Machine Learning\n\n\nProfessor Incharge: Nipun Batra  Course Website: ES-335: Machine Learning  Position : Head Teaching Assistant (TA)  Designed and graded quizzes, assignments, and viva examinations for a large undergraduate class of 280 students, and contributed to managing instructional logistics.\n\n\nSpring : Probability, Statistics and Data Visualization\n\n\nProfessor Incharge: Nipun Batra  Course Website: ES-114: Probability, Statistics and Data Visualization  Position : Head Teaching Assistant (TA)  Organised and evaluated quizzes, assignments, took vivas for a classroom of 320 students, while also playing a pivotal role in supporting classroom logistics.\n\n\n2024\n\n\nSpring and Fall : Machine Learning,\n\n\nProfessor Incharge: Nipun Batra  Course Website: ES-335: Machine Learning (Fall 2024) , ES-335: Machine Learning (Spring 2024)  Position : Teaching Assistant (TA)  Prepared and evaluated assessment components for 240 students, including quizzes, assignments, and viva examinations, while assisting with course administration.\n\n\n2023\n\n\nFall : Computer Systems\n\n\nProfessor Incharge: Abhishek Bichhawat, Sameer G Kulkarni  Position : Teaching Assistant (TA)  Graded assignments and assisted the professor run a class of 40 students smoothly.\n\n\nSummer : World of Engineering\n\n\nProfessor Incharge: Udit Bhatia  Position : Teaching Assistant (TA)  Mentored a group of 30 students in the identification, conceptualization, and modeling of a prototype to address a real-world problem, fostering their problem-solving abilities and teamwork skills.\n\n\nSpring : Probability, Statistics and Data Visualization\n\n\nProfessor Incharge: Shanmuganathan Raman  Position : Teaching Assistant (TA)  Successfully guided over 30 students in Python libraries, including Numpy, Pandas, Matplotlib, Scipy, and Scikit-learn, enhancing their data visualization skills.\n\n\n2022\n\n\nWinter : Introduction to Computing\n\n\nProfessor Incharge: Nipun Batra, Balagopal Komarath  Course Website: ES-112: Introduction to Computing  Position : Teaching Assistant (TA)  Led a Python lab for 30 students, teaching them essential Python concepts, and helped manage logistics, invigilation, and quiz evaluation for a class of 300 students."
   },
   {
     "objectID": "posts/2024/Neural_Process.html",
@@ -219,9 +219,9 @@
   {
     "objectID": "posts/2026/initial_install.html",
     "href": "posts/2026/initial_install.html",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "",
-    "text": "Before you begin, please read these important guidelines:\nGetting Help:\n\nIf you encounter any issues or have questions at any point during this lab, raise your hand and contact the nearest Teaching Assistant (TA) immediately.\nDo not spend more than 5 minutes stuck on a single step. Ask for help early rather than falling behind.\nTAs are here to assist you. No question is too small or too basic.\n\nWorking Through the Lab:\n\nFollow the instructions in order. Do not skip sections unless instructed by your TA.\nRead each step carefully before executing commands.\nPay attention to your operating system (Windows, macOS, or Linux) as instructions may differ.\nTest each step before moving to the next one to ensure everything is working correctly.\n\nImportant Notes:\n\nTake notes of any errors you encounter and the solutions that worked for you.\nKeep this document open for reference during future assignments.\nMake sure you complete the verification steps to confirm your installation is working.\nDo not leave the lab until you have a fully functional Python environment.\n\nLab Etiquette:\n\nBe patient during downloads and installations as they may take several minutes.\nHelp your neighbors if they are struggling and you have completed a section.\nKeep your workspace organized and save any important files you create.\nBefore leaving, ensure you can run Python code and that all required packages are installed."
+    "text": "Think of a virtual environment as a separate workspace for each of your projects. Imagine you have two different projects:\n\nProject A needs Python 3.9 and version 1.0 of a package called “data-tools”\nProject B needs Python 3.11 and version 2.0 of the same “data-tools” package\n\nWithout virtual environments, you could only have one version installed at a time, and switching between projects would be a nightmare. Virtual environments solve this problem by creating isolated spaces where each project can have its own Python version and packages without interfering with each other.\nKey benefits of virtual environments:\n\nKeep different projects separate and organized\nAvoid conflicts between package versions\nMake it easy to share your project setup with others\nPrevent accidentally breaking one project while working on another"
   },
   {
     "objectID": "posts/2026/initial_install.html#general-instructions",
@@ -240,84 +240,84 @@
   {
     "objectID": "posts/2026/initial_install.html#part-1-installing-anaconda",
     "href": "posts/2026/initial_install.html#part-1-installing-anaconda",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Part 1: Installing Anaconda",
     "text": "Part 1: Installing Anaconda\n\nWhat is Anaconda?\nAnaconda is a distribution of Python that comes with many pre-installed packages for data science and scientific computing. It also includes conda, a package manager that makes it easy to install additional packages and manage different environments.\n\n\nStep 1: Download Anaconda\n\nGo to https://www.anaconda.com/download\nChoose the installer for your operating system (Windows, macOS, or Linux)\nDownload the latest Python 3.x version (not Python 2.x)\n\n\n\nStep 2: Install Anaconda\n\nWindows Installation\n\nRun the downloaded .exe file\nClick “Next” through the setup wizard\nImportant: On the “Advanced Installation Options” screen:\n\nCheck “Add Anaconda3 to my PATH environment variable” (even though it’s not recommended, it makes things easier for beginners)\nCheck “Register Anaconda3 as my default Python 3.x”\n\nClick “Install” and wait for the installation to complete (this may take 10-15 minutes)\nClick “Finish”\n\n\n\nmacOS Installation\n\nOpen the downloaded .pkg file\nFollow the installation prompts\nClick “Continue” and “Install”\nEnter your password when prompted\nClick “Close” when installation is complete\n\n\n\nLinux Installation\n\nOpen Terminal\nNavigate to the directory where you downloaded the file\nRun the following command (replace with your actual filename):\n\nbash Anaconda3-2024.xx-Linux-x86_64.sh\n\nPress Enter to read the license agreement, then type “yes” to accept\nPress Enter to confirm the installation location\nType “yes” when asked to initialize Anaconda\n\n\n\n\nStep 3: Verify Installation\nOpen a new terminal or command prompt and run:\nconda --version\nYou should see output like conda 24.x.x. If you get an error, proceed to the next section."
   },
   {
     "objectID": "posts/2026/initial_install.html#part-2-setting-up-environment-variables",
     "href": "posts/2026/initial_install.html#part-2-setting-up-environment-variables",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Part 2: Setting Up Environment Variables",
     "text": "Part 2: Setting Up Environment Variables\nIf the conda --version command didn’t work, you need to add Anaconda to your system’s PATH.\n\nWindows: Adding to PATH\n\nPress Win + X and select “System”\nClick “Advanced system settings” on the right\nClick “Environment Variables” button\nUnder “User variables”, find and select “Path”, then click “Edit”\nClick “New” and add these paths (adjust if you installed in a different location):\n\nC:\\Users\\YourUsername\\anaconda3\nC:\\Users\\YourUsername\\anaconda3\\Scripts\nC:\\Users\\YourUsername\\anaconda3\\Library\\bin\n\nClick “OK” on all windows\nClose and reopen your command prompt\nTest again with conda --version\n\n\n\nmacOS/Linux: Adding to PATH\n\nOpen Terminal\nCheck which shell you’re using:\n\necho $SHELL\n\nEdit your shell configuration file:\n\nIf using bash: nano ~/.bashrc\nIf using zsh: nano ~/.zshrc\n\nAdd this line at the end of the file:\n\nexport PATH=\"$HOME/anaconda3/bin:$PATH\"\n\nSave the file (Ctrl+O, Enter, then Ctrl+X in nano)\nReload the configuration:\n\nsource ~/.bashrc  # or source ~/.zshrc\n\nTest with conda --version"
   },
   {
     "objectID": "posts/2026/initial_install.html#part-3-creating-your-first-environment",
     "href": "posts/2026/initial_install.html#part-3-creating-your-first-environment",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Part 3: Creating Your First Environment",
     "text": "Part 3: Creating Your First Environment\n\nWhy Use Environments?\nVirtual environments let you have different versions of Python and packages for different projects. This prevents conflicts and keeps your projects organized.\n\n\nCreate a Course Environment\nOpen your terminal/command prompt and run these commands:\n# Create a new environment named 'course_env' with Python 3.11\nconda create -n course_env python=3.11 -y\nThis will take a few minutes as it downloads and installs Python.\n\n\nActivate Your Environment\n# Windows\nconda activate course_env\n\n# macOS/Linux\nconda activate course_env\nYour prompt should now show (course_env) at the beginning, indicating the environment is active.\n\n\nInstall Essential Packages\nWith your environment activated, install the packages you’ll need:\n# Install data science packages\nconda install numpy pandas matplotlib jupyter -y\n\n# Install additional useful packages\nconda install scipy scikit-learn seaborn -y\n\n\nVerify Your Installation\nCheck that packages are installed:\n# Check Python version\npython --version\n\n# Check installed packages\nconda list"
   },
   {
     "objectID": "posts/2026/initial_install.html#part-4-running-python",
     "href": "posts/2026/initial_install.html#part-4-running-python",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Part 4: Running Python",
     "text": "Part 4: Running Python\n\nMethod 1: Python Interactive Shell\nWith your environment activated, simply type:\npython\nYou’ll see the Python prompt &gt;&gt;&gt;. Try some commands:\nprint(\"Hello, Python!\")\nx = 5 + 3\nprint(x)\nexit()\n\n\nMethod 2: Running Python Scripts\n\nCreate a file called test.py with this content:\n\n# test.py\nprint(\"This is my first Python script!\")\n\n# Do some calculation\nnumbers = [1, 2, 3, 4, 5]\ntotal = sum(numbers)\nprint(f\"The sum is: {total}\")\n\nRun it from the terminal:\n\npython test.py\n\n\nMethod 3: Jupyter Notebook\nJupyter notebooks are interactive documents that mix code, text, and visualizations.\n\nStart Jupyter:\n\njupyter notebook\n\nYour browser will open automatically\nClick “New” → “Python 3” to create a new notebook\nTry this in a cell:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.title(\"My First Plot\")\nplt.show()\n\nPress Shift + Enter to run the cell"
   },
   {
     "objectID": "posts/2026/initial_install.html#part-5-essential-commands-reference",
     "href": "posts/2026/initial_install.html#part-5-essential-commands-reference",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Part 5: Essential Commands Reference",
     "text": "Part 5: Essential Commands Reference\n\nConda Environment Commands\n# List all environments\nconda env list\n\n# Create new environment\nconda create -n myenv python=3.11\n\n# Activate environment\nconda activate myenv\n\n# Deactivate environment\nconda deactivate\n\n# Delete environment\nconda env remove -n myenv\n\n# Export environment (for sharing)\nconda env export &gt; environment.yml\n\n# Create environment from file\nconda env create -f environment.yml\n\n\nPackage Management Commands\n# Install a package\nconda install package_name\n\n# Install specific version\nconda install package_name=1.2.3\n\n# Update a package\nconda update package_name\n\n# Remove a package\nconda remove package_name\n\n# List installed packages\nconda list\n\n# Search for a package\nconda search package_name\n\n\nJupyter Commands\n# Start Jupyter Notebook\njupyter notebook\n\n# Start Jupyter Lab (more advanced interface)\njupyter lab\n\n# List running notebooks\njupyter notebook list\n\n# Stop all notebooks\njupyter notebook stop"
   },
   {
     "objectID": "posts/2026/initial_install.html#part-6-practice-exercise",
     "href": "posts/2026/initial_install.html#part-6-practice-exercise",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Part 6: Practice Exercise",
     "text": "Part 6: Practice Exercise\nLet’s put everything together! Complete this exercise to confirm your setup is working.\n\nExercise: Create and Run Your First Python Script\n\nMake sure your course_env is activated\nCreate a new file called hello.py\nCopy this code into the file:\n\n# hello.py - My first Python script\n\n# Print a welcome message\nprint(\"Welcome to Python Programming!\")\nprint(\"=\" * 40)\n\n# Basic arithmetic\nprint(\"\\nLet's do some basic math:\")\na = 10\nb = 5\nprint(f\"{a} + {b} = {a + b}\")\nprint(f\"{a} - {b} = {a - b}\")\nprint(f\"{a} * {b} = {a * b}\")\nprint(f\"{a} / {b} = {a / b}\")\n\n# Working with lists\nprint(\"\\nWorking with a list of numbers:\")\nnumbers = [1, 2, 3, 4, 5]\nprint(f\"My numbers: {numbers}\")\nprint(f\"Sum of numbers: {sum(numbers)}\")\nprint(f\"Largest number: {max(numbers)}\")\n\n# Your turn - add your name\nyour_name = \"Your Name Here\"  # Change this to your actual name\nprint(f\"\\nThis script was created by: {your_name}\")\nprint(\"\\nCongratulations! Your Python environment is working correctly!\")\n\nBefore running, change “Your Name Here” to your actual name\nRun the script:\n\npython hello.py\n\nYou should see output showing the calculations and your name\n\nExpected Output:\nWelcome to Python Programming!\n========================================\n\nLet's do some basic math:\n10 + 5 = 15\n10 - 5 = 5\n10 * 5 = 50\n10 / 5 = 2.0\n\nWorking with a list of numbers:\nMy numbers: [1, 2, 3, 4, 5]\nSum of numbers: 15\nLargest number: 5\n\nThis script was created by: [Your Name]\n\nCongratulations! Your Python environment is working correctly!\nCongratulations! You’ve successfully set up your Python environment and run your first Python script."
   },
   {
     "objectID": "posts/2026/initial_install.html#troubleshooting-common-issues",
     "href": "posts/2026/initial_install.html#troubleshooting-common-issues",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Troubleshooting Common Issues",
     "text": "Troubleshooting Common Issues\n\nIssue: “conda: command not found”\nSolution: Anaconda is not in your PATH. Go back to Part 2 and set up environment variables.\n\n\nIssue: “Permission denied” errors on macOS/Linux\nSolution: Add sudo before the command, or check file permissions with chmod.\n\n\nIssue: Packages fail to install\nSolution: Try updating conda first:\nconda update conda\nconda update --all\n\n\nIssue: Jupyter won’t start\nSolution: Make sure jupyter is installed in your active environment:\nconda install jupyter -y\n\n\nIssue: Environment activation doesn’t work\nSolution: - Windows: Use Anaconda Prompt instead of regular Command Prompt - Mac/Linux: Make sure you’ve run conda init after installation"
   },
   {
     "objectID": "posts/2026/initial_install.html#preparation-for-next-lab",
     "href": "posts/2026/initial_install.html#preparation-for-next-lab",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Preparation for Next Lab",
     "text": "Preparation for Next Lab\nBefore the next lab session:\n\nPractice creating a new environment called practice_env\nInstall numpy and matplotlib packages in it\nCreate a simple Python script that prints your name and the current date\nExplore the Jupyter notebook interface and try creating cells with markdown text"
   },
   {
     "objectID": "posts/2026/initial_install.html#assignment-submission-setup",
     "href": "posts/2026/initial_install.html#assignment-submission-setup",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Assignment Submission Setup",
     "text": "Assignment Submission Setup\nFor course assignments:\n\nAlways activate course_env before starting work\nOrganize your work in folders by week/assignment\nUse Jupyter notebooks for assignments that require visualization\nUse .py scripts for pure code assignments\nInclude comments in your code explaining what each section does"
   },
   {
     "objectID": "posts/2026/initial_install.html#quick-start-checklist",
     "href": "posts/2026/initial_install.html#quick-start-checklist",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Quick Start Checklist",
     "text": "Quick Start Checklist\nUse this checklist at the start of each assignment:\n\nOpen terminal/command prompt\nNavigate to your assignment folder: cd path/to/assignment\nActivate environment: conda activate course_env\nStart Jupyter (if needed): jupyter notebook\nBegin working on your assignment"
   },
   {
     "objectID": "posts/2026/initial_install.html#additional-resources",
     "href": "posts/2026/initial_install.html#additional-resources",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nAnaconda Documentation\nConda Cheat Sheet\nJupyter Notebook Documentation\nPython Official Tutorial"
   },
   {
     "objectID": "posts/2026/initial_install.html#questions",
     "href": "posts/2026/initial_install.html#questions",
-    "title": "Setting Up Your Python Development Environment",
+    "title": "Setting Up Your Environment",
     "section": "Questions?",
     "text": "Questions?\nIf you encounter any issues during the lab, raise your hand and ask for help. Make sure you have a working setup before leaving today, as you’ll need it for all future assignments.\n\nLab Complete! You’re now ready to start programming in Python for this course."
   },
@@ -331,238 +331,238 @@
   {
     "objectID": "posts/2026/numpy_intro.html",
     "href": "posts/2026/numpy_intro.html",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "",
     "text": "NumPy stands for Numerical Python. Think of it as a super-powered calculator for Python that can work with large amounts of numbers very quickly.\nWhy do we need NumPy?\n\nPython lists are slow when working with lots of numbers\nNumPy is much faster (sometimes 100x faster!)\nMakes mathematical operations easy\nUsed in Data Science, Machine Learning, and AI\n\n\n\n\nOpen your terminal or command prompt and type:\npip install numpy\nThat’s it! NumPy is now installed."
   },
   {
     "objectID": "posts/2026/numpy_intro.html#what-is-numpy",
     "href": "posts/2026/numpy_intro.html#what-is-numpy",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "",
     "text": "NumPy stands for Numerical Python. Think of it as a super-powered calculator for Python that can work with large amounts of numbers very quickly.\nWhy do we need NumPy?\n\nPython lists are slow when working with lots of numbers\nNumPy is much faster (sometimes 100x faster!)\nMakes mathematical operations easy\nUsed in Data Science, Machine Learning, and AI"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#installing-numpy",
     "href": "posts/2026/numpy_intro.html#installing-numpy",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "",
     "text": "Open your terminal or command prompt and type:\npip install numpy\nThat’s it! NumPy is now installed."
   },
   {
     "objectID": "posts/2026/numpy_intro.html#what-is-an-array",
     "href": "posts/2026/numpy_intro.html#what-is-an-array",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "What is an Array?",
     "text": "What is an Array?\nAn array is like a list, but designed specifically for numbers. Let’s see how to create them:\n# First, we need to import NumPy\n# 'np' is a short name we use instead of typing 'numpy' every time\nimport numpy as np\n\n# Check if NumPy is installed correctly\nprint(\"NumPy version:\", np.__version__)\nOutput:\nNumPy version: 1.24.3"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#creating-arrays-from-lists",
     "href": "posts/2026/numpy_intro.html#creating-arrays-from-lists",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Creating Arrays from Lists",
     "text": "Creating Arrays from Lists\n# Creating a simple 1D array (like a row of numbers)\nmy_list = [1, 2, 3, 4, 5]\nmy_array = np.array(my_list)\n\nprint(\"Original list:\", my_list)\nprint(\"NumPy array:\", my_array)\nprint(\"Type:\", type(my_array))\nOutput:\nOriginal list: [1, 2, 3, 4, 5]\nNumPy array: [1 2 3 4 5]\nType: &lt;class 'numpy.ndarray'&gt;\n# Creating a 2D array (like a table or matrix)\n# This is like having multiple rows\nmy_2d_list = [[1, 2, 3], \n              [4, 5, 6], \n              [7, 8, 9]]\n\nmy_2d_array = np.array(my_2d_list)\n\nprint(\"2D Array:\")\nprint(my_2d_array)\nOutput:\n2D Array:\n[[1 2 3]\n [4 5 6]\n [7 8 9]]"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#other-ways-to-create-arrays",
     "href": "posts/2026/numpy_intro.html#other-ways-to-create-arrays",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Other Ways to Create Arrays",
     "text": "Other Ways to Create Arrays\n\nCreating Arrays of Zeros\nUseful when you need to initialize an array and fill values later.\n# Array of zeros\nzeros = np.zeros(5)\nprint(\"Array of zeros:\", zeros)\n\n# 2D array of zeros\nzeros_2d = np.zeros((3, 4))  # 3 rows, 4 columns\nprint(\"2D array of zeros:\")\nprint(zeros_2d)\nOutput:\nArray of zeros: [0. 0. 0. 0. 0.]\n2D array of zeros:\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n\n\nCreating Arrays of Ones\nSimilar to zeros, but filled with ones.\n# Array of ones\nones = np.ones(5)\nprint(\"Array of ones:\", ones)\n\n# 2D array of ones\nones_2d = np.ones((2, 3))\nprint(\"2D array of ones:\")\nprint(ones_2d)\nOutput:\nArray of ones: [1. 1. 1. 1. 1.]\n2D array of ones:\n[[1. 1. 1.]\n [1. 1. 1.]]\n\n\nCreating Arrays with Range\nSimilar to Python’s range() function, but creates a NumPy array.\n# Array of numbers in a range\nnumbers = np.arange(0, 10, 2)  # Start at 0, end before 10, step by 2\nprint(\"Numbers 0 to 10 (step 2):\", numbers)\n\n# Another example\nnumbers2 = np.arange(5, 15)  # Default step is 1\nprint(\"Numbers 5 to 14:\", numbers2)\nOutput:\nNumbers 0 to 10 (step 2): [0 2 4 6 8]\nNumbers 5 to 14: [ 5  6  7  8  9 10 11 12 13 14]\n\n\nCreating Evenly Spaced Arrays\nCreates a specified number of evenly spaced values between a start and end point.\n# Array of 5 numbers between 0 and 1\nevenly_spaced = np.linspace(0, 1, 5)\nprint(\"5 numbers from 0 to 1:\", evenly_spaced)\n\n# Array of 7 numbers between 0 and 100\nevenly_spaced2 = np.linspace(0, 100, 7)\nprint(\"7 numbers from 0 to 100:\", evenly_spaced2)\nOutput:\n5 numbers from 0 to 1: [0.   0.25 0.5  0.75 1.  ]\n7 numbers from 0 to 100: [  0.          16.66666667  33.33333333  50.          66.66666667\n  83.33333333 100.        ]\n\n\nCreating Random Arrays\nGenerate arrays with random values from a uniform distribution between 0 and 1. Each value has an equal probability of being selected. Useful for testing and simulations.\n# Array of random numbers between 0 and 1\nrandom_array = np.random.rand(5)\nprint(\"Random array (5 elements):\", random_array)\nOutput:\nRandom array (5 elements): [0.5488135  0.71518937 0.60276338 0.54488318 0.4236548 ]\nNote: Values are drawn from a uniform distribution where every number between 0 and 1 has equal probability.\n\n\nCreating 2D Random Arrays\nCreate multi-dimensional arrays with random values from a uniform distribution between 0 and 1.\n# 2D array of random numbers\nrandom_2d = np.random.rand(3, 3)\nprint(\"Random 2D array (3x3):\")\nprint(random_2d)\nOutput:\nRandom 2D array (3x3):\n[[0.64589411 0.43758721 0.891773  ]\n [0.96366276 0.38344152 0.79172504]\n [0.52889492 0.56804456 0.92559664]]\n\n\nCreating Random Arrays from Normal Distribution\nGenerate arrays with random values from a standard normal distribution (mean = 0, standard deviation = 1). This is useful for statistical simulations and machine learning.\n# Array from standard normal distribution\nnormal_array = np.random.randn(5)\nprint(\"Normal distribution array (5 elements):\", normal_array)\n\n# 2D array from normal distribution\nnormal_2d = np.random.randn(3, 3)\nprint(\"Normal distribution 2D array (3x3):\")\nprint(normal_2d)\nOutput:\nNormal distribution array (5 elements): [ 0.49671415 -0.1382643   0.64768854  1.52302986 -0.23415337]\nNormal distribution 2D array (3x3):\n[[-0.23413696  1.57921282  0.76743473]\n [-0.46947439  0.54256004 -0.46341769]\n [-0.46572975  0.24196227 -1.91328024]]\nNote: Values are drawn from a normal (Gaussian) distribution. Most values cluster around 0, with approximately 68% of values between -1 and 1.\n\n\nCreating Random Integer Arrays\nGenerate random integers within a specified range using a discrete uniform distribution (each integer in the range has equal probability).\n# Random integers between a range\nrandom_ints = np.random.randint(1, 100, size=10)  # 10 random integers between 1 and 99\nprint(\"Random integers (1-99):\", random_ints)\n\n# Random integers in a 2D array\nrandom_ints_2d = np.random.randint(0, 10, size=(3, 4))  # 3x4 array with values 0-9\nprint(\"Random 2D integers (0-9):\")\nprint(random_ints_2d)\nOutput:\nRandom integers (1-99): [44 47 64 67 84  9 83 21 36 87]\nRandom 2D integers (0-9):\n[[5 0 3 3]\n [7 9 3 5]\n [2 4 7 6]]\nNote: randint(low, high) generates integers from low (inclusive) to high (exclusive)."
   },
   {
     "objectID": "posts/2026/numpy_intro.html#shape---finding-the-size-of-your-array",
     "href": "posts/2026/numpy_intro.html#shape---finding-the-size-of-your-array",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Shape - Finding the Size of Your Array",
     "text": "Shape - Finding the Size of Your Array\n# Create a 2D array\narr = np.array([[1, 2, 3, 4], \n                [5, 6, 7, 8]])\n\nprint(\"Array:\")\nprint(arr)\nprint(\"\\nShape (rows, columns):\", arr.shape)\nprint(\"Total number of elements:\", arr.size)\nprint(\"Number of dimensions:\", arr.ndim)\nOutput:\nArray:\n[[1 2 3 4]\n [5 6 7 8]]\n\nShape (rows, columns): (2, 4)\nTotal number of elements: 8\nNumber of dimensions: 2\nUnderstanding shape: If shape is (2, 4), it means 2 rows and 4 columns."
   },
   {
     "objectID": "posts/2026/numpy_intro.html#reshape---changing-the-shape",
     "href": "posts/2026/numpy_intro.html#reshape---changing-the-shape",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Reshape - Changing the Shape",
     "text": "Reshape - Changing the Shape\n# Start with a 1D array\noriginal = np.array([1, 2, 3, 4, 5, 6])\nprint(\"Original array:\", original)\nprint(\"Original shape:\", original.shape)\n\n# Reshape to 2 rows and 3 columns\nreshaped = original.reshape(2, 3)\nprint(\"\\nReshaped to 2x3:\")\nprint(reshaped)\n\n# Reshape to 3 rows and 2 columns\nreshaped2 = original.reshape(3, 2)\nprint(\"\\nReshaped to 3x2:\")\nprint(reshaped2)\nOutput:\nOriginal array: [1 2 3 4 5 6]\nOriginal shape: (6,)\n\nReshaped to 2x3:\n[[1 2 3]\n [4 5 6]]\n\nReshaped to 3x2:\n[[1 2]\n [3 4]\n [5 6]]\nImportant: Total elements must remain the same! You can’t reshape 6 elements into a 2x4 array (that needs 8 elements)."
   },
   {
     "objectID": "posts/2026/numpy_intro.html#resize---similar-to-reshape",
     "href": "posts/2026/numpy_intro.html#resize---similar-to-reshape",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Resize - Similar to Reshape",
     "text": "Resize - Similar to Reshape\n# Resize changes the array itself\narr = np.array([1, 2, 3, 4, 5, 6])\nprint(\"Original:\", arr)\n\narr.resize(2, 3)  # This modifies the array directly\nprint(\"After resize:\")\nprint(arr)\nOutput:\nOriginal: [1 2 3 4 5 6]\nAfter resize:\n[[1 2 3]\n [4 5 6]]\nDifference between reshape and resize:\n\nreshape() creates a new array with different shape\nresize() modifies the original array"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#statistical-methods---math-made-easy",
     "href": "posts/2026/numpy_intro.html#statistical-methods---math-made-easy",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Statistical Methods - Math Made Easy!",
     "text": "Statistical Methods - Math Made Easy!\n# Create an array of test scores\nscores = np.array([85, 90, 78, 92, 88, 95, 73, 89])\n\nprint(\"Test Scores:\", scores)\nprint(\"\\nMean (Average):\", np.mean(scores))\nprint(\"Standard Deviation:\", np.std(scores))\nprint(\"Minimum Score:\", np.min(scores))\nprint(\"Maximum Score:\", np.max(scores))\nprint(\"Sum of all scores:\", np.sum(scores))\nOutput:\nTest Scores: [85 90 78 92 88 95 73 89]\n\nMean (Average): 86.25\nStandard Deviation: 6.89\nMinimum Score: 73\nMaximum Score: 95\nSum of all scores: 690\nWhat is Standard Deviation? It tells us how spread out the numbers are.\n\nSmall standard deviation = numbers are close together\nLarge standard deviation = numbers are spread apart"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#data-types-dtype",
     "href": "posts/2026/numpy_intro.html#data-types-dtype",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Data Types (dtype)",
     "text": "Data Types (dtype)\n# NumPy automatically detects the data type\nint_array = np.array([1, 2, 3])\nprint(\"Integer array:\", int_array)\nprint(\"Data type:\", int_array.dtype)\n\nfloat_array = np.array([1.5, 2.7, 3.9])\nprint(\"\\nFloat array:\", float_array)\nprint(\"Data type:\", float_array.dtype)\n\n# You can force a specific type\nforced_float = np.array([1, 2, 3], dtype=np.float64)\nprint(\"\\nForced to float:\", forced_float)\nprint(\"Data type:\", forced_float.dtype)\nOutput:\nInteger array: [1 2 3]\nData type: int64\n\nFloat array: [1.5 2.7 3.9]\nData type: float64\n\nForced to float: [1. 2. 3.]\nData type: float64"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#difference-1-adding-two-collections",
     "href": "posts/2026/numpy_intro.html#difference-1-adding-two-collections",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Difference 1: Adding Two Collections",
     "text": "Difference 1: Adding Two Collections\n# Python Lists: + means CONCATENATE (join together)\nlist1 = [1, 2, 3]\nlist2 = [4, 5, 6]\nresult_list = list1 + list2\nprint(\"List + List:\", result_list)\n\n# NumPy Arrays: + means ADD element by element\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nresult_array = arr1 + arr2\nprint(\"Array + Array:\", result_array)\nOutput:\nList + List: [1, 2, 3, 4, 5, 6]\nArray + Array: [5 7 9]\nSee the difference?\n\nLists: [1,2,3] + [4,5,6] = [1,2,3,4,5,6] (joined together)\nArrays: [1,2,3] + [4,5,6] = [5,7,9] (added element-wise)"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#difference-2-multiplying-by-a-number",
     "href": "posts/2026/numpy_intro.html#difference-2-multiplying-by-a-number",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Difference 2: Multiplying by a Number",
     "text": "Difference 2: Multiplying by a Number\n# Python Lists: * means REPEAT\nmy_list = [1, 2, 3]\nresult_list = my_list * 3\nprint(\"List * 3:\", result_list)\n\n# NumPy Arrays: * means MULTIPLY each element\nmy_array = np.array([1, 2, 3])\nresult_array = my_array * 3\nprint(\"Array * 3:\", result_array)\nOutput:\nList * 3: [1, 2, 3, 1, 2, 3, 1, 2, 3]\nArray * 3: [3 6 9]\nSee the difference?\n\nLists: [1,2,3] * 3 = [1,2,3,1,2,3,1,2,3] (repeated)\nArrays: [1,2,3] * 3 = [3,6,9] (each element multiplied)"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#python-lists---scattered-storage",
     "href": "posts/2026/numpy_intro.html#python-lists---scattered-storage",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Python Lists - Scattered Storage",
     "text": "Python Lists - Scattered Storage\nimport sys\n\n# Create a list\nmy_list = [10, 20, 30, 40, 50]\n\n# Size of the list structure\nlist_size = sys.getsizeof(my_list)\nprint(f\"Size of list structure: {list_size} bytes\")\n\n# Size of one integer object\none_int_size = sys.getsizeof(my_list[0])\nprint(f\"Size of one integer: {one_int_size} bytes\")\n\n# Total approximate size\ntotal_size = list_size + (one_int_size * len(my_list))\nprint(f\"Total approximate size: {total_size} bytes\")\nOutput:\nSize of list structure: 120 bytes\nSize of one integer: 28 bytes\nTotal approximate size: 260 bytes\nHow Lists Store Data:\nList: [pointer] -&gt; [Integer Object 10]\n      [pointer] -&gt; [Integer Object 20]\n      [pointer] -&gt; [Integer Object 30]\n      ...\nEach number is a separate object in memory!"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#numpy-arrays---compact-storage",
     "href": "posts/2026/numpy_intro.html#numpy-arrays---compact-storage",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "NumPy Arrays - Compact Storage",
     "text": "NumPy Arrays - Compact Storage\n# Create equivalent NumPy array\nmy_array = np.array([10, 20, 30, 40, 50])\n\n# Size in bytes\narray_size = my_array.nbytes\nprint(f\"Size of entire array: {array_size} bytes\")\nprint(f\"Size per element: {my_array.itemsize} bytes\")\nprint(f\"Total elements: {my_array.size}\")\nOutput:\nSize of entire array: 40 bytes\nSize per element: 8 bytes\nTotal elements: 5\nHow Arrays Store Data:\nArray: [10][20][30][40][50]  (one continuous block)\nAll numbers are stored together in one block!"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#why-numpy-uses-less-memory",
     "href": "posts/2026/numpy_intro.html#why-numpy-uses-less-memory",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Why NumPy Uses Less Memory",
     "text": "Why NumPy Uses Less Memory\n# Compare for larger data\nsize = 1000\nbig_list = list(range(size))\nbig_array = np.array(range(size))\n\n# List structure size\nlist_structure_size = sys.getsizeof(big_list)\n\n# Size of integer objects (sample first 100 and estimate)\nsample_int_size = sum(sys.getsizeof(big_list[i]) for i in range(min(100, size)))\navg_int_size = sample_int_size / min(100, size)\ntotal_int_size = avg_int_size * size\n\n# Total list size (structure + all integer objects)\ntotal_list_size = list_structure_size + total_int_size\n\nprint(f\"List structure size: {list_structure_size} bytes\")\nprint(f\"Average integer object size: {avg_int_size:.0f} bytes\")\nprint(f\"Total integer objects size: {total_int_size:.0f} bytes\")\nprint(f\"Total list size (structure + objects): {total_list_size:.0f} bytes\")\nprint(f\"\\nNumPy array size: {big_array.nbytes} bytes\")\nprint(f\"\\nNumPy uses approximately {total_list_size / big_array.nbytes:.1f}x less memory!\")\nOutput:\nList structure size: 8056 bytes\nAverage integer object size: 28 bytes\nTotal integer objects size: 27960 bytes\nTotal list size (structure + objects): 36016 bytes\n\nNumPy array size: 8000 bytes\n\nNumPy uses approximately 4.5x less memory!"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#matrix-multiplication-with-lists-slow-way",
     "href": "posts/2026/numpy_intro.html#matrix-multiplication-with-lists-slow-way",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Matrix Multiplication with Lists (Slow Way)",
     "text": "Matrix Multiplication with Lists (Slow Way)\ndef multiply_matrices_with_lists(A, B):\n    \"\"\"Multiply two matrices using Python lists\"\"\"\n    rows_A = len(A)\n    cols_A = len(A[0])\n    cols_B = len(B[0])\n    \n    # Create result matrix filled with zeros\n    result = []\n    for i in range(rows_A):\n        row = []\n        for j in range(cols_B):\n            row.append(0)\n        result.append(row)\n    \n    # Perform multiplication\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    \n    return result\n\n# Test with small example\nA_list = [[1, 2], [3, 4]]\nB_list = [[5, 6], [7, 8]]\n\nresult = multiply_matrices_with_lists(A_list, B_list)\nprint(\"Result of matrix multiplication:\")\nfor row in result:\n    print(row)\nOutput:\nResult of matrix multiplication:\n[19, 22]\n[43, 50]"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#matrix-multiplication-with-numpy-fast-way",
     "href": "posts/2026/numpy_intro.html#matrix-multiplication-with-numpy-fast-way",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Matrix Multiplication with NumPy (Fast Way)",
     "text": "Matrix Multiplication with NumPy (Fast Way)\n# Same multiplication with NumPy\nA_array = np.array([[1, 2], [3, 4]])\nB_array = np.array([[5, 6], [7, 8]])\n\nresult_np = np.dot(A_array, B_array)\nprint(\"Result of matrix multiplication:\")\nprint(result_np)\nOutput:\nResult of matrix multiplication:\n[[19 22]\n [43 50]]"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#performance-comparison",
     "href": "posts/2026/numpy_intro.html#performance-comparison",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Performance Comparison",
     "text": "Performance Comparison\nimport time\n\n# Create larger matrices for timing\nsize = 100\n\n# Create random matrices\nlist_A = [[float(i+j) for j in range(size)] for i in range(size)]\nlist_B = [[float(i-j) for j in range(size)] for i in range(size)]\n\nnp_A = np.array(list_A)\nnp_B = np.array(list_B)\n\n# Number of runs for averaging\nnum_runs = 500\n\n# Time the list version (multiple runs)\nlist_times = []\nfor _ in range(num_runs):\n    start_time = time.time()\n    result_list = multiply_matrices_with_lists(list_A, list_B)\n    list_times.append(time.time() - start_time)\n\navg_list_time = sum(list_times) / num_runs\n\n# Time the NumPy version (multiple runs)\nnumpy_times = []\nfor _ in range(num_runs):\n    start_time = time.time()\n    result_np = np.dot(np_A, np_B)\n    numpy_times.append(time.time() - start_time)\n\navg_numpy_time = sum(numpy_times) / num_runs\n\nprint(f\"Matrix size: {size} x {size}\")\nprint(f\"Number of runs: {num_runs}\")\nprint(f\"\\nPython Lists:\")\nprint(f\"  Average time: {avg_list_time:.6f} seconds\")\nprint(f\"  Min time: {min(list_times):.6f} seconds\")\nprint(f\"  Max time: {max(list_times):.6f} seconds\")\n\nprint(f\"\\nNumPy:\")\nprint(f\"  Average time: {avg_numpy_time:.6f} seconds\")\nprint(f\"  Min time: {min(numpy_times):.6f} seconds\")\nprint(f\"  Max time: {max(numpy_times):.6f} seconds\")\n\nprint(f\"\\nNumPy is {avg_list_time/avg_numpy_time:.1f}x FASTER!\")\nExpected Output:\nMatrix size: 100 x 100\nNumber of runs: 500\n\nPython Lists:\n  Average time: 2.345678 seconds\n  Min time: 2.320145 seconds\n  Max time: 2.378923 seconds\n\nNumPy:\n  Average time: 0.003401 seconds\n  Min time: 0.003201 seconds\n  Max time: 0.003789 seconds\n\nNumPy is 689.9x FASTER!"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#use-numpy-arrays-when",
     "href": "posts/2026/numpy_intro.html#use-numpy-arrays-when",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Use NumPy Arrays when:",
     "text": "Use NumPy Arrays when:\n\nWorking with numbers and math\nNeed speed and efficiency\nDoing calculations on large data\nWorking with matrices\nDoing scientific computing"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#use-python-lists-when",
     "href": "posts/2026/numpy_intro.html#use-python-lists-when",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Use Python Lists when:",
     "text": "Use Python Lists when:\n\nNeed different types of data together\nSmall amount of data\nNeed to frequently add/remove items\nDon’t need mathematical operations"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#element-wise-multiplication-vs-matrix-multiplication",
     "href": "posts/2026/numpy_intro.html#element-wise-multiplication-vs-matrix-multiplication",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Element-wise Multiplication vs Matrix Multiplication",
     "text": "Element-wise Multiplication vs Matrix Multiplication\nNumPy supports two types of multiplication:\n\nElement-wise Multiplication (using *)\n# Element-wise multiplication\narr1 = np.array([[1, 2], [3, 4]])\narr2 = np.array([[5, 6], [7, 8]])\n\nresult = arr1 * arr2\nprint(\"Element-wise multiplication:\")\nprint(result)\nOutput:\nElement-wise multiplication:\n[[ 5 12]\n [21 32]]\nExplanation: Each element is multiplied with the corresponding element in the same position. - 1 * 5 = 5 - 2 * 6 = 12 - 3 * 7 = 21 - 4 * 8 = 32\n\n\nMatrix Multiplication (using np.dot or @)\n# Matrix multiplication\narr1 = np.array([[1, 2], [3, 4]])\narr2 = np.array([[5, 6], [7, 8]])\n\n# Method 1: Using np.dot()\nresult1 = np.dot(arr1, arr2)\nprint(\"Matrix multiplication using np.dot():\")\nprint(result1)\n\n# Method 2: Using @ operator\nresult2 = arr1 @ arr2\nprint(\"\\nMatrix multiplication using @ operator:\")\nprint(result2)\nOutput:\nMatrix multiplication using np.dot():\n[[19 22]\n [43 50]]\n\nMatrix multiplication using @ operator:\n[[19 22]\n [43 50]]\nExplanation: This is proper matrix multiplication from linear algebra.\nFor the first element (row 1, col 1): - (1 * 5) + (2 * 7) = 5 + 14 = 19\nFor the second element (row 1, col 2): - (1 * 6) + (2 * 8) = 6 + 16 = 22\nFor the third element (row 2, col 1): - (3 * 5) + (4 * 7) = 15 + 28 = 43\nFor the fourth element (row 2, col 2): - (3 * 6) + (4 * 8) = 18 + 32 = 50\n\n\nQuick Comparison\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\n\nprint(\"Original matrices:\")\nprint(\"A =\")\nprint(A)\nprint(\"\\nB =\")\nprint(B)\n\nprint(\"\\n\" + \"=\"*50)\nprint(\"Element-wise multiplication (A * B):\")\nprint(A * B)\n\nprint(\"\\n\" + \"=\"*50)\nprint(\"Matrix multiplication (A @ B):\")\nprint(A @ B)\nOutput:\nOriginal matrices:\nA =\n[[1 2]\n [3 4]]\n\nB =\n[[5 6]\n [7 8]]\n\n==================================================\nElement-wise multiplication (A * B):\n[[ 5 12]\n [21 32]]\n\n==================================================\nMatrix multiplication (A @ B):\n[[19 22]\n [43 50]]\nKey Differences:\n\n\n\n\n\n\n\n\nOperation\nSymbol\nWhat it does\n\n\n\n\nElement-wise\n*\nMultiplies corresponding elements\n\n\nMatrix multiplication\n@ or np.dot()\nProper linear algebra matrix multiplication"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#working-with-unique-values",
     "href": "posts/2026/numpy_intro.html#working-with-unique-values",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Working with Unique Values",
     "text": "Working with Unique Values\n# Create an array with duplicate values\ndata = np.array([1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5])\nprint(\"Original array:\", data)\n\n# Get unique values\nunique_values = np.unique(data)\nprint(\"Unique values:\", unique_values)\n\n# Count occurrences of each unique value\nunique_vals, counts = np.unique(data, return_counts=True)\nprint(\"\\nValue counts:\")\nfor val, count in zip(unique_vals, counts):\n    print(f\"  {val}: appears {count} times\")\nOutput:\nOriginal array: [1 2 2 3 3 3 4 4 4 4 5 5 5 5 5]\nUnique values: [1 2 3 4 5]\n\nValue counts:\n  1: appears 1 times\n  2: appears 2 times\n  3: appears 3 times\n  4: appears 4 times\n  5: appears 5 times\nPractical Example:\n# Student IDs with duplicates (some students enrolled in multiple courses)\nstudent_ids = np.array([101, 102, 103, 101, 104, 102, 105, 103, 101])\nprint(\"All enrollments:\", student_ids)\n\n# Find unique students\nunique_students = np.unique(student_ids)\nprint(\"Unique students:\", unique_students)\nprint(\"Total unique students:\", len(unique_students))\nOutput:\nAll enrollments: [101 102 103 101 104 102 105 103 101]\nUnique students: [101 102 103 104 105]\nTotal unique students: 5"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-1-array-creation",
     "href": "posts/2026/numpy_intro.html#question-1-array-creation",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 1: Array Creation",
     "text": "Question 1: Array Creation\nCreate a 1D NumPy array containing the first 20 even numbers (2, 4, 6, …, 40).\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-2-2d-array-and-shape",
     "href": "posts/2026/numpy_intro.html#question-2-2d-array-and-shape",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 2: 2D Array and Shape",
     "text": "Question 2: 2D Array and Shape\nCreate a 2D array of shape (4, 5) filled with random integers between 10 and 50. Print the shape, size, and number of dimensions.\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-3-statistical-analysis",
     "href": "posts/2026/numpy_intro.html#question-3-statistical-analysis",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 3: Statistical Analysis",
     "text": "Question 3: Statistical Analysis\nCreate an array of 100 random numbers from a normal distribution. Calculate and print: - Mean - Standard deviation - Minimum value - Maximum value\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-4-array-reshaping",
     "href": "posts/2026/numpy_intro.html#question-4-array-reshaping",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 4: Array Reshaping",
     "text": "Question 4: Array Reshaping\nCreate a 1D array with numbers from 1 to 24. Reshape it into: - A 2D array of shape (4, 6) - A 2D array of shape (6, 4) - A 3D array of shape (2, 3, 4)\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-5-element-wise-operations",
     "href": "posts/2026/numpy_intro.html#question-5-element-wise-operations",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 5: Element-wise Operations",
     "text": "Question 5: Element-wise Operations\nCreate two arrays: one with [1, 2, 3, 4, 5] and another with [10, 20, 30, 40, 50]. Perform: - Element-wise addition - Element-wise subtraction - Element-wise multiplication - Element-wise division\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-6-finding-unique-values",
     "href": "posts/2026/numpy_intro.html#question-6-finding-unique-values",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 6: Finding Unique Values",
     "text": "Question 6: Finding Unique Values\nCreate an array with the following values: [5, 2, 8, 2, 9, 5, 3, 8, 5, 1]. Find: - All unique values - How many times each unique value appears\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-7-array-slicing",
     "href": "posts/2026/numpy_intro.html#question-7-array-slicing",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 7: Array Slicing",
     "text": "Question 7: Array Slicing\nCreate a 5x5 array with random integers between 1 and 100. Extract: - The first row - The last column - A 2x2 sub-array from the center - All elements greater than 50\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-8-matrix-multiplication",
     "href": "posts/2026/numpy_intro.html#question-8-matrix-multiplication",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 8: Matrix Multiplication",
     "text": "Question 8: Matrix Multiplication\nCreate two 3x3 matrices with random integers between 1 and 10. Perform: - Element-wise multiplication - Matrix multiplication (using both np.dot() and @ operator) - Compare the results\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-9-array-comparison",
     "href": "posts/2026/numpy_intro.html#question-9-array-comparison",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 9: Array Comparison",
     "text": "Question 9: Array Comparison\nCreate two arrays of shape (3, 4) with random integers between 1 and 20. Compare them to find: - Elements where array1 is greater than array2 - Elements where both arrays have the same value - The total count of elements where array1 &gt; array2\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#question-10-real-world-application",
     "href": "posts/2026/numpy_intro.html#question-10-real-world-application",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Question 10: Real-world Application",
     "text": "Question 10: Real-world Application\nYou have test scores of 50 students stored in an array. The scores are: Create an array with random integers between 40 and 100 (representing scores). Calculate: - Class average - How many students scored above 75 - How many students failed (score &lt; 50) - The percentage of students who passed\n# Write your code here in your notebook"
   },
   {
     "objectID": "posts/2026/numpy_intro.html#indexing-and-slicing-arrays",
     "href": "posts/2026/numpy_intro.html#indexing-and-slicing-arrays",
-    "title": "NumPy Tutorial 1",
+    "title": "NumPy Tutorial",
     "section": "Indexing and Slicing Arrays",
     "text": "Indexing and Slicing Arrays\n\nBasic Indexing (1D Arrays)\nAccessing individual elements in a NumPy array works similarly to Python lists, using zero-based indexing.\nAccessing the first element:\narr = np.array([10, 20, 30, 40, 50, 60])\nprint(\"Array:\", arr)\nprint(\"First element:\", arr[0])\nOutput:\nArray: [10 20 30 40 50 60]\nFirst element: 10\nAccessing the third element:\narr = np.array([10, 20, 30, 40, 50, 60])\nprint(\"Third element:\", arr[2])\nOutput:\nThird element: 30\nAccessing from the end (negative indexing):\narr = np.array([10, 20, 30, 40, 50, 60])\nprint(\"Last element:\", arr[-1])\nprint(\"Second to last:\", arr[-2])\nOutput:\nLast element: 60\nSecond to last: 50\n\n\nSlicing (1D Arrays)\nExtract a portion of an array using the syntax array[start:stop:step].\nBasic slicing - extract elements from index 2 to 5:\narr = np.array([10, 20, 30, 40, 50, 60, 70, 80])\nprint(\"Original array:\", arr)\nprint(\"Elements from index 2 to 5:\", arr[2:6])  # 6 is exclusive\nOutput:\nOriginal array: [10 20 30 40 50 60 70 80]\nElements from index 2 to 5: [30 40 50 60]\nSlicing from the start:\narr = np.array([10, 20, 30, 40, 50, 60, 70, 80])\nprint(\"First 4 elements:\", arr[:4])\nOutput:\nFirst 4 elements: [10 20 30 40]\nSlicing to the end:\narr = np.array([10, 20, 30, 40, 50, 60, 70, 80])\nprint(\"Elements from index 3 to end:\", arr[3:])\nOutput:\nElements from index 3 to end: [40 50 60 70 80]\nUsing step to skip elements:\narr = np.array([10, 20, 30, 40, 50, 60, 70, 80])\nprint(\"Every second element:\", arr[::2])\nOutput:\nEvery second element: [10 30 50 70]\nReversing an array:\narr = np.array([10, 20, 30, 40, 50, 60, 70, 80])\nprint(\"Reverse the array:\", arr[::-1])\nOutput:\nReverse the array: [80 70 60 50 40 30 20 10]\n\n\nIndexing in 2D Arrays\nFor 2D arrays, use array[row, column] syntax.\nCreating a 2D array:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12]])\nprint(\"2D Array:\")\nprint(arr_2d)\nOutput:\n2D Array:\n[[ 1  2  3  4]\n [ 5  6  7  8]\n [ 9 10 11 12]]\nAccessing element at row 0, column 2:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12]])\nprint(\"Element at row 0, column 2:\", arr_2d[0, 2])\nOutput:\nElement at row 0, column 2: 3\nAccessing element at row 2, column 3:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12]])\nprint(\"Element at row 2, column 3:\", arr_2d[2, 3])\nOutput:\nElement at row 2, column 3: 12\nUsing negative indexing (last row, last column):\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12]])\nprint(\"Last row, last column:\", arr_2d[-1, -1])\nOutput:\nLast row, last column: 12\n\n\nSlicing in 2D Arrays\nExtract rows, columns, or sub-arrays from 2D arrays.\nCreating a 2D array for slicing examples:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12],\n                   [13, 14, 15, 16]])\nprint(\"Original 2D Array:\")\nprint(arr_2d)\nOutput:\nOriginal 2D Array:\n[[ 1  2  3  4]\n [ 5  6  7  8]\n [ 9 10 11 12]\n [13 14 15 16]]\nExtracting an entire row:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12],\n                   [13, 14, 15, 16]])\nprint(\"First row:\", arr_2d[0, :])\nprint(\"Second row:\", arr_2d[1, :])\nOutput:\nFirst row: [1 2 3 4]\nSecond row: [5 6 7 8]\nExtracting an entire column:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12],\n                   [13, 14, 15, 16]])\nprint(\"First column:\", arr_2d[:, 0])\nprint(\"Third column:\", arr_2d[:, 2])\nOutput:\nFirst column: [ 1  5  9 13]\nThird column: [ 3  7 11 15]\nExtracting a sub-array (first 2 rows, first 3 columns):\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12],\n                   [13, 14, 15, 16]])\nprint(\"First 2 rows, first 3 columns:\")\nprint(arr_2d[0:2, 0:3])\nOutput:\nFirst 2 rows, first 3 columns:\n[[1 2 3]\n [5 6 7]]\nExtracting specific rows and columns:\narr_2d = np.array([[1, 2, 3, 4],\n                   [5, 6, 7, 8],\n                   [9, 10, 11, 12],\n                   [13, 14, 15, 16]])\nprint(\"Rows 1-2, Columns 2-3:\")\nprint(arr_2d[1:3, 2:4])\nOutput:\nRows 1-2, Columns 2-3:\n[[ 7  8]\n [11 12]]\n\n\nBoolean Indexing (Conditional Selection)\nSelect elements based on conditions.\nSelecting elements greater than 40:\narr = np.array([10, 25, 30, 45, 50, 65, 70, 85])\nprint(\"Original array:\", arr)\nprint(\"Elements &gt; 40:\", arr[arr &gt; 40])\nOutput:\nOriginal array: [10 25 30 45 50 65 70 85]\nElements &gt; 40: [45 50 65 70 85]\nSelecting elements within a range:\narr = np.array([10, 25, 30, 45, 50, 65, 70, 85])\nprint(\"Original array:\", arr)\nprint(\"Elements between 20 and 60:\", arr[(arr &gt;= 20) & (arr &lt;= 60)])\nOutput:\nOriginal array: [10 25 30 45 50 65 70 85]\nElements between 20 and 60: [25 30 45 50]\nSelecting even numbers:\narr = np.array([10, 25, 30, 45, 50, 65, 70, 85])\nprint(\"Original array:\", arr)\nprint(\"Even numbers:\", arr[arr % 2 == 0])\nOutput:\nOriginal array: [10 25 30 45 50 65 70 85]\nEven numbers: [10 30 50 70]\n\n\nModifying Array Elements\nYou can modify array elements using indexing and slicing.\nModifying a single element:\narr = np.array([1, 2, 3, 4, 5])\nprint(\"Original:\", arr)\narr[2] = 99\nprint(\"After modifying index 2:\", arr)\nOutput:\nOriginal: [1 2 3 4 5]\nAfter modifying index 2: [ 1  2 99  4  5]\nModifying multiple elements:\narr = np.array([1, 2, 3, 4, 5])\nprint(\"Original:\", arr)\narr[0:3] = [10, 20, 30]\nprint(\"After modifying first 3:\", arr)\nOutput:\nOriginal: [1 2 3 4 5]\nAfter modifying first 3: [10 20 30  4  5]\nModifying using a condition:\narr = np.array([10, 20, 99, 4, 5])\nprint(\"Original:\", arr)\narr[arr &gt; 50] = 50  # Cap all values at 50\nprint(\"After capping at 50:\", arr)\nOutput:\nOriginal: [10 20 99  4  5]\nAfter capping at 50: [10 20 50  4  5]"
   }

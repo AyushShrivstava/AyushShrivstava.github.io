@@ -1,5 +1,5 @@
 ---
-title: "Setting Up Your Python Development Environment"
+title: "Setting Up Your Environment"
 subtitle: "Installing Anaconda and Configuring Your First Environment"
 author: Ayush Shrivastava
 image: /images/blogs/initial_install/thumbnail.png
@@ -13,53 +13,6 @@ format:
     code-tools: true
     theme: cosmo
 ---
-
-## General Instructions
-
-Before you begin, please read these important guidelines:
-
-**Getting Help:**
-
-- If you encounter any issues or have questions at any point during this lab, raise your hand and contact the nearest Teaching Assistant (TA) immediately.
-- Do not spend more than 5 minutes stuck on a single step. Ask for help early rather than falling behind.
-- TAs are here to assist you. No question is too small or too basic.
-
-**Working Through the Lab:**
-
-- Follow the instructions in order. Do not skip sections unless instructed by your TA.
-- Read each step carefully before executing commands.
-- Pay attention to your operating system (Windows, macOS, or Linux) as instructions may differ.
-- Test each step before moving to the next one to ensure everything is working correctly.
-
-**Important Notes:**
-
-- Take notes of any errors you encounter and the solutions that worked for you.
-- Keep this document open for reference during future assignments.
-- Make sure you complete the verification steps to confirm your installation is working.
-- Do not leave the lab until you have a fully functional Python environment.
-
-**Lab Etiquette:**
-
-- Be patient during downloads and installations as they may take several minutes.
-- Help your neighbors if they are struggling and you have completed a section.
-- Keep your workspace organized and save any important files you create.
-- Before leaving, ensure you can run Python code and that all required packages are installed.
-
-## Lab Overview
-
-**Duration:** 1.5 hours
-
-**Objectives:** By the end of this lab, you will be able to:
-
-- Install Anaconda on your computer
-- Understand and configure environment variables
-- Create and manage Python virtual environments
-- Run Python code and Jupyter notebooks
-- Complete course assignments using your setup
-
-## Understanding the Basics
-
-Before we start installing software, let's understand some key concepts that will help you throughout this course.
 
 ### What are Virtual Environments?
 
