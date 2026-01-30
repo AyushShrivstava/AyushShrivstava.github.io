@@ -2,5 +2,5 @@
 title: "Publication"
 ---
 
-1. Under review in Nature BioSensing. Will be added soon.
-2. Under review in KDD, 2026. Will be added soon.
+1. Under review in Nature Partner Journal, BioSensing. Will be added soon.
+2. Under review in ACM KDD, 2026. Will be added soon.
