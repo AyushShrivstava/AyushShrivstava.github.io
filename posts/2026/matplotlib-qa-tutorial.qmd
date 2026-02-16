@@ -11,12 +11,12 @@ format:
     toc-depth: 3
     code-fold: false
     highlight-style: github
-# jupyter: python3
-# execute:
-#   echo: true
-#   warning: false
-#   eval: true
-#   cache: false
+jupyter: python3
+execute:
+  echo: true
+  warning: false
+  eval: true
+  cache: false
 ---
 
 # Part 1: Fundamentals
