@@ -1,0 +1,906 @@
+---
+title: "Matplotlib Tutorial"
+subtitle: "A practical guide to Python visualization"
+author: "Ayush Shrivastava and Rishabh Mondal"
+date: "2026-02-15"
+categories: [Python, Data Visualization, Matplotlib, Tutorial]
+image: "https://matplotlib.org/stable/_static/logo2.svg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    highlight-style: github
+# jupyter: python3
+# execute:
+#   echo: true
+#   warning: false
+#   eval: true
+#   cache: false
+---
+
+# Part 1: Fundamentals
+
+## Q1. What is Matplotlib and why is it essential for data visualization?
+
+**Answer:** Matplotlib is Python's foundational 2D plotting library, created by John Hunter in 2003. It provides:
+
+- Complete control over every plot element (axes, ticks, labels, colors)
+- Publication-quality output in multiple formats (PNG, PDF, SVG, EPS)
+- Integration with NumPy, Pandas, and the entire scientific Python ecosystem
+- Two interfaces: quick `pyplot` (MATLAB-style) and powerful object-oriented API
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+print(f"Matplotlib version: {mpl.__version__}")
+print(f"Available backends: {mpl.rcsetup.all_backends[:5]}...")
+```
+
+::: {.callout-note}
+If Matplotlib is missing, install it with:
+
+```bash
+pip install matplotlib
+```
+:::
+
+## Q2. What are the key parts of a Matplotlib figure?
+
+**Answer:** Every Matplotlib visualization consists of:
+
+- **Figure:** The entire window/page containing everything
+- **Axes:** The actual plot area with data, ticks, labels (a Figure can have multiple Axes)
+- **Axis:** The x-axis and y-axis objects controlling ticks and limits
+- **Artist:** Everything visible on the figure (lines, text, patches, etc.)
+
+```py
+fig, ax = plt.subplots(figsize=(8, 5))
+
+# Demonstrate figure anatomy
+ax.set_title("Figure Anatomy", fontsize=14, fontweight="bold")
+ax.set_xlabel("X-axis (horizontal)")
+ax.set_ylabel("Y-axis (vertical)")
+ax.text(0.5, 0.5, "This is the Axes\n(plot area)", ha="center", va="center", 
+        fontsize=12, bbox=dict(boxstyle="round", facecolor="lightblue"))
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.grid(alpha=0.3)
+
+# Add annotations showing parts
+ax.annotate("Title", xy=(0.5, 1.02), xycoords="axes fraction", ha="center", fontsize=10, color="red")
+ax.annotate("Spines", xy=(0, 0.5), xycoords="axes fraction", ha="right", fontsize=9, color="green")
+fig.text(0.02, 0.5, "Figure boundary →", rotation=90, va="center", fontsize=9, color="purple")
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q3. What is the difference between `plt` (pyplot) and the object-oriented API?
+
+**Answer:**  
+
+| Aspect | pyplot (`plt`) | Object-Oriented (OO) |
+|--------|----------------|---------------------|
+| Style | MATLAB-like, stateful | Pythonic, explicit |
+| Use case | Quick plots, exploration | Complex figures, automation |
+| Control | Limited | Full control over every element |
+| Reusability | Harder to reuse | Easy to create functions |
+
+```py
+# pyplot style (quick but less control)
+plt.figure(figsize=(6, 3))
+plt.plot([1, 2, 3], [1, 4, 9])
+plt.title("Pyplot Style")
+plt.show()
+
+# Object-oriented style (recommended for complex work)
+fig, ax = plt.subplots(figsize=(6, 3))
+ax.plot([1, 2, 3], [1, 4, 9])
+ax.set_title("Object-Oriented Style")
+plt.show()
+```
+
+## Q4. How do I create my first line plot?
+
+**Answer:** Use `plt.plot()` with x and y arrays, then add labels and show.
+
+```py
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.figure(figsize=(8, 4))
+plt.plot(x, y, color="royalblue", linewidth=2)
+plt.title("Sine Wave", fontsize=14)
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+## Q5. What line styles, markers, and colors are available?
+
+**Answer:** Matplotlib offers extensive customization:
+
+**Line styles:** `-` (solid), `--` (dashed), `-.` (dash-dot), `:` (dotted)
+
+**Markers:** `o` (circle), `s` (square), `^` (triangle), `D` (diamond), `*` (star), `+`, `x`
+
+**Colors:** Named colors, hex codes, RGB tuples, or color cycle shortcuts (`C0`, `C1`, etc.)
+
+```py
+fig, axs = plt.subplots(1, 3, figsize=(14, 4))
+x = np.linspace(0, 2, 20)
+
+# Line styles
+for i, ls in enumerate(['-', '--', '-.', ':']):
+    axs[0].plot(x, x + i*0.5, linestyle=ls, linewidth=2, label=f"'{ls}'")
+axs[0].set_title("Line Styles")
+axs[0].legend()
+axs[0].grid(alpha=0.3)
+
+# Markers
+markers = ['o', 's', '^', 'D', '*', 'p', 'h']
+for i, m in enumerate(markers):
+    axs[1].plot(x[::2], (x[::2] + i*0.3), marker=m, linestyle='-', markersize=8, label=f"'{m}'")
+axs[1].set_title("Markers")
+axs[1].legend(ncol=2, fontsize=8)
+axs[1].grid(alpha=0.3)
+
+# Colors
+colors = ['#e63946', '#457b9d', '#2a9d8f', '#f4a261', '#264653']
+for i, c in enumerate(colors):
+    axs[2].bar(i, i+1, color=c, label=c)
+axs[2].set_title("Custom Colors (Hex)")
+axs[2].legend(fontsize=8)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q6. How do I add multiple lines with a legend?
+
+**Answer:** Plot each line with a `label` parameter, then call `plt.legend()`.
+
+```py
+t = np.linspace(0, 2 * np.pi, 200)
+
+plt.figure(figsize=(9, 4))
+plt.plot(t, np.sin(t), label="sin(t)", linewidth=2)
+plt.plot(t, np.cos(t), label="cos(t)", linewidth=2, linestyle="--")
+plt.plot(t, np.sin(t) * np.cos(t), label="sin(t)·cos(t)", linewidth=2, linestyle="-.")
+plt.title("Trigonometric Functions Comparison")
+plt.xlabel("t (radians)")
+plt.ylabel("Value")
+plt.legend(loc="upper right")
+plt.grid(alpha=0.25)
+plt.axhline(y=0, color='k', linewidth=0.5)
+plt.show()
+```
+
+## Q7. How do I customize axis limits and ticks?
+
+**Answer:** Use `xlim()`, `ylim()`, `xticks()`, `yticks()` or their OO equivalents.
+
+```py
+x = np.linspace(0, 10, 100)
+y = np.exp(-x/3) * np.sin(2*x)
+
+fig, ax = plt.subplots(figsize=(9, 4))
+ax.plot(x, y, color="#2a9d8f", linewidth=2)
+
+# Custom limits
+ax.set_xlim(0, 8)
+ax.set_ylim(-0.6, 1.0)
+
+# Custom ticks
+ax.set_xticks([0, 2, 4, 6, 8])
+ax.set_xticklabels(['0', '2π/5', '4π/5', '6π/5', '8π/5'])
+ax.set_yticks([-0.5, 0, 0.5, 1.0])
+
+ax.set_title("Custom Axis Limits and Tick Labels")
+ax.set_xlabel("Phase")
+ax.set_ylabel("Amplitude")
+ax.grid(alpha=0.3)
+plt.show()
+```
+
+## Q8. How do I save figures in different formats?
+
+**Answer:** Use `savefig()` with the desired file extension. Matplotlib detects format from filename.
+
+```py
+fig, ax = plt.subplots(figsize=(7, 4))
+ax.plot(np.random.randn(50).cumsum(), color="steelblue", linewidth=2)
+ax.set_title("Random Walk")
+ax.grid(alpha=0.3)
+
+# Save in multiple formats (uncomment to save)
+# fig.savefig("plot.png", dpi=300, bbox_inches="tight")  # Raster, web-friendly
+# fig.savefig("plot.pdf", bbox_inches="tight")           # Vector, publication
+# fig.savefig("plot.svg", bbox_inches="tight")           # Vector, scalable
+# fig.savefig("plot.eps", bbox_inches="tight")           # Vector, LaTeX compatible
+
+plt.show()
+print("Supported formats:", fig.canvas.get_supported_filetypes())
+```
+
+## Q9. How do I add grid lines selectively?
+
+**Answer:** Use `grid()` with `axis`, `which`, and `linestyle` parameters.
+
+```py
+fig, axs = plt.subplots(1, 3, figsize=(14, 4))
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Default grid
+axs[0].plot(x, y)
+axs[0].grid(True)
+axs[0].set_title("Default Grid")
+
+# Only horizontal grid
+axs[1].plot(x, y)
+axs[1].grid(axis='y', alpha=0.5)
+axs[1].set_title("Horizontal Only")
+
+# Major and minor grid
+axs[2].plot(x, y)
+axs[2].grid(which='major', linestyle='-', alpha=0.7)
+axs[2].grid(which='minor', linestyle=':', alpha=0.4)
+axs[2].minorticks_on()
+axs[2].set_title("Major + Minor Grid")
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q10. How do I add horizontal and vertical reference lines?
+
+**Answer:** Use `axhline()`, `axvline()`, `hlines()`, and `vlines()`.
+
+```py
+fig, ax = plt.subplots(figsize=(9, 5))
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+ax.plot(x, y, linewidth=2, label="sin(x)")
+
+# Reference lines
+ax.axhline(y=0, color='k', linestyle='-', linewidth=0.8, label="y=0")
+ax.axhline(y=0.5, color='red', linestyle='--', alpha=0.7, label="y=0.5 threshold")
+ax.axvline(x=np.pi, color='green', linestyle=':', linewidth=2, label="x=π")
+
+# Span regions
+ax.axhspan(-0.2, 0.2, alpha=0.2, color='yellow', label="Safe zone")
+ax.axvspan(6, 8, alpha=0.15, color='blue', label="Highlight region")
+
+ax.set_xlim(0, 10)
+ax.legend(loc="upper right", fontsize=9)
+ax.set_title("Reference Lines and Spans")
+ax.grid(alpha=0.3)
+plt.show()
+```
+
+::: {.callout-caution collapse="true"}
+## Practice (Fundamentals) - 5 Challenges
+
+### Challenge 1 (Easy): Basic Line Plot
+Create a simple line plot of $y = x^2$ for x ∈ [0, 10].
+
+**Requirements:**
+- Blue solid line with linewidth=2
+- Title: "Quadratic Function"
+- X and Y axis labels
+- Grid enabled
+
+---
+
+### Challenge 2 (Easy): Multiple Lines with Legend
+Plot $y = x$, $y = x^2$, and $y = x^3$ on the same figure for x ∈ [0, 3].
+
+**Requirements:**
+- Different colors for each line
+- Line labels and legend
+- Add grid with alpha=0.3
+
+---
+
+### Challenge 3 (Moderate): Customized Sine Waves
+Create a figure showing $\sin(x)$, $\sin(2x)$, and $\sin(3x)$ for x ∈ [0, 2π].
+
+**Requirements:**
+- Different line styles (solid, dashed, dotted)
+- Custom colors (not default)
+- Legend positioned at 'upper right'
+- Add horizontal line at y=0
+- Custom x-ticks at [0, π/2, π, 3π/2, 2π] with labels ['0', 'π/2', 'π', '3π/2', '2π']
+
+---
+
+### Challenge 4 (Moderate): Reference Lines and Spans
+Plot $y = e^{-x} \cdot \cos(2\pi x)$ for x ∈ [0, 5].
+
+**Requirements:**
+- Highlight the region where |y| < 0.2 using `axhspan`
+- Add vertical lines at x = 1, 2, 3, 4 using `axvline`
+- Mark the envelope curves $\pm e^{-x}$ with dashed lines
+- Proper annotations explaining what each element represents
+
+---
+
+### Challenge 5 (Difficult): Publication-Ready Multi-Curve Plot
+Create a plot showing three exponential decay curves: $e^{-x}$, $e^{-2x}$, and $e^{-0.5x}$ for x ∈ [0, 5].
+
+**Requirements:**
+1. Different line styles and colors for each curve
+2. A horizontal line at y=0.1 (threshold)
+3. Vertical line where $e^{-x}$ crosses the threshold (x = ln(10) ≈ 2.303)
+4. Annotation pointing to the intersection
+5. LaTeX labels: $e^{-x}$, $e^{-2x}$, $e^{-0.5x}$
+6. Legend with title "Decay Rates"
+7. Save as both PNG (300 DPI) and SVG
+:::
+
+---
+
+# Part 2: Intermediate Visualizations
+
+## Q11. How do I create bar charts (vertical and horizontal)?
+
+**Answer:** Use `bar()` for vertical and `barh()` for horizontal bars.
+
+```py
+categories = ['Python', 'JavaScript', 'Java', 'C++', 'Go']
+values = [85, 72, 68, 45, 52]
+colors = ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51']
+
+fig, axs = plt.subplots(1, 2, figsize=(12, 4))
+
+# Vertical bars
+axs[0].bar(categories, values, color=colors, edgecolor='white', linewidth=1.5)
+axs[0].set_title("Programming Language Popularity")
+axs[0].set_ylabel("Score")
+axs[0].set_ylim(0, 100)
+
+# Add value labels on bars
+for i, (cat, val) in enumerate(zip(categories, values)):
+    axs[0].text(i, val + 2, str(val), ha='center', fontweight='bold')
+
+# Horizontal bars
+axs[1].barh(categories, values, color=colors, edgecolor='white', linewidth=1.5)
+axs[1].set_title("Horizontal Bar Chart")
+axs[1].set_xlabel("Score")
+axs[1].set_xlim(0, 100)
+axs[1].invert_yaxis()  # Top category first
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q12. How do I create grouped and stacked bar charts?
+
+**Answer:** For grouped bars, offset the x positions. For stacked, use the `bottom` parameter.
+
+```py
+categories = ['Q1', 'Q2', 'Q3', 'Q4']
+product_a = [20, 35, 30, 35]
+product_b = [25, 32, 34, 20]
+product_c = [15, 25, 28, 30]
+
+x = np.arange(len(categories))
+width = 0.25
+
+fig, axs = plt.subplots(1, 2, figsize=(13, 5))
+
+# Grouped bars
+bars1 = axs[0].bar(x - width, product_a, width, label='Product A', color='#264653')
+bars2 = axs[0].bar(x, product_b, width, label='Product B', color='#2a9d8f')
+bars3 = axs[0].bar(x + width, product_c, width, label='Product C', color='#e9c46a')
+axs[0].set_xlabel('Quarter')
+axs[0].set_ylabel('Sales')
+axs[0].set_title('Grouped Bar Chart: Quarterly Sales')
+axs[0].set_xticks(x)
+axs[0].set_xticklabels(categories)
+axs[0].legend()
+axs[0].grid(axis='y', alpha=0.3)
+
+# Stacked bars
+axs[1].bar(categories, product_a, label='Product A', color='#264653')
+axs[1].bar(categories, product_b, bottom=product_a, label='Product B', color='#2a9d8f')
+axs[1].bar(categories, product_c, bottom=np.array(product_a)+np.array(product_b), 
+           label='Product C', color='#e9c46a')
+axs[1].set_xlabel('Quarter')
+axs[1].set_ylabel('Total Sales')
+axs[1].set_title('Stacked Bar Chart: Quarterly Sales')
+axs[1].legend()
+axs[1].grid(axis='y', alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q13. How do I create scatter plots with varying size and color?
+
+**Answer:** Use the `s` (size) and `c` (color) parameters with colormaps.
+
+```py
+np.random.seed(42)
+n = 100
+x = np.random.randn(n)
+y = x + np.random.randn(n) * 0.5
+colors = np.random.rand(n)
+sizes = np.abs(np.random.randn(n)) * 200 + 50
+
+fig, axs = plt.subplots(1, 2, figsize=(13, 5))
+
+# Basic scatter
+axs[0].scatter(x, y, alpha=0.7, edgecolors='white', linewidth=0.5)
+axs[0].set_title("Basic Scatter Plot")
+axs[0].set_xlabel("X")
+axs[0].set_ylabel("Y")
+axs[0].grid(alpha=0.3)
+
+# Scatter with size and color mapping
+scatter = axs[1].scatter(x, y, c=colors, s=sizes, cmap='viridis', 
+                          alpha=0.7, edgecolors='white', linewidth=0.5)
+axs[1].set_title("Scatter with Color & Size Mapping")
+axs[1].set_xlabel("X")
+axs[1].set_ylabel("Y")
+axs[1].grid(alpha=0.3)
+plt.colorbar(scatter, ax=axs[1], label="Color Value")
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q14. How do I create histograms with different configurations?
+
+**Answer:** Use `hist()` with parameters like `bins`, `density`, `histtype`, `alpha`.
+
+```py
+np.random.seed(42)
+data1 = np.random.normal(0, 1, 1000)
+data2 = np.random.normal(2, 1.5, 1000)
+
+fig, axs = plt.subplots(2, 2, figsize=(12, 9))
+
+# Basic histogram
+axs[0, 0].hist(data1, bins=30, color='steelblue', edgecolor='white', alpha=0.8)
+axs[0, 0].set_title("Basic Histogram")
+axs[0, 0].set_xlabel("Value")
+axs[0, 0].set_ylabel("Frequency")
+
+# Density histogram (normalized)
+axs[0, 1].hist(data1, bins=30, density=True, color='#2a9d8f', edgecolor='white', alpha=0.8)
+axs[0, 1].set_title("Density Histogram (Normalized)")
+axs[0, 1].set_xlabel("Value")
+axs[0, 1].set_ylabel("Density")
+
+# Overlapping histograms
+axs[1, 0].hist(data1, bins=30, alpha=0.6, label='Distribution 1', color='#264653')
+axs[1, 0].hist(data2, bins=30, alpha=0.6, label='Distribution 2', color='#e76f51')
+axs[1, 0].set_title("Overlapping Histograms")
+axs[1, 0].legend()
+
+# Step histogram
+axs[1, 1].hist(data1, bins=30, histtype='step', linewidth=2, label='Step', color='#264653')
+axs[1, 1].hist(data1, bins=30, histtype='stepfilled', alpha=0.3, label='Filled', color='#264653')
+axs[1, 1].set_title("Step Histogram Types")
+axs[1, 1].legend()
+
+for ax in axs.flat:
+    ax.grid(alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q15. How do I create pie charts and donut charts?
+
+**Answer:** Use `pie()` with explode for emphasis and a white center circle for donuts.
+
+```py
+labels = ['Python', 'JavaScript', 'Java', 'C++', 'Others']
+sizes = [35, 25, 20, 12, 8]
+colors = ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51']
+explode = (0.05, 0, 0, 0, 0)  # Explode Python slice
+
+fig, axs = plt.subplots(1, 2, figsize=(13, 5))
+
+# Basic pie chart
+axs[0].pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
+           shadow=False, startangle=90, textprops={'fontsize': 10})
+axs[0].set_title("Pie Chart: Language Usage", fontsize=12)
+
+# Donut chart
+wedges, texts, autotexts = axs[1].pie(sizes, colors=colors, autopct='%1.1f%%',
+                                        startangle=90, pctdistance=0.75,
+                                        textprops={'fontsize': 9, 'color': 'white'})
+# Create donut by adding white circle
+centre_circle = plt.Circle((0, 0), 0.50, fc='white')
+axs[1].add_patch(centre_circle)
+axs[1].legend(wedges, labels, title="Languages", loc="center left", bbox_to_anchor=(0.9, 0.5))
+axs[1].set_title("Donut Chart: Language Usage", fontsize=12)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q16. How do I create subplots with `plt.subplots()`?
+
+**Answer:** `subplots(nrows, ncols)` returns a figure and array of axes.
+
+```py
+fig, axs = plt.subplots(2, 3, figsize=(14, 8))
+x = np.linspace(0, 2*np.pi, 100)
+
+# Different plots in each subplot
+axs[0, 0].plot(x, np.sin(x), 'b-')
+axs[0, 0].set_title("sin(x)")
+
+axs[0, 1].plot(x, np.cos(x), 'r--')
+axs[0, 1].set_title("cos(x)")
+
+axs[0, 2].plot(x, np.tan(x), 'g-.')
+axs[0, 2].set_ylim(-5, 5)
+axs[0, 2].set_title("tan(x) (clipped)")
+
+axs[1, 0].bar(['A', 'B', 'C'], [3, 7, 5], color=['#264653', '#2a9d8f', '#e9c46a'])
+axs[1, 0].set_title("Bar Chart")
+
+axs[1, 1].scatter(np.random.rand(30), np.random.rand(30), c=np.random.rand(30), cmap='viridis')
+axs[1, 1].set_title("Scatter Plot")
+
+axs[1, 2].hist(np.random.randn(200), bins=15, color='steelblue', edgecolor='white')
+axs[1, 2].set_title("Histogram")
+
+# Add super title and common labels
+fig.suptitle("Multiple Subplot Demonstration", fontsize=14, fontweight='bold')
+fig.supxlabel("X-axis")
+fig.supylabel("Y-axis")
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q17. How do I share axes between subplots?
+
+**Answer:** Use `sharex=True` or `sharey=True` parameters.
+
+```py
+fig, axs = plt.subplots(2, 2, figsize=(10, 8), sharex='col', sharey='row')
+
+np.random.seed(42)
+data = [np.random.randn(100) * scale + mean for scale, mean in [(1, 0), (1.5, 2), (0.5, -1), (2, 1)]]
+
+for i, ax in enumerate(axs.flat):
+    ax.hist(data[i], bins=20, alpha=0.7, color=f'C{i}')
+    ax.set_title(f"Distribution {i+1}")
+
+# Only outer axes have labels due to sharing
+for ax in axs[-1, :]:
+    ax.set_xlabel("Value")
+for ax in axs[:, 0]:
+    ax.set_ylabel("Frequency")
+
+fig.suptitle("Shared Axes: Columns share X, Rows share Y", fontsize=12)
+plt.tight_layout()
+plt.show()
+```
+
+## Q18. How do I add text and annotations to plots?
+
+**Answer:** Use `text()` for static text and `annotate()` for text with arrows.
+
+```py
+fig, ax = plt.subplots(figsize=(10, 6))
+x = np.linspace(0, 10, 100)
+y = np.sin(x) * np.exp(-x/10)
+
+ax.plot(x, y, 'b-', linewidth=2)
+
+# Find maximum
+max_idx = np.argmax(y)
+max_x, max_y = x[max_idx], y[max_idx]
+
+# Annotation with arrow
+ax.annotate(f'Maximum\n({max_x:.2f}, {max_y:.2f})',
+            xy=(max_x, max_y),
+            xytext=(max_x + 2, max_y + 0.3),
+            fontsize=10,
+            arrowprops=dict(arrowstyle='->', color='red', lw=1.5),
+            bbox=dict(boxstyle='round,pad=0.3', facecolor='lightyellow', edgecolor='orange'))
+
+# Simple text
+ax.text(7, 0.2, "Damped oscillation", fontsize=11, style='italic', 
+        bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.5))
+
+# Mathematical text using LaTeX
+ax.text(5, -0.4, r'$y = \sin(x) \cdot e^{-x/10}$', fontsize=12)
+
+ax.set_title("Annotations and Text Placement")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.grid(alpha=0.3)
+ax.axhline(y=0, color='k', linewidth=0.5)
+plt.show()
+```
+
+## Q19. How do I create error bars for uncertainty visualization?
+
+**Answer:** Use `errorbar()` with `xerr` and/or `yerr` parameters.
+
+```py
+# Experimental data with uncertainties
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2.1, 3.9, 6.2, 7.8, 10.1])
+y_err = np.array([0.3, 0.4, 0.5, 0.3, 0.6])
+x_err = np.array([0.1, 0.1, 0.15, 0.1, 0.2])
+
+fig, axs = plt.subplots(1, 3, figsize=(14, 4))
+
+# Symmetric y-error bars
+axs[0].errorbar(x, y, yerr=y_err, fmt='o-', capsize=4, capthick=2, 
+                color='#264653', ecolor='#e76f51', markersize=8)
+axs[0].set_title("Y Error Bars")
+axs[0].grid(alpha=0.3)
+
+# Both x and y error bars
+axs[1].errorbar(x, y, xerr=x_err, yerr=y_err, fmt='s', capsize=3, 
+                color='#2a9d8f', ecolor='gray', markersize=8)
+axs[1].set_title("X and Y Error Bars")
+axs[1].grid(alpha=0.3)
+
+# Asymmetric error bars
+y_err_asym = np.array([[0.2, 0.3, 0.2, 0.25, 0.3],  # Lower errors
+                       [0.4, 0.5, 0.6, 0.35, 0.7]])  # Upper errors
+axs[2].errorbar(x, y, yerr=y_err_asym, fmt='D-', capsize=4, 
+                color='#e9c46a', ecolor='#264653', markersize=8)
+axs[2].set_title("Asymmetric Error Bars")
+axs[2].grid(alpha=0.3)
+
+for ax in axs:
+    ax.set_xlabel("X")
+    ax.set_ylabel("Y")
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q20. How do I create box plots for statistical distribution comparison?
+
+**Answer:** Use `boxplot()` or the more flexible `bxp()`.
+
+```py
+np.random.seed(42)
+data = [np.random.normal(0, std, 100) for std in [1, 1.5, 2, 0.8]]
+labels = ['Group A', 'Group B', 'Group C', 'Group D']
+
+fig, axs = plt.subplots(1, 2, figsize=(13, 5))
+
+# Basic box plot
+bp = axs[0].boxplot(data, labels=labels, patch_artist=True)
+colors = ['#264653', '#2a9d8f', '#e9c46a', '#e76f51']
+for patch, color in zip(bp['boxes'], colors):
+    patch.set_facecolor(color)
+    patch.set_alpha(0.7)
+axs[0].set_title("Box Plot: Distribution Comparison")
+axs[0].set_ylabel("Value")
+axs[0].grid(axis='y', alpha=0.3)
+
+# Horizontal box plot with notch
+bp2 = axs[1].boxplot(data, labels=labels, patch_artist=True, vert=False, notch=True)
+for patch, color in zip(bp2['boxes'], colors):
+    patch.set_facecolor(color)
+    patch.set_alpha(0.7)
+axs[1].set_title("Horizontal Notched Box Plot")
+axs[1].set_xlabel("Value")
+axs[1].grid(axis='x', alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q21. How do I create violin plots for richer distribution visualization?
+
+**Answer:** Use `violinplot()` to show both the distribution shape and summary statistics.
+
+```py
+np.random.seed(42)
+data = [np.concatenate([np.random.normal(0, 1, 50), np.random.normal(3, 0.5, 30)]),
+        np.random.normal(1, 1.5, 100),
+        np.random.exponential(1, 100),
+        np.random.uniform(-2, 2, 100)]
+
+fig, axs = plt.subplots(1, 2, figsize=(13, 5))
+
+# Basic violin plot
+vp = axs[0].violinplot(data, showmeans=True, showmedians=True)
+for i, body in enumerate(vp['bodies']):
+    body.set_facecolor(f'C{i}')
+    body.set_alpha(0.7)
+axs[0].set_xticks([1, 2, 3, 4])
+axs[0].set_xticklabels(['Bimodal', 'Normal', 'Exponential', 'Uniform'])
+axs[0].set_title("Violin Plot: Different Distributions")
+axs[0].set_ylabel("Value")
+axs[0].grid(alpha=0.3)
+
+# Half violin with box plot overlay
+parts = axs[1].violinplot(data, showextrema=False)
+for i, body in enumerate(parts['bodies']):
+    body.set_facecolor(f'C{i}')
+    body.set_alpha(0.7)
+# Add box plots on top
+bp = axs[1].boxplot(data, widths=0.15)
+axs[1].set_xticks([1, 2, 3, 4])
+axs[1].set_xticklabels(['Bimodal', 'Normal', 'Exponential', 'Uniform'])
+axs[1].set_title("Violin + Box Plot Overlay")
+axs[1].set_ylabel("Value")
+axs[1].grid(alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Q22. What chart type should I use for different data scenarios?
+
+**Answer:** Chart selection depends on your data and the story you want to tell:
+
+| Data Type | Chart | Use Case |
+|-----------|-------|----------|
+| Trend over time | Line | Time series, continuous change |
+| Category comparison | Bar | Discrete categories, rankings |
+| Relationship | Scatter | Correlation, clusters |
+| Distribution | Histogram, Box, Violin | Spread, outliers, shape |
+| Part of whole | Pie, Stacked Bar | Proportions (use sparingly) |
+| 2D density | Heatmap, Contour | Matrix data, correlations |
+| Hierarchical | Treemap, Sunburst | Nested categories |
+
+```py
+fig, axs = plt.subplots(2, 3, figsize=(14, 9))
+np.random.seed(42)
+
+# Time series → Line
+dates = np.arange(30)
+values = np.cumsum(np.random.randn(30)) + 50
+axs[0, 0].plot(dates, values, 'o-', color='#264653', markersize=4)
+axs[0, 0].set_title("Trend → Line Chart")
+axs[0, 0].set_xlabel("Day")
+axs[0, 0].fill_between(dates, values, alpha=0.2)
+
+# Categories → Bar
+cats = ['A', 'B', 'C', 'D']
+vals = [25, 40, 30, 45]
+axs[0, 1].bar(cats, vals, color=['#264653', '#2a9d8f', '#e9c46a', '#e76f51'])
+axs[0, 1].set_title("Comparison → Bar Chart")
+
+# Correlation → Scatter
+x = np.random.randn(50)
+y = 0.7*x + np.random.randn(50)*0.5
+axs[0, 2].scatter(x, y, alpha=0.7, c='#2a9d8f', edgecolors='white')
+axs[0, 2].set_title("Relationship → Scatter")
+
+# Distribution → Histogram
+data = np.random.randn(500)
+axs[1, 0].hist(data, bins=25, color='#264653', edgecolor='white', alpha=0.8)
+axs[1, 0].set_title("Distribution → Histogram")
+
+# Spread → Box plot
+data = [np.random.randn(100)*s + m for s, m in [(1, 0), (0.5, 2), (1.5, 1)]]
+axs[1, 1].boxplot(data, labels=['Low var', 'High mean', 'High var'], patch_artist=True)
+axs[1, 1].set_title("Spread → Box Plot")
+
+# Proportion → Pie (use sparingly!)
+sizes = [35, 25, 20, 20]
+axs[1, 2].pie(sizes, labels=['A', 'B', 'C', 'D'], autopct='%1.0f%%', 
+              colors=['#264653', '#2a9d8f', '#e9c46a', '#e76f51'])
+axs[1, 2].set_title("Proportion → Pie (careful!)")
+
+for ax in axs.flat:
+    if ax != axs[1, 2]:
+        ax.grid(alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+::: {.callout-caution collapse="true"}
+## Practice (Intermediate) - 5 Challenges
+
+### Challenge 1 (Easy): Basic Bar Chart
+Create a bar chart comparing sales across 5 products: ['Laptop', 'Phone', 'Tablet', 'Watch', 'Earbuds'] with values [150, 280, 95, 120, 200].
+
+**Requirements:**
+- Different color for each bar
+- Add value labels on top of each bar
+- Title and axis labels
+- Grid on y-axis only
+
+---
+
+### Challenge 2 (Easy): Simple Scatter Plot
+Generate 50 random points (x from uniform [0, 10], y = 2x + noise).
+
+**Requirements:**
+- Scatter plot with alpha=0.7
+- Different marker size based on y-value
+- Add a trend line (y = 2x)
+- Legend distinguishing data vs. trend
+
+---
+
+### Challenge 3 (Moderate): Grouped Bar Chart with Error Bars
+Compare performance metrics across 4 teams for 3 quarters.
+
+**Requirements:**
+- Grouped bars (3 groups of 4 bars each)
+- Error bars representing standard deviation
+- Different colors per quarter
+- Rotated x-tick labels
+- Legend outside the plot area
+
+---
+
+### Challenge 4 (Moderate): Histogram with Statistical Annotations
+Generate 1000 samples from a normal distribution (mean=75, std=10).
+
+**Requirements:**
+- Histogram with 30 bins
+- Overlay a density curve (kernel density estimate or theoretical normal)
+- Vertical lines showing mean and ±1σ, ±2σ
+- Text annotation showing mean and standard deviation values
+- Different colors for each region (within 1σ, between 1σ-2σ, beyond 2σ)
+
+---
+
+### Challenge 5 (Difficult): Comprehensive Analytics Dashboard
+Create a 2×2 subplot panel analyzing mock business data:
+
+**Requirements:**
+1. **Top-left:** Monthly revenue time series (line chart with fill_between showing growth area)
+2. **Top-right:** Revenue by product category (horizontal bar chart, sorted by value)
+3. **Bottom-left:** Revenue vs. expenses scatter plot with:
+   - Color representing profit margin
+   - Size representing transaction volume
+   - Colorbar showing profit scale
+4. **Bottom-right:** Distribution of daily transactions (histogram with overlaid density curve)
+
+Add:
+- Super title: "Business Analytics Dashboard"
+- Consistent color scheme across all panels
+- Proper annotations for key insights (e.g., best month, highest margin product)
+:::
+
+---
+
+# Quick Reference Guide
+
+## Common Plot Types
+
+| Function | Use Case |
+|----------|----------|
+| `plot()` | Line charts, time series |
+| `scatter()` | Relationships, clusters |
+| `bar()` / `barh()` | Categorical comparisons |
+| `hist()` | Distributions |
+| `pie()` | Part of whole (sparingly) |
+| `boxplot()` | Statistical summaries |
+| `violinplot()` | Distribution shape |
+| `errorbar()` | Data with uncertainty |
+| `fill_between()` | Confidence bands |
+| `imshow()` / `pcolormesh()` | Heatmaps, images |
+
+
+---
+
+
+# References
+
+1. [Matplotlib Official Documentation](https://matplotlib.org/)
+2. [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html)
+3. [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html)
+4. [Scientific Visualization: Python + Matplotlib (Book)](https://github.com/rougier/scientific-visualization-book)
+5. [Matplotlib Cheatsheets](https://matplotlib.org/cheatsheets/)

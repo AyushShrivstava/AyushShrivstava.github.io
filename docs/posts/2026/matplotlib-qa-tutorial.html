@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.46">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ayush Shrivastava and Rishabh Mondal">
+<meta name="dcterms.date" content="2026-02-15">
+
+<title>Matplotlib Tutorial – Homepage</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Homepage</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../publication.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">BlogPosts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../gallery.html"> 
+<span class="menu-text">Gallery</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../files/Ayush_Master_CV.pdf"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-1-fundamentals" id="toc-part-1-fundamentals" class="nav-link active" data-scroll-target="#part-1-fundamentals">Part 1: Fundamentals</a>
+  <ul class="collapse">
+  <li><a href="#q1.-what-is-matplotlib-and-why-is-it-essential-for-data-visualization" id="toc-q1.-what-is-matplotlib-and-why-is-it-essential-for-data-visualization" class="nav-link" data-scroll-target="#q1.-what-is-matplotlib-and-why-is-it-essential-for-data-visualization">Q1. What is Matplotlib and why is it essential for data visualization?</a></li>
+  <li><a href="#q2.-what-are-the-key-parts-of-a-matplotlib-figure" id="toc-q2.-what-are-the-key-parts-of-a-matplotlib-figure" class="nav-link" data-scroll-target="#q2.-what-are-the-key-parts-of-a-matplotlib-figure">Q2. What are the key parts of a Matplotlib figure?</a></li>
+  <li><a href="#q3.-what-is-the-difference-between-plt-pyplot-and-the-object-oriented-api" id="toc-q3.-what-is-the-difference-between-plt-pyplot-and-the-object-oriented-api" class="nav-link" data-scroll-target="#q3.-what-is-the-difference-between-plt-pyplot-and-the-object-oriented-api">Q3. What is the difference between <code>plt</code> (pyplot) and the object-oriented API?</a></li>
+  <li><a href="#q4.-how-do-i-create-my-first-line-plot" id="toc-q4.-how-do-i-create-my-first-line-plot" class="nav-link" data-scroll-target="#q4.-how-do-i-create-my-first-line-plot">Q4. How do I create my first line plot?</a></li>
+  <li><a href="#q5.-what-line-styles-markers-and-colors-are-available" id="toc-q5.-what-line-styles-markers-and-colors-are-available" class="nav-link" data-scroll-target="#q5.-what-line-styles-markers-and-colors-are-available">Q5. What line styles, markers, and colors are available?</a></li>
+  <li><a href="#q6.-how-do-i-add-multiple-lines-with-a-legend" id="toc-q6.-how-do-i-add-multiple-lines-with-a-legend" class="nav-link" data-scroll-target="#q6.-how-do-i-add-multiple-lines-with-a-legend">Q6. How do I add multiple lines with a legend?</a></li>
+  <li><a href="#q7.-how-do-i-customize-axis-limits-and-ticks" id="toc-q7.-how-do-i-customize-axis-limits-and-ticks" class="nav-link" data-scroll-target="#q7.-how-do-i-customize-axis-limits-and-ticks">Q7. How do I customize axis limits and ticks?</a></li>
+  <li><a href="#q8.-how-do-i-save-figures-in-different-formats" id="toc-q8.-how-do-i-save-figures-in-different-formats" class="nav-link" data-scroll-target="#q8.-how-do-i-save-figures-in-different-formats">Q8. How do I save figures in different formats?</a></li>
+  <li><a href="#q9.-how-do-i-add-grid-lines-selectively" id="toc-q9.-how-do-i-add-grid-lines-selectively" class="nav-link" data-scroll-target="#q9.-how-do-i-add-grid-lines-selectively">Q9. How do I add grid lines selectively?</a></li>
+  <li><a href="#q10.-how-do-i-add-horizontal-and-vertical-reference-lines" id="toc-q10.-how-do-i-add-horizontal-and-vertical-reference-lines" class="nav-link" data-scroll-target="#q10.-how-do-i-add-horizontal-and-vertical-reference-lines">Q10. How do I add horizontal and vertical reference lines?</a></li>
+  </ul></li>
+  <li><a href="#part-2-intermediate-visualizations" id="toc-part-2-intermediate-visualizations" class="nav-link" data-scroll-target="#part-2-intermediate-visualizations">Part 2: Intermediate Visualizations</a>
+  <ul class="collapse">
+  <li><a href="#q11.-how-do-i-create-bar-charts-vertical-and-horizontal" id="toc-q11.-how-do-i-create-bar-charts-vertical-and-horizontal" class="nav-link" data-scroll-target="#q11.-how-do-i-create-bar-charts-vertical-and-horizontal">Q11. How do I create bar charts (vertical and horizontal)?</a></li>
+  <li><a href="#q12.-how-do-i-create-grouped-and-stacked-bar-charts" id="toc-q12.-how-do-i-create-grouped-and-stacked-bar-charts" class="nav-link" data-scroll-target="#q12.-how-do-i-create-grouped-and-stacked-bar-charts">Q12. How do I create grouped and stacked bar charts?</a></li>
+  <li><a href="#q13.-how-do-i-create-scatter-plots-with-varying-size-and-color" id="toc-q13.-how-do-i-create-scatter-plots-with-varying-size-and-color" class="nav-link" data-scroll-target="#q13.-how-do-i-create-scatter-plots-with-varying-size-and-color">Q13. How do I create scatter plots with varying size and color?</a></li>
+  <li><a href="#q14.-how-do-i-create-histograms-with-different-configurations" id="toc-q14.-how-do-i-create-histograms-with-different-configurations" class="nav-link" data-scroll-target="#q14.-how-do-i-create-histograms-with-different-configurations">Q14. How do I create histograms with different configurations?</a></li>
+  <li><a href="#q15.-how-do-i-create-pie-charts-and-donut-charts" id="toc-q15.-how-do-i-create-pie-charts-and-donut-charts" class="nav-link" data-scroll-target="#q15.-how-do-i-create-pie-charts-and-donut-charts">Q15. How do I create pie charts and donut charts?</a></li>
+  <li><a href="#q16.-how-do-i-create-subplots-with-plt.subplots" id="toc-q16.-how-do-i-create-subplots-with-plt.subplots" class="nav-link" data-scroll-target="#q16.-how-do-i-create-subplots-with-plt.subplots">Q16. How do I create subplots with <code>plt.subplots()</code>?</a></li>
+  <li><a href="#q17.-how-do-i-share-axes-between-subplots" id="toc-q17.-how-do-i-share-axes-between-subplots" class="nav-link" data-scroll-target="#q17.-how-do-i-share-axes-between-subplots">Q17. How do I share axes between subplots?</a></li>
+  <li><a href="#q18.-how-do-i-add-text-and-annotations-to-plots" id="toc-q18.-how-do-i-add-text-and-annotations-to-plots" class="nav-link" data-scroll-target="#q18.-how-do-i-add-text-and-annotations-to-plots">Q18. How do I add text and annotations to plots?</a></li>
+  <li><a href="#q19.-how-do-i-create-error-bars-for-uncertainty-visualization" id="toc-q19.-how-do-i-create-error-bars-for-uncertainty-visualization" class="nav-link" data-scroll-target="#q19.-how-do-i-create-error-bars-for-uncertainty-visualization">Q19. How do I create error bars for uncertainty visualization?</a></li>
+  <li><a href="#q20.-how-do-i-create-box-plots-for-statistical-distribution-comparison" id="toc-q20.-how-do-i-create-box-plots-for-statistical-distribution-comparison" class="nav-link" data-scroll-target="#q20.-how-do-i-create-box-plots-for-statistical-distribution-comparison">Q20. How do I create box plots for statistical distribution comparison?</a></li>
+  <li><a href="#q21.-how-do-i-create-violin-plots-for-richer-distribution-visualization" id="toc-q21.-how-do-i-create-violin-plots-for-richer-distribution-visualization" class="nav-link" data-scroll-target="#q21.-how-do-i-create-violin-plots-for-richer-distribution-visualization">Q21. How do I create violin plots for richer distribution visualization?</a></li>
+  <li><a href="#q22.-what-chart-type-should-i-use-for-different-data-scenarios" id="toc-q22.-what-chart-type-should-i-use-for-different-data-scenarios" class="nav-link" data-scroll-target="#q22.-what-chart-type-should-i-use-for-different-data-scenarios">Q22. What chart type should I use for different data scenarios?</a></li>
+  </ul></li>
+  <li><a href="#quick-reference-guide" id="toc-quick-reference-guide" class="nav-link" data-scroll-target="#quick-reference-guide">Quick Reference Guide</a>
+  <ul class="collapse">
+  <li><a href="#common-plot-types" id="toc-common-plot-types" class="nav-link" data-scroll-target="#common-plot-types">Common Plot Types</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matplotlib Tutorial</h1>
+<p class="subtitle lead">A practical guide to Python visualization</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Data Visualization</div>
+    <div class="quarto-category">Matplotlib</div>
+    <div class="quarto-category">Tutorial</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ayush Shrivastava and Rishabh Mondal </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 15, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-1-fundamentals" class="level1">
+<h1>Part 1: Fundamentals</h1>
+<section id="q1.-what-is-matplotlib-and-why-is-it-essential-for-data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="q1.-what-is-matplotlib-and-why-is-it-essential-for-data-visualization">Q1. What is Matplotlib and why is it essential for data visualization?</h2>
+<p><strong>Answer:</strong> Matplotlib is Python’s foundational 2D plotting library, created by John Hunter in 2003. It provides:</p>
+<ul>
+<li>Complete control over every plot element (axes, ticks, labels, colors)</li>
+<li>Publication-quality output in multiple formats (PNG, PDF, SVG, EPS)</li>
+<li>Integration with NumPy, Pandas, and the entire scientific Python ecosystem</li>
+<li>Two interfaces: quick <code>pyplot</code> (MATLAB-style) and powerful object-oriented API</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Matplotlib version: </span><span class="sc">{</span>mpl<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Available backends: </span><span class="sc">{</span>mpl<span class="sc">.</span>rcsetup<span class="sc">.</span>all_backends[:<span class="dv">5</span>]<span class="sc">}</span><span class="ss">..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If Matplotlib is missing, install it with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install matplotlib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="q2.-what-are-the-key-parts-of-a-matplotlib-figure" class="level2">
+<h2 class="anchored" data-anchor-id="q2.-what-are-the-key-parts-of-a-matplotlib-figure">Q2. What are the key parts of a Matplotlib figure?</h2>
+<p><strong>Answer:</strong> Every Matplotlib visualization consists of:</p>
+<ul>
+<li><strong>Figure:</strong> The entire window/page containing everything</li>
+<li><strong>Axes:</strong> The actual plot area with data, ticks, labels (a Figure can have multiple Axes)</li>
+<li><strong>Axis:</strong> The x-axis and y-axis objects controlling ticks and limits</li>
+<li><strong>Artist:</strong> Everything visible on the figure (lines, text, patches, etc.)</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrate figure anatomy</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Figure Anatomy"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"X-axis (horizontal)"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Y-axis (vertical)"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="st">"This is the Axes</span><span class="ch">\n</span><span class="st">(plot area)"</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">12</span>, bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">"round"</span>, facecolor<span class="op">=</span><span class="st">"lightblue"</span>))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add annotations showing parts</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">"Title"</span>, xy<span class="op">=</span>(<span class="fl">0.5</span>, <span class="fl">1.02</span>), xycoords<span class="op">=</span><span class="st">"axes fraction"</span>, ha<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">"red"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">"Spines"</span>, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), xycoords<span class="op">=</span><span class="st">"axes fraction"</span>, ha<span class="op">=</span><span class="st">"right"</span>, fontsize<span class="op">=</span><span class="dv">9</span>, color<span class="op">=</span><span class="st">"green"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>fig.text(<span class="fl">0.02</span>, <span class="fl">0.5</span>, <span class="st">"Figure boundary →"</span>, rotation<span class="op">=</span><span class="dv">90</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">9</span>, color<span class="op">=</span><span class="st">"purple"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q3.-what-is-the-difference-between-plt-pyplot-and-the-object-oriented-api" class="level2">
+<h2 class="anchored" data-anchor-id="q3.-what-is-the-difference-between-plt-pyplot-and-the-object-oriented-api">Q3. What is the difference between <code>plt</code> (pyplot) and the object-oriented API?</h2>
+<p><strong>Answer:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>pyplot (<code>plt</code>)</th>
+<th>Object-Oriented (OO)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Style</td>
+<td>MATLAB-like, stateful</td>
+<td>Pythonic, explicit</td>
+</tr>
+<tr class="even">
+<td>Use case</td>
+<td>Quick plots, exploration</td>
+<td>Complex figures, automation</td>
+</tr>
+<tr class="odd">
+<td>Control</td>
+<td>Limited</td>
+<td>Full control over every element</td>
+</tr>
+<tr class="even">
+<td>Reusability</td>
+<td>Harder to reuse</td>
+<td>Easy to create functions</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pyplot style (quick but less control)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Pyplot Style"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Object-oriented style (recommended for complex work)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>])</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Object-Oriented Style"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q4.-how-do-i-create-my-first-line-plot" class="level2">
+<h2 class="anchored" data-anchor-id="q4.-how-do-i-create-my-first-line-plot">Q4. How do I create my first line plot?</h2>
+<p><strong>Answer:</strong> Use <code>plt.plot()</code> with x and y arrays, then add labels and show.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color<span class="op">=</span><span class="st">"royalblue"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Sine Wave"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"sin(x)"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q5.-what-line-styles-markers-and-colors-are-available" class="level2">
+<h2 class="anchored" data-anchor-id="q5.-what-line-styles-markers-and-colors-are-available">Q5. What line styles, markers, and colors are available?</h2>
+<p><strong>Answer:</strong> Matplotlib offers extensive customization:</p>
+<p><strong>Line styles:</strong> <code>-</code> (solid), <code>--</code> (dashed), <code>-.</code> (dash-dot), <code>:</code> (dotted)</p>
+<p><strong>Markers:</strong> <code>o</code> (circle), <code>s</code> (square), <code>^</code> (triangle), <code>D</code> (diamond), <code>*</code> (star), <code>+</code>, <code>x</code></p>
+<p><strong>Colors:</strong> Named colors, hex codes, RGB tuples, or color cycle shortcuts (<code>C0</code>, <code>C1</code>, etc.)</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">20</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Line styles</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, ls <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="st">'-'</span>, <span class="st">'--'</span>, <span class="st">'-.'</span>, <span class="st">':'</span>]):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">0</span>].plot(x, x <span class="op">+</span> i<span class="op">*</span><span class="fl">0.5</span>, linestyle<span class="op">=</span>ls, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f"'</span><span class="sc">{</span>ls<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Line Styles"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].legend()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Markers</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>markers <span class="op">=</span> [<span class="st">'o'</span>, <span class="st">'s'</span>, <span class="st">'^'</span>, <span class="st">'D'</span>, <span class="st">'*'</span>, <span class="st">'p'</span>, <span class="st">'h'</span>]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, m <span class="kw">in</span> <span class="bu">enumerate</span>(markers):</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].plot(x[::<span class="dv">2</span>], (x[::<span class="dv">2</span>] <span class="op">+</span> i<span class="op">*</span><span class="fl">0.3</span>), marker<span class="op">=</span>m, linestyle<span class="op">=</span><span class="st">'-'</span>, markersize<span class="op">=</span><span class="dv">8</span>, label<span class="op">=</span><span class="ss">f"'</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Markers"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].legend(ncol<span class="op">=</span><span class="dv">2</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Colors</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#e63946'</span>, <span class="st">'#457b9d'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#f4a261'</span>, <span class="st">'#264653'</span>]</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, c <span class="kw">in</span> <span class="bu">enumerate</span>(colors):</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">2</span>].bar(i, i<span class="op">+</span><span class="dv">1</span>, color<span class="op">=</span>c, label<span class="op">=</span>c)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].set_title(<span class="st">"Custom Colors (Hex)"</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].legend(fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q6.-how-do-i-add-multiple-lines-with-a-legend" class="level2">
+<h2 class="anchored" data-anchor-id="q6.-how-do-i-add-multiple-lines-with-a-legend">Q6. How do I add multiple lines with a legend?</h2>
+<p><strong>Answer:</strong> Plot each line with a <code>label</code> parameter, then call <code>plt.legend()</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, <span class="dv">200</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.plot(t, np.sin(t), label<span class="op">=</span><span class="st">"sin(t)"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.plot(t, np.cos(t), label<span class="op">=</span><span class="st">"cos(t)"</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.plot(t, np.sin(t) <span class="op">*</span> np.cos(t), label<span class="op">=</span><span class="st">"sin(t)·cos(t)"</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">"-."</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Trigonometric Functions Comparison"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"t (radians)"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Value"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper right"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q7.-how-do-i-customize-axis-limits-and-ticks" class="level2">
+<h2 class="anchored" data-anchor-id="q7.-how-do-i-customize-axis-limits-and-ticks">Q7. How do I customize axis limits and ticks?</h2>
+<p><strong>Answer:</strong> Use <code>xlim()</code>, <code>ylim()</code>, <code>xticks()</code>, <code>yticks()</code> or their OO equivalents.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.exp(<span class="op">-</span>x<span class="op">/</span><span class="dv">3</span>) <span class="op">*</span> np.sin(<span class="dv">2</span><span class="op">*</span>x)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, color<span class="op">=</span><span class="st">"#2a9d8f"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom limits</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">8</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="fl">0.6</span>, <span class="fl">1.0</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom ticks</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>])</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([<span class="st">'0'</span>, <span class="st">'2π/5'</span>, <span class="st">'4π/5'</span>, <span class="st">'6π/5'</span>, <span class="st">'8π/5'</span>])</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>ax.set_yticks([<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>])</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Custom Axis Limits and Tick Labels"</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Phase"</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Amplitude"</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q8.-how-do-i-save-figures-in-different-formats" class="level2">
+<h2 class="anchored" data-anchor-id="q8.-how-do-i-save-figures-in-different-formats">Q8. How do I save figures in different formats?</h2>
+<p><strong>Answer:</strong> Use <code>savefig()</code> with the desired file extension. Matplotlib detects format from filename.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ax.plot(np.random.randn(<span class="dv">50</span>).cumsum(), color<span class="op">=</span><span class="st">"steelblue"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Random Walk"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Save in multiple formats (uncomment to save)</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.savefig("plot.png", dpi=300, bbox_inches="tight")  # Raster, web-friendly</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.savefig("plot.pdf", bbox_inches="tight")           # Vector, publication</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.savefig("plot.svg", bbox_inches="tight")           # Vector, scalable</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.savefig("plot.eps", bbox_inches="tight")           # Vector, LaTeX compatible</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Supported formats:"</span>, fig.canvas.get_supported_filetypes())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q9.-how-do-i-add-grid-lines-selectively" class="level2">
+<h2 class="anchored" data-anchor-id="q9.-how-do-i-add-grid-lines-selectively">Q9. How do I add grid lines selectively?</h2>
+<p><strong>Answer:</strong> Use <code>grid()</code> with <code>axis</code>, <code>which</code>, and <code>linestyle</code> parameters.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Default grid</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].plot(x, y)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(<span class="va">True</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Default Grid"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Only horizontal grid</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].plot(x, y)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Horizontal Only"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Major and minor grid</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].plot(x, y)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].grid(which<span class="op">=</span><span class="st">'major'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].grid(which<span class="op">=</span><span class="st">'minor'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].minorticks_on()</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].set_title(<span class="st">"Major + Minor Grid"</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q10.-how-do-i-add-horizontal-and-vertical-reference-lines" class="level2">
+<h2 class="anchored" data-anchor-id="q10.-how-do-i-add-horizontal-and-vertical-reference-lines">Q10. How do I add horizontal and vertical reference lines?</h2>
+<p><strong>Answer:</strong> Use <code>axhline()</code>, <code>axvline()</code>, <code>hlines()</code>, and <code>vlines()</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"sin(x)"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Reference lines</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">"y=0"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">"y=0.5 threshold"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>ax.axvline(x<span class="op">=</span>np.pi, color<span class="op">=</span><span class="st">'green'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"x=π"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Span regions</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>ax.axhspan(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">0.2</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">'yellow'</span>, label<span class="op">=</span><span class="st">"Safe zone"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>ax.axvspan(<span class="dv">6</span>, <span class="dv">8</span>, alpha<span class="op">=</span><span class="fl">0.15</span>, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">"Highlight region"</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"upper right"</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Reference Lines and Spans"</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practice (Fundamentals) - 5 Challenges
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="challenge-1-easy-basic-line-plot" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-1-easy-basic-line-plot">Challenge 1 (Easy): Basic Line Plot</h3>
+<p>Create a simple line plot of <span class="math inline">\(y = x^2\)</span> for x ∈ [0, 10].</p>
+<p><strong>Requirements:</strong> - Blue solid line with linewidth=2 - Title: “Quadratic Function” - X and Y axis labels - Grid enabled</p>
+<hr>
+</section>
+<section id="challenge-2-easy-multiple-lines-with-legend" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-2-easy-multiple-lines-with-legend">Challenge 2 (Easy): Multiple Lines with Legend</h3>
+<p>Plot <span class="math inline">\(y = x\)</span>, <span class="math inline">\(y = x^2\)</span>, and <span class="math inline">\(y = x^3\)</span> on the same figure for x ∈ [0, 3].</p>
+<p><strong>Requirements:</strong> - Different colors for each line - Line labels and legend - Add grid with alpha=0.3</p>
+<hr>
+</section>
+<section id="challenge-3-moderate-customized-sine-waves" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-3-moderate-customized-sine-waves">Challenge 3 (Moderate): Customized Sine Waves</h3>
+<p>Create a figure showing <span class="math inline">\(\sin(x)\)</span>, <span class="math inline">\(\sin(2x)\)</span>, and <span class="math inline">\(\sin(3x)\)</span> for x ∈ [0, 2π].</p>
+<p><strong>Requirements:</strong> - Different line styles (solid, dashed, dotted) - Custom colors (not default) - Legend positioned at ‘upper right’ - Add horizontal line at y=0 - Custom x-ticks at [0, π/2, π, 3π/2, 2π] with labels [‘0’, ‘π/2’, ‘π’, ‘3π/2’, ‘2π’]</p>
+<hr>
+</section>
+<section id="challenge-4-moderate-reference-lines-and-spans" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-4-moderate-reference-lines-and-spans">Challenge 4 (Moderate): Reference Lines and Spans</h3>
+<p>Plot <span class="math inline">\(y = e^{-x} \cdot \cos(2\pi x)\)</span> for x ∈ [0, 5].</p>
+<p><strong>Requirements:</strong> - Highlight the region where |y| &lt; 0.2 using <code>axhspan</code> - Add vertical lines at x = 1, 2, 3, 4 using <code>axvline</code> - Mark the envelope curves <span class="math inline">\(\pm e^{-x}\)</span> with dashed lines - Proper annotations explaining what each element represents</p>
+<hr>
+</section>
+<section id="challenge-5-difficult-publication-ready-multi-curve-plot" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-5-difficult-publication-ready-multi-curve-plot">Challenge 5 (Difficult): Publication-Ready Multi-Curve Plot</h3>
+<p>Create a plot showing three exponential decay curves: <span class="math inline">\(e^{-x}\)</span>, <span class="math inline">\(e^{-2x}\)</span>, and <span class="math inline">\(e^{-0.5x}\)</span> for x ∈ [0, 5].</p>
+<p><strong>Requirements:</strong> 1. Different line styles and colors for each curve 2. A horizontal line at y=0.1 (threshold) 3. Vertical line where <span class="math inline">\(e^{-x}\)</span> crosses the threshold (x = ln(10) ≈ 2.303) 4. Annotation pointing to the intersection 5. LaTeX labels: <span class="math inline">\(e^{-x}\)</span>, <span class="math inline">\(e^{-2x}\)</span>, <span class="math inline">\(e^{-0.5x}\)</span> 6. Legend with title “Decay Rates” 7. Save as both PNG (300 DPI) and SVG</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-2-intermediate-visualizations" class="level1">
+<h1>Part 2: Intermediate Visualizations</h1>
+<section id="q11.-how-do-i-create-bar-charts-vertical-and-horizontal" class="level2">
+<h2 class="anchored" data-anchor-id="q11.-how-do-i-create-bar-charts-vertical-and-horizontal">Q11. How do I create bar charts (vertical and horizontal)?</h2>
+<p><strong>Answer:</strong> Use <code>bar()</code> for vertical and <code>barh()</code> for horizontal bars.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'Python'</span>, <span class="st">'JavaScript'</span>, <span class="st">'Java'</span>, <span class="st">'C++'</span>, <span class="st">'Go'</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">72</span>, <span class="dv">68</span>, <span class="dv">45</span>, <span class="dv">52</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#264653'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#e9c46a'</span>, <span class="st">'#f4a261'</span>, <span class="st">'#e76f51'</span>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Vertical bars</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].bar(categories, values, color<span class="op">=</span>colors, edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Programming Language Popularity"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylabel(<span class="st">"Score"</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylim(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add value labels on bars</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, (cat, val) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(categories, values)):</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">0</span>].text(i, val <span class="op">+</span> <span class="dv">2</span>, <span class="bu">str</span>(val), ha<span class="op">=</span><span class="st">'center'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal bars</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].barh(categories, values, color<span class="op">=</span>colors, edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Horizontal Bar Chart"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xlabel(<span class="st">"Score"</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xlim(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].invert_yaxis()  <span class="co"># Top category first</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q12.-how-do-i-create-grouped-and-stacked-bar-charts" class="level2">
+<h2 class="anchored" data-anchor-id="q12.-how-do-i-create-grouped-and-stacked-bar-charts">Q12. How do I create grouped and stacked bar charts?</h2>
+<p><strong>Answer:</strong> For grouped bars, offset the x positions. For stacked, use the <code>bottom</code> parameter.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'Q1'</span>, <span class="st">'Q2'</span>, <span class="st">'Q3'</span>, <span class="st">'Q4'</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>product_a <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">30</span>, <span class="dv">35</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>product_b <span class="op">=</span> [<span class="dv">25</span>, <span class="dv">32</span>, <span class="dv">34</span>, <span class="dv">20</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>product_c <span class="op">=</span> [<span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="bu">len</span>(categories))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouped bars</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>bars1 <span class="op">=</span> axs[<span class="dv">0</span>].bar(x <span class="op">-</span> width, product_a, width, label<span class="op">=</span><span class="st">'Product A'</span>, color<span class="op">=</span><span class="st">'#264653'</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>bars2 <span class="op">=</span> axs[<span class="dv">0</span>].bar(x, product_b, width, label<span class="op">=</span><span class="st">'Product B'</span>, color<span class="op">=</span><span class="st">'#2a9d8f'</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>bars3 <span class="op">=</span> axs[<span class="dv">0</span>].bar(x <span class="op">+</span> width, product_c, width, label<span class="op">=</span><span class="st">'Product C'</span>, color<span class="op">=</span><span class="st">'#e9c46a'</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xlabel(<span class="st">'Quarter'</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylabel(<span class="st">'Sales'</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'Grouped Bar Chart: Quarterly Sales'</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xticks(x)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xticklabels(categories)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].legend()</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Stacked bars</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].bar(categories, product_a, label<span class="op">=</span><span class="st">'Product A'</span>, color<span class="op">=</span><span class="st">'#264653'</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].bar(categories, product_b, bottom<span class="op">=</span>product_a, label<span class="op">=</span><span class="st">'Product B'</span>, color<span class="op">=</span><span class="st">'#2a9d8f'</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].bar(categories, product_c, bottom<span class="op">=</span>np.array(product_a)<span class="op">+</span>np.array(product_b), </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="st">'Product C'</span>, color<span class="op">=</span><span class="st">'#e9c46a'</span>)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xlabel(<span class="st">'Quarter'</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_ylabel(<span class="st">'Total Sales'</span>)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'Stacked Bar Chart: Quarterly Sales'</span>)</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].legend()</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q13.-how-do-i-create-scatter-plots-with-varying-size-and-color" class="level2">
+<h2 class="anchored" data-anchor-id="q13.-how-do-i-create-scatter-plots-with-varying-size-and-color">Q13. How do I create scatter plots with varying size and color?</h2>
+<p><strong>Answer:</strong> Use the <code>s</code> (size) and <code>c</code> (color) parameters with colormaps.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.randn(n)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">+</span> np.random.randn(n) <span class="op">*</span> <span class="fl">0.5</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> np.random.rand(n)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> np.<span class="bu">abs</span>(np.random.randn(n)) <span class="op">*</span> <span class="dv">200</span> <span class="op">+</span> <span class="dv">50</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic scatter</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].scatter(x, y, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolors<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Basic Scatter Plot"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylabel(<span class="st">"Y"</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter with size and color mapping</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>scatter <span class="op">=</span> axs[<span class="dv">1</span>].scatter(x, y, c<span class="op">=</span>colors, s<span class="op">=</span>sizes, cmap<span class="op">=</span><span class="st">'viridis'</span>, </span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>                          alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolors<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Scatter with Color &amp; Size Mapping"</span>)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_ylabel(<span class="st">"Y"</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plt.colorbar(scatter, ax<span class="op">=</span>axs[<span class="dv">1</span>], label<span class="op">=</span><span class="st">"Color Value"</span>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q14.-how-do-i-create-histograms-with-different-configurations" class="level2">
+<h2 class="anchored" data-anchor-id="q14.-how-do-i-create-histograms-with-different-configurations">Q14. How do I create histograms with different configurations?</h2>
+<p><strong>Answer:</strong> Use <code>hist()</code> with parameters like <code>bins</code>, <code>density</code>, <code>histtype</code>, <code>alpha</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>data1 <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> np.random.normal(<span class="dv">2</span>, <span class="fl">1.5</span>, <span class="dv">1000</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">9</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic histogram</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].hist(data1, bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"Basic Histogram"</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].set_xlabel(<span class="st">"Value"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].set_ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Density histogram (normalized)</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].hist(data1, bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'#2a9d8f'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"Density Histogram (Normalized)"</span>)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].set_xlabel(<span class="st">"Value"</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].set_ylabel(<span class="st">"Density"</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Overlapping histograms</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].hist(data1, bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'Distribution 1'</span>, color<span class="op">=</span><span class="st">'#264653'</span>)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].hist(data2, bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'Distribution 2'</span>, color<span class="op">=</span><span class="st">'#e76f51'</span>)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"Overlapping Histograms"</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].legend()</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Step histogram</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].hist(data1, bins<span class="op">=</span><span class="dv">30</span>, histtype<span class="op">=</span><span class="st">'step'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Step'</span>, color<span class="op">=</span><span class="st">'#264653'</span>)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].hist(data1, bins<span class="op">=</span><span class="dv">30</span>, histtype<span class="op">=</span><span class="st">'stepfilled'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">'Filled'</span>, color<span class="op">=</span><span class="st">'#264653'</span>)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"Step Histogram Types"</span>)</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].legend()</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs.flat:</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q15.-how-do-i-create-pie-charts-and-donut-charts" class="level2">
+<h2 class="anchored" data-anchor-id="q15.-how-do-i-create-pie-charts-and-donut-charts">Q15. How do I create pie charts and donut charts?</h2>
+<p><strong>Answer:</strong> Use <code>pie()</code> with explode for emphasis and a white center circle for donuts.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'Python'</span>, <span class="st">'JavaScript'</span>, <span class="st">'Java'</span>, <span class="st">'C++'</span>, <span class="st">'Others'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">8</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#264653'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#e9c46a'</span>, <span class="st">'#f4a261'</span>, <span class="st">'#e76f51'</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> (<span class="fl">0.05</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)  <span class="co"># Explode Python slice</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic pie chart</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].pie(sizes, explode<span class="op">=</span>explode, labels<span class="op">=</span>labels, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>           shadow<span class="op">=</span><span class="va">False</span>, startangle<span class="op">=</span><span class="dv">90</span>, textprops<span class="op">=</span>{<span class="st">'fontsize'</span>: <span class="dv">10</span>})</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Pie Chart: Language Usage"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Donut chart</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>wedges, texts, autotexts <span class="op">=</span> axs[<span class="dv">1</span>].pie(sizes, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                                        startangle<span class="op">=</span><span class="dv">90</span>, pctdistance<span class="op">=</span><span class="fl">0.75</span>,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>                                        textprops<span class="op">=</span>{<span class="st">'fontsize'</span>: <span class="dv">9</span>, <span class="st">'color'</span>: <span class="st">'white'</span>})</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create donut by adding white circle</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>centre_circle <span class="op">=</span> plt.Circle((<span class="dv">0</span>, <span class="dv">0</span>), <span class="fl">0.50</span>, fc<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].add_patch(centre_circle)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].legend(wedges, labels, title<span class="op">=</span><span class="st">"Languages"</span>, loc<span class="op">=</span><span class="st">"center left"</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.9</span>, <span class="fl">0.5</span>))</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Donut Chart: Language Usage"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q16.-how-do-i-create-subplots-with-plt.subplots" class="level2">
+<h2 class="anchored" data-anchor-id="q16.-how-do-i-create-subplots-with-plt.subplots">Q16. How do I create subplots with <code>plt.subplots()</code>?</h2>
+<p><strong>Answer:</strong> <code>subplots(nrows, ncols)</code> returns a figure and array of axes.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">8</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">100</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Different plots in each subplot</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].plot(x, np.sin(x), <span class="st">'b-'</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"sin(x)"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].plot(x, np.cos(x), <span class="st">'r--'</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"cos(x)"</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">2</span>].plot(x, np.tan(x), <span class="st">'g-.'</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">2</span>].set_ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">"tan(x) (clipped)"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].bar([<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>], [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">5</span>], color<span class="op">=</span>[<span class="st">'#264653'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#e9c46a'</span>])</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"Bar Chart"</span>)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].scatter(np.random.rand(<span class="dv">30</span>), np.random.rand(<span class="dv">30</span>), c<span class="op">=</span>np.random.rand(<span class="dv">30</span>), cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"Scatter Plot"</span>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">2</span>].hist(np.random.randn(<span class="dv">200</span>), bins<span class="op">=</span><span class="dv">15</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">"Histogram"</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Add super title and common labels</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"Multiple Subplot Demonstration"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>fig.supxlabel(<span class="st">"X-axis"</span>)</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>fig.supylabel(<span class="st">"Y-axis"</span>)</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q17.-how-do-i-share-axes-between-subplots" class="level2">
+<h2 class="anchored" data-anchor-id="q17.-how-do-i-share-axes-between-subplots">Q17. How do I share axes between subplots?</h2>
+<p><strong>Answer:</strong> Use <code>sharex=True</code> or <code>sharey=True</code> parameters.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>), sharex<span class="op">=</span><span class="st">'col'</span>, sharey<span class="op">=</span><span class="st">'row'</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [np.random.randn(<span class="dv">100</span>) <span class="op">*</span> scale <span class="op">+</span> mean <span class="cf">for</span> scale, mean <span class="kw">in</span> [(<span class="dv">1</span>, <span class="dv">0</span>), (<span class="fl">1.5</span>, <span class="dv">2</span>), (<span class="fl">0.5</span>, <span class="op">-</span><span class="dv">1</span>), (<span class="dv">2</span>, <span class="dv">1</span>)]]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, ax <span class="kw">in</span> <span class="bu">enumerate</span>(axs.flat):</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    ax.hist(data[i], bins<span class="op">=</span><span class="dv">20</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="ss">f'C</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"Distribution </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Only outer axes have labels due to sharing</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs[<span class="op">-</span><span class="dv">1</span>, :]:</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">"Value"</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs[:, <span class="dv">0</span>]:</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"Shared Axes: Columns share X, Rows share Y"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q18.-how-do-i-add-text-and-annotations-to-plots" class="level2">
+<h2 class="anchored" data-anchor-id="q18.-how-do-i-add-text-and-annotations-to-plots">Q18. How do I add text and annotations to plots?</h2>
+<p><strong>Answer:</strong> Use <code>text()</code> for static text and <code>annotate()</code> for text with arrows.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x) <span class="op">*</span> np.exp(<span class="op">-</span>x<span class="op">/</span><span class="dv">10</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Find maximum</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>max_idx <span class="op">=</span> np.argmax(y)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>max_x, max_y <span class="op">=</span> x[max_idx], y[max_idx]</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Annotation with arrow</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f'Maximum</span><span class="ch">\n</span><span class="ss">(</span><span class="sc">{</span>max_x<span class="sc">:.2f}</span><span class="ss">, </span><span class="sc">{</span>max_y<span class="sc">:.2f}</span><span class="ss">)'</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(max_x, max_y),</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(max_x <span class="op">+</span> <span class="dv">2</span>, max_y <span class="op">+</span> <span class="fl">0.3</span>),</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="fl">1.5</span>),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round,pad=0.3'</span>, facecolor<span class="op">=</span><span class="st">'lightyellow'</span>, edgecolor<span class="op">=</span><span class="st">'orange'</span>))</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple text</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">7</span>, <span class="fl">0.2</span>, <span class="st">"Damped oscillation"</span>, fontsize<span class="op">=</span><span class="dv">11</span>, style<span class="op">=</span><span class="st">'italic'</span>, </span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>        bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round'</span>, facecolor<span class="op">=</span><span class="st">'lightblue'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>))</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Mathematical text using LaTeX</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">5</span>, <span class="op">-</span><span class="fl">0.4</span>, <span class="vs">r'$y = \sin(x) \cdot e^{-x/10}$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Annotations and Text Placement"</span>)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"x"</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"y"</span>)</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q19.-how-do-i-create-error-bars-for-uncertainty-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="q19.-how-do-i-create-error-bars-for-uncertainty-visualization">Q19. How do I create error bars for uncertainty visualization?</h2>
+<p><strong>Answer:</strong> Use <code>errorbar()</code> with <code>xerr</code> and/or <code>yerr</code> parameters.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Experimental data with uncertainties</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="fl">2.1</span>, <span class="fl">3.9</span>, <span class="fl">6.2</span>, <span class="fl">7.8</span>, <span class="fl">10.1</span>])</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>y_err <span class="op">=</span> np.array([<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>])</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>x_err <span class="op">=</span> np.array([<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>])</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Symmetric y-error bars</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].errorbar(x, y, yerr<span class="op">=</span>y_err, fmt<span class="op">=</span><span class="st">'o-'</span>, capsize<span class="op">=</span><span class="dv">4</span>, capthick<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">'#264653'</span>, ecolor<span class="op">=</span><span class="st">'#e76f51'</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Y Error Bars"</span>)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Both x and y error bars</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].errorbar(x, y, xerr<span class="op">=</span>x_err, yerr<span class="op">=</span>y_err, fmt<span class="op">=</span><span class="st">'s'</span>, capsize<span class="op">=</span><span class="dv">3</span>, </span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">'#2a9d8f'</span>, ecolor<span class="op">=</span><span class="st">'gray'</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"X and Y Error Bars"</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Asymmetric error bars</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>y_err_asym <span class="op">=</span> np.array([[<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.25</span>, <span class="fl">0.3</span>],  <span class="co"># Lower errors</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>                       [<span class="fl">0.4</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.35</span>, <span class="fl">0.7</span>]])  <span class="co"># Upper errors</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].errorbar(x, y, yerr<span class="op">=</span>y_err_asym, fmt<span class="op">=</span><span class="st">'D-'</span>, capsize<span class="op">=</span><span class="dv">4</span>, </span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">'#e9c46a'</span>, ecolor<span class="op">=</span><span class="st">'#264653'</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].set_title(<span class="st">"Asymmetric Error Bars"</span>)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs:</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">"Y"</span>)</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q20.-how-do-i-create-box-plots-for-statistical-distribution-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="q20.-how-do-i-create-box-plots-for-statistical-distribution-comparison">Q20. How do I create box plots for statistical distribution comparison?</h2>
+<p><strong>Answer:</strong> Use <code>boxplot()</code> or the more flexible <code>bxp()</code>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [np.random.normal(<span class="dv">0</span>, std, <span class="dv">100</span>) <span class="cf">for</span> std <span class="kw">in</span> [<span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="fl">0.8</span>]]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'Group A'</span>, <span class="st">'Group B'</span>, <span class="st">'Group C'</span>, <span class="st">'Group D'</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic box plot</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>bp <span class="op">=</span> axs[<span class="dv">0</span>].boxplot(data, labels<span class="op">=</span>labels, patch_artist<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#264653'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#e9c46a'</span>, <span class="st">'#e76f51'</span>]</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> patch, color <span class="kw">in</span> <span class="bu">zip</span>(bp[<span class="st">'boxes'</span>], colors):</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    patch.set_facecolor(color)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    patch.set_alpha(<span class="fl">0.7</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Box Plot: Distribution Comparison"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylabel(<span class="st">"Value"</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal box plot with notch</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>bp2 <span class="op">=</span> axs[<span class="dv">1</span>].boxplot(data, labels<span class="op">=</span>labels, patch_artist<span class="op">=</span><span class="va">True</span>, vert<span class="op">=</span><span class="va">False</span>, notch<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> patch, color <span class="kw">in</span> <span class="bu">zip</span>(bp2[<span class="st">'boxes'</span>], colors):</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    patch.set_facecolor(color)</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    patch.set_alpha(<span class="fl">0.7</span>)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Horizontal Notched Box Plot"</span>)</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xlabel(<span class="st">"Value"</span>)</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(axis<span class="op">=</span><span class="st">'x'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q21.-how-do-i-create-violin-plots-for-richer-distribution-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="q21.-how-do-i-create-violin-plots-for-richer-distribution-visualization">Q21. How do I create violin plots for richer distribution visualization?</h2>
+<p><strong>Answer:</strong> Use <code>violinplot()</code> to show both the distribution shape and summary statistics.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [np.concatenate([np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">50</span>), np.random.normal(<span class="dv">3</span>, <span class="fl">0.5</span>, <span class="dv">30</span>)]),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        np.random.normal(<span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">100</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        np.random.exponential(<span class="dv">1</span>, <span class="dv">100</span>),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        np.random.uniform(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)]</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic violin plot</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>vp <span class="op">=</span> axs[<span class="dv">0</span>].violinplot(data, showmeans<span class="op">=</span><span class="va">True</span>, showmedians<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, body <span class="kw">in</span> <span class="bu">enumerate</span>(vp[<span class="st">'bodies'</span>]):</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    body.set_facecolor(<span class="ss">f'C</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    body.set_alpha(<span class="fl">0.7</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xticks([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xticklabels([<span class="st">'Bimodal'</span>, <span class="st">'Normal'</span>, <span class="st">'Exponential'</span>, <span class="st">'Uniform'</span>])</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">"Violin Plot: Different Distributions"</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylabel(<span class="st">"Value"</span>)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Half violin with box plot overlay</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>parts <span class="op">=</span> axs[<span class="dv">1</span>].violinplot(data, showextrema<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, body <span class="kw">in</span> <span class="bu">enumerate</span>(parts[<span class="st">'bodies'</span>]):</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    body.set_facecolor(<span class="ss">f'C</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    body.set_alpha(<span class="fl">0.7</span>)</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Add box plots on top</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>bp <span class="op">=</span> axs[<span class="dv">1</span>].boxplot(data, widths<span class="op">=</span><span class="fl">0.15</span>)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xticks([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_xticklabels([<span class="st">'Bimodal'</span>, <span class="st">'Normal'</span>, <span class="st">'Exponential'</span>, <span class="st">'Uniform'</span>])</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">"Violin + Box Plot Overlay"</span>)</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_ylabel(<span class="st">"Value"</span>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="q22.-what-chart-type-should-i-use-for-different-data-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="q22.-what-chart-type-should-i-use-for-different-data-scenarios">Q22. What chart type should I use for different data scenarios?</h2>
+<p><strong>Answer:</strong> Chart selection depends on your data and the story you want to tell:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Data Type</th>
+<th>Chart</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trend over time</td>
+<td>Line</td>
+<td>Time series, continuous change</td>
+</tr>
+<tr class="even">
+<td>Category comparison</td>
+<td>Bar</td>
+<td>Discrete categories, rankings</td>
+</tr>
+<tr class="odd">
+<td>Relationship</td>
+<td>Scatter</td>
+<td>Correlation, clusters</td>
+</tr>
+<tr class="even">
+<td>Distribution</td>
+<td>Histogram, Box, Violin</td>
+<td>Spread, outliers, shape</td>
+</tr>
+<tr class="odd">
+<td>Part of whole</td>
+<td>Pie, Stacked Bar</td>
+<td>Proportions (use sparingly)</td>
+</tr>
+<tr class="even">
+<td>2D density</td>
+<td>Heatmap, Contour</td>
+<td>Matrix data, correlations</td>
+</tr>
+<tr class="odd">
+<td>Hierarchical</td>
+<td>Treemap, Sunburst</td>
+<td>Nested categories</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb23"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">9</span>))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Time series → Line</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> np.arange(<span class="dv">30</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> np.cumsum(np.random.randn(<span class="dv">30</span>)) <span class="op">+</span> <span class="dv">50</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].plot(dates, values, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'#264653'</span>, markersize<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"Trend → Line Chart"</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].set_xlabel(<span class="st">"Day"</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">0</span>].fill_between(dates, values, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Categories → Bar</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>cats <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>vals <span class="op">=</span> [<span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">30</span>, <span class="dv">45</span>]</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].bar(cats, vals, color<span class="op">=</span>[<span class="st">'#264653'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#e9c46a'</span>, <span class="st">'#e76f51'</span>])</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"Comparison → Bar Chart"</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation → Scatter</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.randn(<span class="dv">50</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">0.7</span><span class="op">*</span>x <span class="op">+</span> np.random.randn(<span class="dv">50</span>)<span class="op">*</span><span class="fl">0.5</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">2</span>].scatter(x, y, alpha<span class="op">=</span><span class="fl">0.7</span>, c<span class="op">=</span><span class="st">'#2a9d8f'</span>, edgecolors<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">"Relationship → Scatter"</span>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution → Histogram</span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.randn(<span class="dv">500</span>)</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].hist(data, bins<span class="op">=</span><span class="dv">25</span>, color<span class="op">=</span><span class="st">'#264653'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"Distribution → Histogram"</span>)</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Spread → Box plot</span></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [np.random.randn(<span class="dv">100</span>)<span class="op">*</span>s <span class="op">+</span> m <span class="cf">for</span> s, m <span class="kw">in</span> [(<span class="dv">1</span>, <span class="dv">0</span>), (<span class="fl">0.5</span>, <span class="dv">2</span>), (<span class="fl">1.5</span>, <span class="dv">1</span>)]]</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].boxplot(data, labels<span class="op">=</span>[<span class="st">'Low var'</span>, <span class="st">'High mean'</span>, <span class="st">'High var'</span>], patch_artist<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"Spread → Box Plot"</span>)</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Proportion → Pie (use sparingly!)</span></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">20</span>]</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">2</span>].pie(sizes, labels<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>], autopct<span class="op">=</span><span class="st">'%1.0f</span><span class="sc">%%</span><span class="st">'</span>, </span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>              colors<span class="op">=</span>[<span class="st">'#264653'</span>, <span class="st">'#2a9d8f'</span>, <span class="st">'#e9c46a'</span>, <span class="st">'#e76f51'</span>])</span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">"Proportion → Pie (careful!)"</span>)</span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs.flat:</span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="op">!=</span> axs[<span class="dv">1</span>, <span class="dv">2</span>]:</span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>        ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practice (Intermediate) - 5 Challenges
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="challenge-1-easy-basic-bar-chart" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-1-easy-basic-bar-chart">Challenge 1 (Easy): Basic Bar Chart</h3>
+<p>Create a bar chart comparing sales across 5 products: [‘Laptop’, ‘Phone’, ‘Tablet’, ‘Watch’, ‘Earbuds’] with values [150, 280, 95, 120, 200].</p>
+<p><strong>Requirements:</strong> - Different color for each bar - Add value labels on top of each bar - Title and axis labels - Grid on y-axis only</p>
+<hr>
+</section>
+<section id="challenge-2-easy-simple-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-2-easy-simple-scatter-plot">Challenge 2 (Easy): Simple Scatter Plot</h3>
+<p>Generate 50 random points (x from uniform [0, 10], y = 2x + noise).</p>
+<p><strong>Requirements:</strong> - Scatter plot with alpha=0.7 - Different marker size based on y-value - Add a trend line (y = 2x) - Legend distinguishing data vs.&nbsp;trend</p>
+<hr>
+</section>
+<section id="challenge-3-moderate-grouped-bar-chart-with-error-bars" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-3-moderate-grouped-bar-chart-with-error-bars">Challenge 3 (Moderate): Grouped Bar Chart with Error Bars</h3>
+<p>Compare performance metrics across 4 teams for 3 quarters.</p>
+<p><strong>Requirements:</strong> - Grouped bars (3 groups of 4 bars each) - Error bars representing standard deviation - Different colors per quarter - Rotated x-tick labels - Legend outside the plot area</p>
+<hr>
+</section>
+<section id="challenge-4-moderate-histogram-with-statistical-annotations" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-4-moderate-histogram-with-statistical-annotations">Challenge 4 (Moderate): Histogram with Statistical Annotations</h3>
+<p>Generate 1000 samples from a normal distribution (mean=75, std=10).</p>
+<p><strong>Requirements:</strong> - Histogram with 30 bins - Overlay a density curve (kernel density estimate or theoretical normal) - Vertical lines showing mean and ±1σ, ±2σ - Text annotation showing mean and standard deviation values - Different colors for each region (within 1σ, between 1σ-2σ, beyond 2σ)</p>
+<hr>
+</section>
+<section id="challenge-5-difficult-comprehensive-analytics-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-5-difficult-comprehensive-analytics-dashboard">Challenge 5 (Difficult): Comprehensive Analytics Dashboard</h3>
+<p>Create a 2×2 subplot panel analyzing mock business data:</p>
+<p><strong>Requirements:</strong> 1. <strong>Top-left:</strong> Monthly revenue time series (line chart with fill_between showing growth area) 2. <strong>Top-right:</strong> Revenue by product category (horizontal bar chart, sorted by value) 3. <strong>Bottom-left:</strong> Revenue vs.&nbsp;expenses scatter plot with: - Color representing profit margin - Size representing transaction volume - Colorbar showing profit scale 4. <strong>Bottom-right:</strong> Distribution of daily transactions (histogram with overlaid density curve)</p>
+<p>Add: - Super title: “Business Analytics Dashboard” - Consistent color scheme across all panels - Proper annotations for key insights (e.g., best month, highest margin product)</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="quick-reference-guide" class="level1">
+<h1>Quick Reference Guide</h1>
+<section id="common-plot-types" class="level2">
+<h2 class="anchored" data-anchor-id="common-plot-types">Common Plot Types</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>plot()</code></td>
+<td>Line charts, time series</td>
+</tr>
+<tr class="even">
+<td><code>scatter()</code></td>
+<td>Relationships, clusters</td>
+</tr>
+<tr class="odd">
+<td><code>bar()</code> / <code>barh()</code></td>
+<td>Categorical comparisons</td>
+</tr>
+<tr class="even">
+<td><code>hist()</code></td>
+<td>Distributions</td>
+</tr>
+<tr class="odd">
+<td><code>pie()</code></td>
+<td>Part of whole (sparingly)</td>
+</tr>
+<tr class="even">
+<td><code>boxplot()</code></td>
+<td>Statistical summaries</td>
+</tr>
+<tr class="odd">
+<td><code>violinplot()</code></td>
+<td>Distribution shape</td>
+</tr>
+<tr class="even">
+<td><code>errorbar()</code></td>
+<td>Data with uncertainty</td>
+</tr>
+<tr class="odd">
+<td><code>fill_between()</code></td>
+<td>Confidence bands</td>
+</tr>
+<tr class="even">
+<td><code>imshow()</code> / <code>pcolormesh()</code></td>
+<td>Heatmaps, images</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li><a href="https://matplotlib.org/">Matplotlib Official Documentation</a></li>
+<li><a href="https://matplotlib.org/stable/gallery/index.html">Matplotlib Gallery</a></li>
+<li><a href="https://matplotlib.org/stable/tutorials/index.html">Matplotlib Tutorials</a></li>
+<li><a href="https://github.com/rougier/scientific-visualization-book">Scientific Visualization: Python + Matplotlib (Book)</a></li>
+<li><a href="https://matplotlib.org/cheatsheets/">Matplotlib Cheatsheets</a></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ayushshrivstava\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

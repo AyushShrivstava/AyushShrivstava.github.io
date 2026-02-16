@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ayushshrivstava.github.io/gallery.html</loc>
-    <lastmod>2026-01-30T16:14:36.004Z</lastmod>
+    <lastmod>2026-02-16T03:36:59.925Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts.html</loc>
-    <lastmod>2026-01-30T14:51:41.678Z</lastmod>
+    <lastmod>2026-02-16T03:37:00.003Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/publication.html</loc>
-    <lastmod>2026-01-30T16:12:17.126Z</lastmod>
+    <lastmod>2026-02-16T03:37:00.032Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2024/SirenDemo.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/index.html</loc>
-    <lastmod>2026-01-30T16:15:20.436Z</lastmod>
+    <lastmod>2026-02-16T03:37:00.003Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2026/initial_install.html</loc>
@@ -54,6 +54,10 @@
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/gtf-position.html</loc>
-    <lastmod>2026-01-30T15:39:28.466Z</lastmod>
+    <lastmod>2026-02-16T03:36:59.925Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ayushshrivstava.github.io/posts/2026/matplotlib-qa-tutorial.html</loc>
+    <lastmod>2026-02-16T03:56:26.658Z</lastmod>
   </url>
 </urlset>

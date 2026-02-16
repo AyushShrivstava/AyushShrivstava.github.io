@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/2026/matplotlib-qa-tutorial.html",
       "/posts/2026/numpy_intro.html",
       "/posts/2026/initial_install.html",
       "/posts/2024/Canny_Edge.html",
