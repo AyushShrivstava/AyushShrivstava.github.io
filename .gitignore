@@ -2,3 +2,4 @@
 /posts/2024/data/
 *.DS_Store
 .DS_Store
+**/*.quarto_ipynb
