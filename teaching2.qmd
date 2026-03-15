@@ -69,7 +69,7 @@ toc: false
     z-index: 1;
   }
 
-  .timeline-item.role-gtf::before  { border-color: #e76f51; }
+  .timeline-item.role-gtf::before  { border-color: #1d3557; }
   .timeline-item.role-head::before { border-color: #457b9d; }
   .timeline-item.role-ta::before   { border-color: #90bcd4; }
 
@@ -80,7 +80,7 @@ toc: false
     padding: 14px 16px;
   }
 
-  .role-gtf  .timeline-card { border-left-color: #e76f51; }
+  .role-gtf  .timeline-card { border-left-color: #1d3557; }
   .role-head .timeline-card { border-left-color: #457b9d; }
   .role-ta   .timeline-card { border-left-color: #90bcd4; }
 
@@ -106,7 +106,7 @@ toc: false
     color: white;
   }
 
-  .role-gtf  .role-badge { background: #e76f51; }
+  .role-gtf  .role-badge { background: #1d3557; }
   .role-head .role-badge { background: #457b9d; }
   .role-ta   .role-badge { background: #90bcd4; }
 
@@ -161,7 +161,7 @@ toc: false
 </style>
 
 <div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:#e76f51"></div> Graduate Teaching Fellow (GTF)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#1d3557"></div> Graduate Teaching Fellow (GTF)</div>
   <div class="legend-item"><div class="legend-dot" style="background:#457b9d"></div> Head Teaching Assistant</div>
   <div class="legend-item"><div class="legend-dot" style="background:#90bcd4"></div> Teaching Assistant</div>
 </div>
@@ -176,7 +176,7 @@ toc: false
       <div class="season-label">Spring</div>
       <div class="card-header">
         <span class="course-name"><a href="https://sites.google.com/iitgn.ac.in/es114-2026/home">ES-114: Probability, Statistics and Data Visualization</a></span>
-        <span class="role-badge">Graduate Teaching Fellow</span>
+        <a href="gtf-position.html" style="text-decoration:none;"><span class="role-badge">Graduate Teaching Fellow</span></a>
       </div>
       <div class="card-meta">Prof. <a href="https://mayank4490.github.io">Mayank Singh</a> &nbsp;&middot;&nbsp; 360 students</div>
       <p class="card-desc">Taught concepts of probability, statistics, and data visualization using Python. Conducted weekly lab sessions, assisted in grading assignments, and provided support during exams.</p>
