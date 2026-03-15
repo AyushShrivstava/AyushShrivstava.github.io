@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ayushshrivstava.github.io/gallery.html</loc>
-    <lastmod>2026-03-11T11:04:29.937Z</lastmod>
+    <lastmod>2026-03-15T14:35:02.242Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts.html</loc>
-    <lastmod>2026-03-11T11:42:47.515Z</lastmod>
+    <lastmod>2026-03-15T14:14:06.557Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/publication.html</loc>
-    <lastmod>2026-03-11T11:16:39.501Z</lastmod>
+    <lastmod>2026-03-15T14:36:58.341Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2024/SirenDemo.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/teaching.html</loc>
-    <lastmod>2026-03-11T11:04:30.062Z</lastmod>
+    <lastmod>2026-02-16T03:37:00.032Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2024/Neural_Process.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/index.html</loc>
-    <lastmod>2026-02-21T06:31:47.282Z</lastmod>
+    <lastmod>2026-03-15T14:58:03.492Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2026/initial_install.html</loc>
@@ -58,10 +58,14 @@
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2026/matplotlib-qa-tutorial.html</loc>
-    <lastmod>2026-03-11T11:04:30.062Z</lastmod>
+    <lastmod>2026-02-16T04:06:39.889Z</lastmod>
   </url>
   <url>
     <loc>https://ayushshrivstava.github.io/posts/2026/SetTheory_Probability.html</loc>
-    <lastmod>2026-03-11T11:42:42.382Z</lastmod>
+    <lastmod>2026-03-15T14:13:51.755Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ayushshrivstava.github.io/teaching2.html</loc>
+    <lastmod>2026-03-15T14:56:03.125Z</lastmod>
   </url>
 </urlset>

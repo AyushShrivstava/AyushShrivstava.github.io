@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Blog – Homepage</title>
+<title>Teaching – Homepage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,65 +66,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -152,7 +92,7 @@ window.Quarto = {
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">BlogPosts</span></a>
   </li>  
   <li class="nav-item">
@@ -160,7 +100,7 @@ window.Quarto = {
 <span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching2.html"> 
+    <a class="nav-link active" href="./teaching2.html" aria-current="page"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
 </ul>
@@ -182,19 +122,18 @@ window.Quarto = {
   
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Anaconda">Anaconda <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Computer Vision">Computer Vision <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Visualization">Data Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Helpful Tips">Helpful Tips <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Matplotlib">Matplotlib <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NumPy">NumPy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Probability">Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Set Theory">Set Theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Setup">Setup <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tutorial">Tutorial <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Virtual Environments">Virtual Environments <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Blog</h1>
+<h1 class="title">Teaching</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -206,319 +145,298 @@ window.Quarto = {
 </header>
 
 
+<style>
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #dee2e6;
+  }
+
+  .timeline-year {
+    position: relative;
+    margin: 40px 0 10px 0;
+    padding-left: 120px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #495057;
+  }
+
+  .timeline-year::before {
+    content: attr(data-year);
+    position: absolute;
+    left: 0;
+    width: 80px;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #6c757d;
+    top: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 24px 120px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 83px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #adb5bd;
+    z-index: 1;
+  }
+
+  .timeline-item.role-gtf::before  { border-color: #e76f51; }
+  .timeline-item.role-head::before { border-color: #457b9d; }
+  .timeline-item.role-ta::before   { border-color: #90bcd4; }
+
+  .timeline-card {
+    background: #f8f9fa;
+    border-left: 4px solid #adb5bd;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+
+  .role-gtf  .timeline-card { border-left-color: #e76f51; }
+  .role-head .timeline-card { border-left-color: #457b9d; }
+  .role-ta   .timeline-card { border-left-color: #90bcd4; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+
+  .course-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .role-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    color: white;
+  }
+
+  .role-gtf  .role-badge { background: #e76f51; }
+  .role-head .role-badge { background: #457b9d; }
+  .role-ta   .role-badge { background: #90bcd4; }
+
+  .card-meta {
+    font-size: 0.82rem;
+    color: #6c757d;
+    margin-bottom: 6px;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: #495057;
+    margin: 0;
+  }
+
+  .season-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #adb5bd;
+    margin-bottom: 4px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-size: 0.85rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 600px) {
+    .timeline::before { left: 16px; }
+    .timeline-year { padding-left: 40px; }
+    .timeline-year::before { display: none; }
+    .timeline-item { padding-left: 40px; }
+    .timeline-item::before { left: 9px; }
+  }
+</style>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#e76f51"></div> Graduate Teaching Fellow (GTF)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#457b9d"></div> Head Teaching Assistant</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#90bcd4"></div> Teaching Assistant</div>
+</div>
+
+<div class="timeline">
+
+  <!-- 2026 -->
+  <div class="timeline-year" data-year="2026">2026</div>
+
+  <div class="timeline-item role-gtf">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://sites.google.com/iitgn.ac.in/es114-2026/home">ES-114: Probability, Statistics and Data Visualization</a></span>
+        <span class="role-badge">Graduate Teaching Fellow</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://mayank4490.github.io">Mayank Singh</a> &nbsp;·&nbsp; 360 students</div>
+      <p class="card-desc">Taught concepts of probability, statistics, and data visualization using Python. Conducted weekly lab sessions, assisted in grading assignments, and provided support during exams.</p>
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div class="timeline-year" data-year="2025">2025</div>
+
+  <div class="timeline-item role-head">
+    <div class="timeline-card">
+      <div class="season-label">Fall</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/ml2025/">ES-335: Machine Learning</a></span>
+        <span class="role-badge">Head Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;·&nbsp; 280 students</div>
+      <p class="card-desc">Designed and graded quizzes, assignments, and viva examinations for a large undergraduate class, and contributed to managing instructional logistics.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-head">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/psdv25/">ES-114: Probability, Statistics and Data Visualization</a></span>
+        <span class="role-badge">Head Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;·&nbsp; 320 students</div>
+      <p class="card-desc">Organised and evaluated quizzes, assignments, took vivas, while also playing a pivotal role in supporting classroom logistics.</p>
+    </div>
+  </div>
+
+  <!-- 2024 -->
+  <div class="timeline-year" data-year="2024">2024</div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Fall</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/ml2024-fall/">ES-335: Machine Learning</a></span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;·&nbsp; 250 students</div>
+      <p class="card-desc">Prepared and evaluated quizzes, assignments, and viva examinations, while assisting with course administration.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>  
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/ml2024/">ES-335: Machine Learning</a></span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;·&nbsp; 230 students</div>
+      <p class="card-desc">Prepared and evaluated quizzes, assignments, and viva examinations, while assisting with course administration.</p>
+    </div>
+  </div>
+
+  <!-- 2023 -->
+  <div class="timeline-year" data-year="2023">2023</div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Fall</div>
+      <div class="card-header">
+        <span class="course-name">Computer Systems</span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://abhishek.people.iitgn.ac.in/">Abhishek Bichhawat</a> &amp; <a href="https://www.iitgn.ac.in/faculty/cse/sameer">Sameer G Kulkarni</a> &nbsp;·&nbsp; 45 students</div>
+      <p class="card-desc">Graded assignments and assisted the professor in running the class smoothly.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Summer</div>
+      <div class="card-header">
+        <span class="course-name">World of Engineering</span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://www.iitgn.ac.in/faculty/civil/fac-udit">Udit Bhatia</a> &nbsp;·&nbsp; 300 students</div>
+      <p class="card-desc">Mentored students in identifying, conceptualizing, and modeling a prototype to address a real-world problem, fostering problem-solving and teamwork skills.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>
+      <div class="card-header">
+        <span class="course-name">ES-114: Probability, Statistics and Data Visualization</span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://people.iitgn.ac.in/~shanmuga/">Shanmuganathan Raman</a> &nbsp;·&nbsp; 300 students</div>
+      <p class="card-desc">Guided students in Python libraries including NumPy, Pandas, Matplotlib, SciPy, and Scikit-learn, enhancing their data visualization skills.</p>
+    </div>
+  </div>
+
+  <!-- 2022 -->
+  <div class="timeline-year" data-year="2022">2022</div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Winter</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/comp22/">ES-112: Introduction to Computing</a></span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &amp; <a href="https://bkomarath.rbgo.in/">Balagopal Komarath</a> &nbsp;·&nbsp; 300 students</div>
+      <p class="card-desc">Led a Python lab for 30 students and helped manage logistics, invigilation, and quiz evaluation for a class of 300 students.</p>
+    </div>
+  </div>
+
+</div>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Python,Data Visualization,Matplotlib,Tutorial" data-listing-date-sort="1771093800000" data-listing-file-modified-sort="1771214799889" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3004">
-<a href="./posts/2026/matplotlib-qa-tutorial.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://matplotlib.org/stable/_static/logo2.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Matplotlib Tutorial
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
-Data Visualization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Matplotlib'); return false;">
-Matplotlib
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Tutorial'); return false;">
-Tutorial
-</div>
-</div>
-<div class="card-text listing-description">
-<strong>Answer:</strong> Matplotlib is Python’s foundational 2D plotting library, created by John Hunter in 2003. It provides:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava and Rishabh Mondal
-</div>
-<div class="listing-date">
-Feb 15, 2026
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Python,NumPy,Data Science,Tutorial" data-listing-date-sort="1768415400000" data-listing-file-modified-sort="1771213020032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4848">
-<a href="./posts/2026/numpy_intro.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/numpy/Numpy_thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-NumPy Tutorial
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NumPy'); return false;">
-NumPy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
-Data Science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Tutorial'); return false;">
-Tutorial
-</div>
-</div>
-<div class="card-text listing-description">
-NumPy stands for <strong>Numerical Python</strong>. Think of it as a super-powered calculator for Python that can work with large amounts of numbers very quickly.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Jan 15, 2026
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Python,Anaconda,Setup,Virtual Environments" data-listing-date-sort="1767810600000" data-listing-file-modified-sort="1771213020032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1630">
-<a href="./posts/2026/initial_install.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/initial_install/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Setting Up Your Environment
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Anaconda'); return false;">
-Anaconda
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Setup'); return false;">
-Setup
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Virtual Environments'); return false;">
-Virtual Environments
-</div>
-</div>
-<div class="card-text listing-description">
-Think of a virtual environment as a separate workspace for each of your projects. Imagine you have two different projects:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Jan 8, 2026
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Python,Probability,Set Theory" data-listing-date-sort="1741717800000" data-listing-file-modified-sort="1773584031755" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2432">
-<a href="./posts/2026/SetTheory_Probability.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/SetTheory/SetTheory.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Set Theory and Probability
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Probability'); return false;">
-Probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Set Theory'); return false;">
-Set Theory
-</div>
-</div>
-<div class="card-text listing-description">
-A <strong>set</strong> is an unordered collection of distinct elements. We start with a <strong>universal set</strong> <span class="math inline">\(\Omega\)</span>, which contains every element under consideration. All other sets in the…<span class="math inline"></span>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Mar 12, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Computer Vision" data-listing-date-sort="1733423400000" data-listing-file-modified-sort="1771213020009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
-<a href="./posts/2024/Canny_Edge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/Canny_Edge/Canny_logo.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Canny Edge Detector
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Computer Vision'); return false;">
-Computer Vision
-</div>
-</div>
-<div class="card-text listing-description">
-The Canny Edge detector is named after its inventor, John F. Canny. It is among the most popular edge detection algorithms due to its simplicity and effectiveness. The…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Dec 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="Computer Vision,Deep Learning" data-listing-date-sort="1732300200000" data-listing-file-modified-sort="1771213020031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="544">
-<a href="./posts/2024/SirenDemo.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts/2024/SirenDemo_files/figure-html/cell-3-output-2.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Power of Sine Activation
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Computer Vision'); return false;">
-Computer Vision
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-This notebook is a simple demonstration of the power of the sine activation function in neural networks. We will use a nueral network to learn a function mapping that goes…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Nov 23, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="Computer Vision" data-listing-date-sort="1729621800000" data-listing-file-modified-sort="1771213020009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
-<a href="./posts/2024/Lucas_Kanade.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/blogs/Lucas-Kanade/BCC.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Lucas Kanade Optical Flow
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Computer Vision'); return false;">
-Computer Vision
-</div>
-</div>
-<div class="card-text listing-description">
-Optical flow is the pattern of apparent motion of image objects between two consecutive frames caused by the movement of object or camera. It is vector field where each…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Oct 23, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="Helpful Tips" data-listing-date-sort="1718476200000" data-listing-file-modified-sort="1771213020009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="202">
-<a href="./posts/2024/CondaPost.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/InstallingConda/conda_image.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Setting up Conda Environment for ML Projects
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Helpful Tips'); return false;">
-Helpful Tips
-</div>
-</div>
-<div class="card-text listing-description">
-This blogpost is written for myself as I keep forgetting the steps to set up a conda environment for my ML projects.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Jun 16, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="Deep Learning" data-listing-date-sort="1717612200000" data-listing-file-modified-sort="1771213020009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="560">
-<a href="./posts/2024/Neural_Process.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/blogs/Neural_Process/NP_1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Neural Processes
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-This notebook demonstrates the implementation of the Neural Processes. The model is trained to predict the distribution of the target function given a few examples of the…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ayush Shrivastava
-</div>
-<div class="listing-date">
-Jun 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

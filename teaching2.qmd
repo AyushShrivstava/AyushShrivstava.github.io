@@ -1,0 +1,295 @@
+---
+title: "Teaching"
+toc: false
+---
+
+```{=html}
+<style>
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #dee2e6;
+  }
+
+  .timeline-year {
+    position: relative;
+    margin: 40px 0 10px 0;
+    padding-left: 120px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #495057;
+  }
+
+  .timeline-year::before {
+    content: attr(data-year);
+    position: absolute;
+    left: 0;
+    width: 80px;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #6c757d;
+    top: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 24px 120px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 83px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #adb5bd;
+    z-index: 1;
+  }
+
+  .timeline-item.role-gtf::before  { border-color: #e76f51; }
+  .timeline-item.role-head::before { border-color: #457b9d; }
+  .timeline-item.role-ta::before   { border-color: #90bcd4; }
+
+  .timeline-card {
+    background: #f8f9fa;
+    border-left: 4px solid #adb5bd;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+
+  .role-gtf  .timeline-card { border-left-color: #e76f51; }
+  .role-head .timeline-card { border-left-color: #457b9d; }
+  .role-ta   .timeline-card { border-left-color: #90bcd4; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+
+  .course-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .role-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    color: white;
+  }
+
+  .role-gtf  .role-badge { background: #e76f51; }
+  .role-head .role-badge { background: #457b9d; }
+  .role-ta   .role-badge { background: #90bcd4; }
+
+  .card-meta {
+    font-size: 0.82rem;
+    color: #6c757d;
+    margin-bottom: 6px;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: #495057;
+    margin: 0;
+  }
+
+  .season-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #adb5bd;
+    margin-bottom: 4px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-size: 0.85rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 600px) {
+    .timeline::before { left: 16px; }
+    .timeline-year { padding-left: 40px; }
+    .timeline-year::before { display: none; }
+    .timeline-item { padding-left: 40px; }
+    .timeline-item::before { left: 9px; }
+  }
+</style>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#e76f51"></div> Graduate Teaching Fellow (GTF)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#457b9d"></div> Head Teaching Assistant</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#90bcd4"></div> Teaching Assistant</div>
+</div>
+
+<div class="timeline">
+
+  <!-- 2026 -->
+  <div class="timeline-year" data-year="2026">2026</div>
+
+  <div class="timeline-item role-gtf">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://sites.google.com/iitgn.ac.in/es114-2026/home">ES-114: Probability, Statistics and Data Visualization</a></span>
+        <span class="role-badge">Graduate Teaching Fellow</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://mayank4490.github.io">Mayank Singh</a> &nbsp;&middot;&nbsp; 360 students</div>
+      <p class="card-desc">Taught concepts of probability, statistics, and data visualization using Python. Conducted weekly lab sessions, assisted in grading assignments, and provided support during exams.</p>
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div class="timeline-year" data-year="2025">2025</div>
+
+  <div class="timeline-item role-head">
+    <div class="timeline-card">
+      <div class="season-label">Fall</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/ml2025/">ES-335: Machine Learning</a></span>
+        <span class="role-badge">Head Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;&middot;&nbsp; 280 students</div>
+      <p class="card-desc">Designed and graded quizzes, assignments, and viva examinations for a large undergraduate class, and contributed to managing instructional logistics.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-head">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/psdv25/">ES-114: Probability, Statistics and Data Visualization</a></span>
+        <span class="role-badge">Head Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;&middot;&nbsp; 320 students</div>
+      <p class="card-desc">Organised and evaluated quizzes, assignments, took vivas, while also playing a pivotal role in supporting classroom logistics.</p>
+    </div>
+  </div>
+
+  <!-- 2024 -->
+  <div class="timeline-year" data-year="2024">2024</div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Fall</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/ml2024-fall/">ES-335: Machine Learning</a></span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;&middot;&nbsp; 250 students</div>
+      <p class="card-desc">Prepared and evaluated quizzes, assignments, and viva examinations, while assisting with course administration.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>  
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/ml2024/">ES-335: Machine Learning</a></span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &nbsp;&middot;&nbsp; 230 students</div>
+      <p class="card-desc">Prepared and evaluated quizzes, assignments, and viva examinations, while assisting with course administration.</p>
+    </div>
+  </div>
+
+  <!-- 2023 -->
+  <div class="timeline-year" data-year="2023">2023</div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Fall</div>
+      <div class="card-header">
+        <span class="course-name">Computer Systems</span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://abhishek.people.iitgn.ac.in/">Abhishek Bichhawat</a> &amp; <a href="https://www.iitgn.ac.in/faculty/cse/sameer">Sameer G Kulkarni</a> &nbsp;&middot;&nbsp; 45 students</div>
+      <p class="card-desc">Graded assignments and assisted the professor in running the class smoothly.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Summer</div>
+      <div class="card-header">
+        <span class="course-name">World of Engineering</span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://www.iitgn.ac.in/faculty/civil/fac-udit">Udit Bhatia</a> &nbsp;&middot;&nbsp; 300 students</div>
+      <p class="card-desc">Mentored students in identifying, conceptualizing, and modeling a prototype to address a real-world problem, fostering problem-solving and teamwork skills.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Spring</div>
+      <div class="card-header">
+        <span class="course-name">ES-114: Probability, Statistics and Data Visualization</span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://people.iitgn.ac.in/~shanmuga/">Shanmuganathan Raman</a> &nbsp;&middot;&nbsp; 300 students</div>
+      <p class="card-desc">Guided students in Python libraries including NumPy, Pandas, Matplotlib, SciPy, and Scikit-learn, enhancing their data visualization skills.</p>
+    </div>
+  </div>
+
+  <!-- 2022 -->
+  <div class="timeline-year" data-year="2022">2022</div>
+
+  <div class="timeline-item role-ta">
+    <div class="timeline-card">
+      <div class="season-label">Winter</div>
+      <div class="card-header">
+        <span class="course-name"><a href="https://nipunbatra.github.io/comp22/">ES-112: Introduction to Computing</a></span>
+        <span class="role-badge">Teaching Assistant</span>
+      </div>
+      <div class="card-meta">Prof. <a href="https://nipunbatra.github.io/">Nipun Batra</a> &amp; <a href="https://bkomarath.rbgo.in/">Balagopal Komarath</a> &nbsp;&middot;&nbsp; 300 students</div>
+      <p class="card-desc">Led a Python lab for 30 students and helped manage logistics, invigilation, and quiz evaluation for a class of 300 students.</p>
+    </div>
+  </div>
+
+</div>
+```
