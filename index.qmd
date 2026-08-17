@@ -12,7 +12,7 @@ toc: False
 
 
 <p style="margin-right:-20%;">
-I am a first-year PhD student in Computer Science and Engineering at IIT Gandhinagar, working at the intersection of machine learning, sustainability, and health sensing. I am an active member of the <a href="https://sustainability-lab.github.io/">Sustainability Lab</a>, led by <a href="https://nipunbatra.github.io/">Prof. Nipun Batra</a>, and the <a href="https://smashlab.io/">Smash Lab</a>, led by <a href="https://mynkgoel.github.io/">Prof. Mayank Goel</a>.  
+I am a PhD student in Computer Science and Engineering at IIT Gandhinagar, working at the intersection of machine learning, sustainability, and health sensing. I am an active member of the <a href="https://sustainability-lab.github.io/">Sustainability Lab</a>, led by <a href="https://nipunbatra.github.io/">Prof. Nipun Batra</a>, and the <a href="https://smashlab.io/">Smash Lab</a>, led by <a href="https://mynkgoel.github.io/">Prof. Mayank Goel</a>.  
 
 I hold a master's degree in Computer Science and Engineering from IIT Gandhinagar and a bachelor's degree in Electronics and Telecommunications from Jabalpur Engineering College. My research focuses on applying machine learning to develop innovative solutions in sustainability and health sensing. I am passionate about solving challenging problems using machine learning to create meaningful impact.
 
@@ -49,6 +49,16 @@ I hold a master's degree in Computer Science and Engineering from IIT Gandhinaga
       <col span="1" style="width: 15%;">
   </colgroup>
 
+  <tr>
+    <td>09-13 Aug 2026</td>
+    <td>Presented our work on <a href="https://dl.acm.org/doi/10.1145/3770855.3817469">"ThermEval"</a> at <a href="https://kdd2026.kdd.org/">ACM SIGKDD 2026</a>, ICC Jeju, Korea.
+    </td>
+  </tr>
+  <tr>
+    <td>09-13 Aug 2026</td>
+    <td>Our paper on <a href="https://kdd-milets.github.io/milets2026/accepted%20papers/32MILETS2026Paper32.pdf">"Feature-Informed Self-Supervised Learning"</a> was selected for oral presentation at the <a href="https://kdd-milets.github.io/milets2026/">12th MiLeTS Workshop</a>, KDD 2026.
+    </td>
+  </tr>
   <tr>
     <td>15 Oct 2025</td>
     <td>Successfully defended the PhD research proposal at IIT Gandhinagar.
