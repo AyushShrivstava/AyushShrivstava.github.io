@@ -14,16 +14,22 @@ title: "Publication"
 
 2. **Feature-Informed Self-Supervised Learning for Time Series Understanding**
    Parv Thacker\*, [**Ayush Shrivastava**]{.underline}\*, Nipun Batra.
+   *IEEE International Conference on Data Science and Advanced Analytics (DSAA)*, 2026. **(Short presentation)**
+   [<a href="https://dsaa-2026.vercel.app/accepted-papers"><i class="bi bi-globe2"></i> Accepted papers</a>
+   <a href="https://github.com/parvthacker/SSL-for-Time-Series"><i class="bi bi-github"></i> Code</a>]{.pub-links}
+
+3. **Feature-Informed Self-Supervised Learning for Time Series Understanding**
+   Parv Thacker\*, [**Ayush Shrivastava**]{.underline}\*, Nipun Batra.
    *The 12th Mining and Learning from Time Series Workshop (MiLeTS), KDD*, 2026. **(Oral presentation)**
    [<a href="https://kdd-milets.github.io/milets2026/accepted%20papers/32MILETS2026Paper32.pdf"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
    <a href="https://github.com/parvthacker/SSL-for-Time-Series"><i class="bi bi-github"></i> Code</a>
    <a href="https://kdd-milets.github.io/milets2026/"><i class="bi bi-globe2"></i> Workshop</a>]{.pub-links}
 
-3. **Towards Sleep Apnea Screening via Thermal Imagery** [**Ayush Shrivastava**]{.underline}, Rishiraj Adhikary, Saurabh Mittal, Mayank Goel, Nipun Batra.
+4. **Towards Sleep Apnea Screening via Thermal Imagery** [**Ayush Shrivastava**]{.underline}, Rishiraj Adhikary, Saurabh Mittal, Mayank Goel, Nipun Batra.
    *COMSNETS 2025 Graduate Forum*, 2025.
    [<a href="https://archive.comsnets.org/archive/2025/graduate_forum.html"><i class="bi bi-globe2"></i> Program</a>]{.pub-links}
 
-4. **Sensing respiration and sleep apnea using thermal imaging in real world conditions**
+5. **Sensing respiration and sleep apnea using thermal imaging in real world conditions**
    [**Ayush Shrivastava**]{.underline}.
    Master's Thesis, Indian Institute of Technology Gandhinagar (IITGN), 2024.
 

@@ -50,6 +50,11 @@ I hold a master's degree in Computer Science and Engineering from IIT Gandhinaga
   </colgroup>
 
   <tr>
+    <td>28 Aug 2026</td>
+    <td>Our paper on <a href="https://dsaa-2026.vercel.app/accepted-papers">"Feature-Informed Self-Supervised Learning"</a> was accepted at <a href="https://dsaa-2026.vercel.app/">IEEE DSAA 2026</a>, New Delhi, India.
+    </td>
+  </tr>
+  <tr>
     <td>09-13 Aug 2026</td>
     <td>Presented our work on <a href="https://dl.acm.org/doi/10.1145/3770855.3817469">"ThermEval"</a> at <a href="https://kdd2026.kdd.org/">ACM SIGKDD 2026</a>, ICC Jeju, Korea.
     </td>
