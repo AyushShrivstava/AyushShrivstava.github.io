@@ -50,6 +50,11 @@ I hold a master's degree in Computer Science and Engineering from IIT Gandhinaga
   </colgroup>
 
   <tr>
+    <td>04 Sep 2026</td>
+    <td>Selected for an <b>Oral Presentation</b> at ConfAI 2026, Mohali (top 20 of 370+ abstracts, &lt;6% accepted).
+    </td>
+  </tr>
+  <tr>
     <td>28 Aug 2026</td>
     <td>Our paper on <a href="https://dsaa-2026.vercel.app/accepted-papers">"Feature-Informed Self-Supervised Learning"</a> was accepted at <a href="https://dsaa-2026.vercel.app/">IEEE DSAA 2026</a>, New Delhi, India.
     </td>
